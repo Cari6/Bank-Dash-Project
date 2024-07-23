@@ -1,1 +1,5 @@
 export { default as Typography } from "./typography";
+export { default as Input } from "./input";
+export { default as IconButton } from "./icon-button";
+export { default as Avatar } from "./avatar";
+export { default as Logo } from "./logo";

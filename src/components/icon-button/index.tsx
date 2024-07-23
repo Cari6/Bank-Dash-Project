@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { styles } from "./styles";
 
 interface IconButtonProps {
@@ -7,13 +8,11 @@ interface IconButtonProps {
 }
 
 const IconButton = ({ url, size = 50, iconSize = 25 }: IconButtonProps) => {
-  const iconButtonStyles = styles(size, iconSize);
+  const iconButtonStyles = styles(size);
   return (
-    <div>
-      <button style={iconButtonStyles.iconButton}>
-        <img src={url} alt={url} style={iconButtonStyles.icon} />
-      </button>
-    </div>
+    <button style={iconButtonStyles.iconButton}>
+      <Image src={url} alt={url} width={iconSize} height={iconSize} />
+    </button>
   );
 };
 

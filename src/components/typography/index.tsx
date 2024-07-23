@@ -12,11 +12,13 @@ const Typography = ({
   ...props
 }: TypographyProps) => {
   const rootStyles = {
+    margin: "5px 0",
     ...styles[variant],
     ...style,
   };
 
   if (error) rootStyles.color = "#FF0000";
+
   return <p style={rootStyles} {...props} />;
 };
 

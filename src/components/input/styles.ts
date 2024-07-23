@@ -2,29 +2,21 @@ import { StylesProps } from "../../utils/styles-props";
 
 export const styles = (): StylesProps => ({
   inputContainer: {
-    position: "relative",
-  },
-
-  input: {
-    width: "150px",
-    height: "50px",
-    padding: "0px 10px 0px 60px",
+    display: "flex",
+    alignItems: "center",
+    width: "100%",
+    height: "40px",
+    padding: "0px 20px 0px 20px",
     backgroundColor: "#F5F7FA",
-    borderRadius: "25px 25px 25px 25px",
-    border: "none",
-    outline: "none",
+    borderRadius: "25px",
     transition: " box-shadow 0.3s",
   },
-  icon: {
-    position: "absolute",
-    left: "25px",
-    top: "55%",
-    transform: "translateY(-50%)",
-    pointerEvents: "none",
-  },
-
-  img: {
-    width: 20,
-    height: 20,
+  input: {
+    backgroundColor: "transparent",
+    border: "none",
+    outline: "none",
+    minWidth: 0,
+    flex: 1,
+    marginLeft: "10px",
   },
 });

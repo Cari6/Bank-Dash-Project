@@ -1,6 +1,6 @@
 import { StylesProps } from "../../utils/styles-props";
 
-export const styles = (size: number, iconSize: number): StylesProps => ({
+export const styles = (size: number): StylesProps => ({
   iconButton: {
     border: "none",
     borderRadius: "50%",
@@ -11,9 +11,5 @@ export const styles = (size: number, iconSize: number): StylesProps => ({
     justifyContent: "center",
     backgroundColor: "#F5F7FA",
     cursor: "pointer",
-  },
-  icon: {
-    width: iconSize,
-    height: iconSize,
   },
 });

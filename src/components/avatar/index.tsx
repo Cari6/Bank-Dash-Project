@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { styles } from "./styles";
 
 interface AvatarProps {
@@ -5,11 +6,15 @@ interface AvatarProps {
   size?: number;
 }
 
-const Avatar = ({ url, size = 60 }: AvatarProps) => {
+const Avatar = ({ url, size = 50 }: AvatarProps) => {
   return (
-    <div>
-      <img src={url} alt={url} style={styles(size).avatar} />
-    </div>
+    <Image
+      src={url}
+      alt={url}
+      width={size}
+      height={size}
+      style={styles().avatar}
+    />
   );
 };
 

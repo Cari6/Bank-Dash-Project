@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { styles } from "./styles";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -14,16 +15,13 @@ const Input = ({ placeholder, icon, ...props }: InputProps) => {
             color:#8BA3CB;
           
           }
-
           .input-with-placeholder:hover {
           border-color: #cb8b90;
-          
-           box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        
           }
-            
-          
         `}
       </style>
+      {icon && <Image src={icon} alt={icon} width={18} height={18} />}
       <input
         type="text"
         placeholder={placeholder}
@@ -31,9 +29,6 @@ const Input = ({ placeholder, icon, ...props }: InputProps) => {
         className="input-with-placeholder"
         {...props}
       />
-      <div style={styles().icon}>
-        <img src={icon} alt={icon} style={styles().img} />
-      </div>
     </div>
   );
 };

@@ -1,4 +1,10 @@
-import { Avatar, IconButton, Input, Typography } from "@/src/components";
+import {
+  Avatar,
+  IconButton,
+  Input,
+  ItemList,
+  Typography,
+} from "@/src/components";
 import {
   CardIcon,
   EconometricsIcon,
@@ -40,6 +46,8 @@ const Home = () => {
       <ServiceIcon />
       <EconometricsIcon />
       <SettingsIcon />
+
+      <ItemList item="Dashboard" />
     </div>
   );
 };

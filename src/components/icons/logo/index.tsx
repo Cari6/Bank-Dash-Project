@@ -1,9 +1,5 @@
 import React from "react";
-
-interface IconProps {
-  width?: string;
-  height?: string;
-}
+import { IconProps } from "@/src/types/icon-props";
 
 const LogoIcon = ({ width = "183", height }: IconProps) => {
   const aspectRatio = 183 / 36;

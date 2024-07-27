@@ -1,5 +1,16 @@
 import { Avatar, IconButton, Input, Typography } from "@/src/components";
-import { LogoIcon } from "@/src/components/icons";
+import {
+  CardIcon,
+  EconometricsIcon,
+  HomeIcon,
+  InvestmentIcon,
+  LoanIcon,
+  LogoIcon,
+  ServiceIcon,
+  TransferIcon,
+  UserIcon,
+} from "@/src/components/icons";
+import SettingsIcon from "@/src/components/icons/settings-icon";
 
 const Home = () => {
   return (
@@ -20,6 +31,15 @@ const Home = () => {
       <Avatar url="assets/image/avatar.svg" />
 
       <LogoIcon width="150" />
+      <HomeIcon />
+      <TransferIcon />
+      <UserIcon />
+      <InvestmentIcon />
+      <CardIcon />
+      <LoanIcon />
+      <ServiceIcon />
+      <EconometricsIcon />
+      <SettingsIcon />
     </div>
   );
 };

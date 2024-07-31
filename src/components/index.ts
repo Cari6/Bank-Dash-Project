@@ -4,3 +4,6 @@ export { default as IconButton } from "./icon-button";
 export { default as Avatar } from "./avatar";
 export { default as ItemList } from "./item-list";
 export { default as Icon } from "./icon";
+export { default as Layout } from "./layout";
+export { default as Header } from "./header";
+export { default as Sidebar } from "./sidebar";

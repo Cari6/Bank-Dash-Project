@@ -12,7 +12,7 @@ const ItemList = ({ title, iconName }: ItemListProps) => {
   return (
     <div style={styles().itemListContainer}>
       <Icon name={iconName} />
-      <Typography variant="title2" style={{ marginLeft: 15 }}>
+      <Typography variant="title2" style={{ marginLeft: 25 }}>
         {title}
       </Typography>
     </div>

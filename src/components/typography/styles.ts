@@ -5,7 +5,6 @@ export const styles: StylesProps = {
     fontSize: "28px",
     fontWeight: 600,
     color: "#343C6A",
-    backgroundColor: "red",
   },
   title1: {
     fontSize: "22px",

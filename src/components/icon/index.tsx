@@ -1,10 +1,27 @@
 import React from "react";
-import { HomeIcon, UserIcon } from "../icons";
+import {
+  CardIcon,
+  EconometricsIcon,
+  HomeIcon,
+  InvestmentIcon,
+  LoanIcon,
+  ServiceIcon,
+  Settingsicon,
+  TransferIcon,
+  UserIcon,
+} from "../icons";
 import { IconProps } from "@/src/types/icon-props";
 
 const icons = (props?: IconProps) => ({
   home: <HomeIcon {...props} />,
+  transfer: <TransferIcon {...props} />,
   user: <UserIcon {...props} />,
+  investment: <InvestmentIcon {...props} />,
+  card: <CardIcon {...props} />,
+  loan: <LoanIcon {...props} />,
+  service: <ServiceIcon {...props} />,
+  econometrics: <EconometricsIcon {...props} />,
+  setting: <Settingsicon {...props} />,
 });
 
 export type IconName = keyof ReturnType<typeof icons>;

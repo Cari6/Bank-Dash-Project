@@ -4,7 +4,7 @@ export const styles = (): StylesProps => ({
   inputContainer: {
     display: "flex",
     alignItems: "center",
-    width: "100%",
+    width: "150",
     height: "40px",
     padding: "0px 20px 0px 20px",
     backgroundColor: "#F5F7FA",

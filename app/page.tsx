@@ -4,6 +4,7 @@ import {
   Input,
   ItemList,
   Typography,
+  Icon,
 } from "@/src/components";
 import {
   CardIcon,
@@ -33,10 +34,10 @@ const Home = () => {
           icon="/assets/image/search.svg"
         />
       </div>
-      <IconButton url="assets/image/setting.svg" size={40} iconSize={20} />
-      <Avatar url="assets/image/avatar.svg" />
+      {/* <IconButton url="assets/image/setting.svg" size={40} iconSize={20} />
+      <Avatar url="assets/image/avatar.svg" /> */}
 
-      <LogoIcon width="150" />
+      {/* <LogoIcon width="150" />
       <HomeIcon />
       <TransferIcon />
       <UserIcon />
@@ -45,11 +46,17 @@ const Home = () => {
       <LoanIcon />
       <ServiceIcon />
       <EconometricsIcon />
-      <SettingsIcon />
-
-      <ItemList item="Dashboard" />
+      <SettingsIcon /> */}
+      <Icon name="home" />
+      <Icon name="user" />
+      <ItemList title="Dashboard" iconName="user" />
+      <ItemList title="Dashboard" iconName="user" />
+      <ItemList title="Dashboard" iconName="user" />
+      <ItemList title="Dashboard" iconName="user" />
     </div>
   );
 };
 
 export default Home;
+
+const items = [{ title: "", iconName: "" }];

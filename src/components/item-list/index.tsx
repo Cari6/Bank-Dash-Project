@@ -1,18 +1,19 @@
 import React from "react";
-import { HomeIcon, TransferIcon } from "../icons";
 import Typography from "../typography";
 import { styles } from "./styles";
+import Icon, { IconName } from "../icon";
 
 interface ItemListProps {
-  item: string;
+  title: string;
+  iconName: IconName;
 }
 
-const ItemList = ({ item }: ItemListProps) => {
+const ItemList = ({ title, iconName }: ItemListProps) => {
   return (
     <div style={styles().itemListContainer}>
-      <HomeIcon />
+      <Icon name={iconName} />
       <Typography variant="title2" style={{ marginLeft: 15 }}>
-        {item}
+        {title}
       </Typography>
     </div>
   );

@@ -2,7 +2,7 @@ import { StylesProps } from "../../utils/styles-props";
 
 export const styles = (): StylesProps => ({
   headerContainer: {
-    // backgroundColor: "blue",
+    backgroundColor: "#fff",
     display: "flex",
     position: "fixed",
     alignItems: "center",

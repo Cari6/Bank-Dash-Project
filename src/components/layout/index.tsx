@@ -7,7 +7,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <div>
       <Sidebar />
       <Header />
-      <div style={{ marginTop: 100, marginLeft: 250 }}>{children}</div>
+      <div style={{ marginTop: 100, marginLeft: 250, padding: 40 }}>
+        {children}
+      </div>
     </div>
   );
 };

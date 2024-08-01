@@ -21,4 +21,8 @@ export const styles = (): StylesProps => ({
   itemListContainer: {
     marginTop: 60,
   },
+
+  link: {
+    textDecoration: "none",
+  },
 });

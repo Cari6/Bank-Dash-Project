@@ -5,7 +5,7 @@ import { Sidebar } from "..";
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Header />
       <div style={{ marginTop: 100, marginLeft: 250, padding: 40 }}>
         {children}

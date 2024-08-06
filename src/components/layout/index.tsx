@@ -2,7 +2,7 @@
 
 import React, { ReactNode, useState } from "react";
 import Header from "../header";
-import { MainContent } from "./styles";
+import { MainContent, SideBarContainer, GlobalStyle } from "./styles";
 import SideBar from "../side-bar";
 import HeaderMobile from "../header-mobile";
 import SideBarMobile from "../side-bar-mobile";
@@ -16,15 +16,22 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div>
-      <SideBar />
-      <SideBarMobile isOpen={isSideBarOpen} />
+      <GlobalStyle isSidebarOpen={isSideBarOpen} />
+      <SideBarContainer>
+        <SideBar />
+      </SideBarContainer>
+
+      <SideBarMobile
+        isOpen={isSideBarOpen}
+        setSideBarOpen={handleClickSideBar}
+      />
 
       <Header />
       <HeaderMobile
         isSideBarOpen={isSideBarOpen}
         setSideBarOpen={handleClickSideBar}
       />
-      <MainContent>{children}</MainContent>
+      <MainContent isOpen={isSideBarOpen}>{children}</MainContent>
     </div>
   );
 };

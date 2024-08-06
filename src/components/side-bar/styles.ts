@@ -12,10 +12,6 @@ export const SideBarContainer = styled.div`
   height: 100%;
   border-right: 2px solid #e6eff5;
   z-index: 1001;
-
-  @media (max-width: 1024px) {
-    display: none;
-  }
 `;
 
 export const Logo = styled.div`

@@ -1,21 +1,30 @@
 "use client";
 import React from "react";
 import Sidebar from "../side-bar";
-import { SideBarContainer, SideBarMobileContainer } from "./styles";
+import {
+  SideBarContainer,
+  SideBarMobileContainer,
+  Overlay,
+  Container,
+} from "./styles";
 
-const SideBarMobile = ({ isOpen }: { isOpen: boolean }) => {
+const SideBarMobile = ({
+  isOpen,
+  setSideBarOpen,
+}: {
+  isOpen: boolean;
+  setSideBarOpen: () => void;
+}) => {
+  console.log("isOpen", isOpen);
   return (
-    <SideBarMobileContainer
-      style={{
-        visibility: isOpen ? "visible" : "hidden",
-        opacity: isOpen ? 1 : 0,
-        transition: "opacity 0.3s ease, visibility 0.3s ease",
-      }}
-    >
-      <SideBarContainer>
-        <Sidebar />
-      </SideBarContainer>
-    </SideBarMobileContainer>
+    <>
+      <Container isOpen={isOpen}>
+        <SideBarContainer>
+          <Sidebar />
+        </SideBarContainer>
+      </Container>
+      <Overlay onClick={setSideBarOpen} isOpen={isOpen} />
+    </>
   );
 };
 

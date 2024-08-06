@@ -6,4 +6,6 @@ export { default as ItemList } from "./item-list";
 export { default as Icon } from "./icon";
 export { default as Layout } from "./layout";
 export { default as Header } from "./header";
-export { default as Sidebar } from "./sidebar";
+export { default as SideBar } from "./side-bar";
+export { default as SideBarMobile } from "./side-bar-mobile";
+export { default as HeaderMobile } from "./header-mobile";

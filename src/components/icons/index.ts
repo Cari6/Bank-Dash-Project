@@ -6,5 +6,4 @@ export { default as InvestmentIcon } from "./investment";
 export { default as CardIcon } from "./card";
 export { default as LoanIcon } from "./loan";
 export { default as ServiceIcon } from "./service-icon";
-export { default as EconometricsIcon } from "./econometrics";
 export { default as Settingsicon } from "./settings-icon";

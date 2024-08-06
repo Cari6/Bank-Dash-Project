@@ -1,17 +1,29 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import Header from "../header";
 import { MainContent } from "./styles";
-import SideBar from "../sidebar";
+import SideBar from "../side-bar";
+import HeaderMobile from "../header-mobile";
+import SideBarMobile from "../side-bar-mobile";
 
 const Layout = ({ children }: { children: ReactNode }) => {
+  const [isSideBarOpen, setSideBarOpen] = useState(false);
+
+  const handleClickSideBar = () => {
+    setSideBarOpen(!isSideBarOpen);
+  };
+
   return (
     <div>
       <SideBar />
-      {/* <SideBarMobile /> */}
+      <SideBarMobile isOpen={isSideBarOpen} />
+
       <Header />
-      {/* <HeaderMobile /> */}
+      <HeaderMobile
+        isSideBarOpen={isSideBarOpen}
+        setSideBarOpen={handleClickSideBar}
+      />
       <MainContent>{children}</MainContent>
     </div>
   );

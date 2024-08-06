@@ -11,7 +11,7 @@ import {
   StyledLink,
 } from "./styles";
 
-const SideBar = () => {
+const Sidebar = () => {
   const items: { iconName: IconName; title: string; route: string }[] = [
     { iconName: "home", title: "Dashboard", route: "/" },
     { iconName: "transfer", title: "Transactions", route: "/transactions" },
@@ -40,4 +40,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Sidebar;

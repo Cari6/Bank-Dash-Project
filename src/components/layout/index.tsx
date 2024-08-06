@@ -9,7 +9,9 @@ const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <SideBar />
+      {/* <SideBarMobile /> */}
       <Header />
+      {/* <HeaderMobile /> */}
       <MainContent>{children}</MainContent>
     </div>
   );

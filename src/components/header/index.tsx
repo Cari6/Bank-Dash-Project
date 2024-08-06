@@ -11,61 +11,50 @@ import {
   HeaderContainer,
   MenuIcon,
   TitleContainer,
-  InputContainer,
-  HeaderContainer2,
-  MenuIcon2,
-  TitleContainer2,
-  ContainerRight2,
-} from "./Header.styled";
+  HeaderMobileContainer,
+  InputMobileContainer,
+  ContainerTop,
+} from "./styles";
 
-const Header: React.FC = () => {
+const Header = () => {
   return (
     <div>
       <HeaderContainer>
-        <MenuIcon>
-          <IconButton
-            url="/assets/image/menu-icon.svg"
-            style={{ backgroundColor: "transparent" }}
-          />
-        </MenuIcon>
         <TitleContainer>
           <Typography variant="h1">Overview</Typography>
         </TitleContainer>
         <ContainerRight>
-          <InputContainer>
-            <Input
-              placeholder="Search for something"
-              icon="/assets/image/search.svg"
-            />
-          </InputContainer>
+          <Input
+            placeholder="Search for something"
+            icon="/assets/image/search.svg"
+          />
+
           <IconButton url="/assets/image/setting-header.svg" />
           <IconButton url="/assets/image/notification.svg" />
           <Avatar url="/assets/image/avatar.svg" />
         </ContainerRight>
       </HeaderContainer>
 
-      {/* <HeaderContainer2>
-        <MenuIcon2>
-          <IconButton
-            url="/assets/image/menu-icon.svg"
-            style={{ backgroundColor: "transparent" }}
-          />
-        </MenuIcon2>
-        <TitleContainer2>
-          <Typography variant="h1">Overview</Typography>
-        </TitleContainer2>
-        <ContainerRight2>
-          <InputContainer>
-            <Input
-              placeholder="Search for something"
-              icon="/assets/image/search.svg"
+      <HeaderMobileContainer>
+        <ContainerTop>
+          <MenuIcon>
+            <IconButton
+              url="/assets/image/menu-icon.svg"
+              style={{ backgroundColor: "transparent" }}
             />
-          </InputContainer>
-          <IconButton url="/assets/image/setting-header.svg" />
-          <IconButton url="/assets/image/notification.svg" />
+          </MenuIcon>
+
+          <Typography variant="h1">Overview</Typography>
+
           <Avatar url="/assets/image/avatar.svg" />
-        </ContainerRight2>
-      </HeaderContainer2> */}
+        </ContainerTop>
+        <InputMobileContainer>
+          <Input
+            placeholder="Search for something"
+            icon="/assets/image/search.svg"
+          />
+        </InputMobileContainer>
+      </HeaderMobileContainer>
     </div>
   );
 };

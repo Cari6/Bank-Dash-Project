@@ -1,11 +1,17 @@
+"use client";
+
 import React from "react";
-import { styles } from "./styles";
 import { LogoIcon } from "../icons";
 import ItemList from "../item-list";
 import { IconName } from "../icon";
-import Link from "next/link";
+import {
+  ItemListContainer,
+  Logo,
+  SideBarContainer,
+  StyledLink,
+} from "./styles";
 
-const Sidebar = () => {
+const SideBar = () => {
   const items: { iconName: IconName; title: string; route: string }[] = [
     { iconName: "home", title: "Dashboard", route: "/" },
     { iconName: "transfer", title: "Transactions", route: "/transactions" },
@@ -19,19 +25,19 @@ const Sidebar = () => {
   ];
 
   return (
-    <div style={styles().sidebarContainer}>
-      <div style={styles().logo}>
+    <SideBarContainer>
+      <Logo>
         <LogoIcon />
-      </div>
-      <div style={styles().itemListContainer}>
+      </Logo>
+      <ItemListContainer>
         {items.map(({ iconName, title, route }) => (
-          <Link href={route} key={iconName} style={styles().link}>
+          <StyledLink href={route} key={iconName}>
             <ItemList iconName={iconName} title={title} />
-          </Link>
+          </StyledLink>
         ))}
-      </div>
-    </div>
+      </ItemListContainer>
+    </SideBarContainer>
   );
 };
 
-export default Sidebar;
+export default SideBar;

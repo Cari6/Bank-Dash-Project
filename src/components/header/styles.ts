@@ -1,33 +1,53 @@
-// import { StylesProps } from "../../utils/styles-props";
+import styled from "styled-components";
 
-// export const styles = (): StylesProps => ({
-//   headerContainer: {
-//     backgroundColor: "#fff",
-//     display: "flex",
-//     position: "fixed",
-//     alignItems: "center",
-//     justifyContent: "space-between",
-//     width: "calc(100% - 250px)",
-//     height: 100,
-//     top: 0,
-//     left: 250,
-//     zIndex: 1000,
-//   },
+export const HeaderContainer = styled.header`
+  background-color: #fff;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 250px);
+  height: 100px;
+  top: 0;
+  left: 250px;
+  z-index: 1000;
+  
 
-//   titleContainer: {
-//     marginLeft: 40,
-//   },
+  @media (max-width: 1024px) {
+ left:0;
+ display:none;
+  }
 
-//   containerRigth: {
-//     // backgroundColor: "red",
-//     display: "flex",
-//     alignItems: "center",
-//     gap: 25,
-//     marginRight: 40,
-//   },
+  
+}`;
 
-//   menuIcon: {
-//     backgroundColor: "transparent",
-//     display: "none",
-//   },
-// });
+export const TitleContainer = styled.div`
+  margin-left: 40px;
+`;
+
+export const ContainerRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-right: 40px;
+`;
+
+export const HeaderMobileContainer = styled.div`
+  margin: 25px;
+  @media (min-width: 1024px) {
+    display: none;
+  }
+`;
+
+export const ContainerTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const MenuIcon = styled.div`
+  background-color: transparent;
+`;
+
+export const InputMobileContainer = styled.div`
+  margin: 20px 0;
+`;

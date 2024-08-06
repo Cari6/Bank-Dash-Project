@@ -1,28 +1,31 @@
-import { StylesProps } from "../../utils/styles-props";
+import styled from "styled-components";
+import NextLink from "next/link";
 
-export const styles = (): StylesProps => ({
-  sidebarContainer: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: 250,
-    height: "100%",
-    borderRight: " 2px solid #E6EFF5",
-    zIndex: 1001,
-  },
+export const SideBarContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  border-right: 2px solid #e6eff5;
+  z-index: 1001;
 
-  logo: {
-    marginTop: 30,
-  },
+  @media (max-width: 1024px) {
+    display: none;
+  }
+`;
 
-  itemListContainer: {
-    marginTop: 60,
-  },
+export const Logo = styled.div`
+  margin-top: 30px;
+`;
 
-  link: {
-    textDecoration: "none",
-  },
-});
+export const ItemListContainer = styled.div`
+  margin-top: 60px;
+`;
+
+export const StyledLink = styled(NextLink)`
+  text-decoration: none;
+`;

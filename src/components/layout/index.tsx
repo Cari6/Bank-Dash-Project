@@ -1,15 +1,16 @@
+"use client";
+
 import React, { ReactNode } from "react";
 import Header from "../header";
-import { Sidebar } from "..";
+import { MainContent } from "./styles";
+import SideBar from "../sidebar";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
-      {/* <Sidebar /> */}
+      <SideBar />
       <Header />
-      <div style={{ marginTop: 100, marginLeft: 250, padding: 40 }}>
-        {children}
-      </div>
+      <MainContent>{children}</MainContent>
     </div>
   );
 };

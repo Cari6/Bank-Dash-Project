@@ -1,21 +1,14 @@
 "use client";
 import React from "react";
 import Sidebar from "../side-bar";
-import {
-  SideBarContainer,
-  SideBarMobileContainer,
-  Overlay,
-  Container,
-} from "./styles";
+import { SideBarContainer, Overlay, Container } from "./styles";
 
-const SideBarMobile = ({
-  isOpen,
-  setSideBarOpen,
-}: {
+interface SideBarMobileProps {
   isOpen: boolean;
   setSideBarOpen: () => void;
-}) => {
-  console.log("isOpen", isOpen);
+}
+
+const SideBarMobile = ({ isOpen, setSideBarOpen }: SideBarMobileProps) => {
   return (
     <>
       <Container isOpen={isOpen}>
@@ -29,4 +22,3 @@ const SideBarMobile = ({
 };
 
 export default SideBarMobile;
-/* overlay */

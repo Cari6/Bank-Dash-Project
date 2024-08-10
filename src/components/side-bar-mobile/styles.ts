@@ -9,8 +9,11 @@ export const Container = styled.div<{ isOpen: boolean }>`
   bottom: 0;
   z-index: 1000;
   display: flex;
+  overflow-y: auto;
+  max-height: 100vh;
   transform: ${(props) =>
     props.isOpen ? "translateX(250px)" : "translateX(0)"};
+  transition: transform 0.3s ease-in-out;
 `;
 
 export const SideBarContainer = styled.div`

@@ -1,56 +1,9 @@
-import { Typography } from "@/src/components";
+import { ContentHome, Typography } from "@/src/components";
 
 const Home = () => {
   return (
     <div>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
-      <Typography variant="h1" style={{}}>
-        hola
-      </Typography>
+      <ContentHome />
     </div>
   );
 };

@@ -13,7 +13,7 @@ const SideBarMobile = ({ isOpen, setSideBarOpen }: SideBarMobileProps) => {
     <>
       <Container isOpen={isOpen}>
         <SideBarContainer>
-          <Sidebar />
+          <Sidebar onItemClick={setSideBarOpen} />
         </SideBarContainer>
       </Container>
       <Overlay onClick={setSideBarOpen} isOpen={isOpen} />

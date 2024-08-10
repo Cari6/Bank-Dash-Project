@@ -10,6 +10,7 @@ import {
   Item4,
   Item5,
   Item6,
+  Item7,
   LastRow,
 } from "./styles";
 import CreditCard from "../credit-card";
@@ -21,16 +22,21 @@ const ContentHome = () => {
         <Item1>
           <CreditCard />
         </Item1>
-        <Item2>item2</Item2>
+        <Item2>
+          <CreditCard />
+        </Item2>
+        <Item3>
+          <CreditCard />
+        </Item3>
       </FirstRow>
-      {/* <CenterRow>
-        <Item3>item3</Item3>
+      <CenterRow>
         <Item4>item4</Item4>
+        <Item5>item5</Item5>
       </CenterRow>
       <LastRow>
-        <Item5>item5</Item5>
         <Item6>item6</Item6>
-      </LastRow> */}
+        <Item7>item7</Item7>
+      </LastRow>
     </GridContainer>
   );
 };

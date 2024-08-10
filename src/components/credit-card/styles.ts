@@ -8,7 +8,8 @@ export const CardContainer = styled.div`
     #4c49ed 66%,
     #0a06fa 100%
   );
-  width: 360px;
+
+  min-width: 360px;
   padding: 20px;
   border-radius: 25px;
 `;

@@ -57,11 +57,11 @@ const CreditCard = () => {
           <Typography variant="title1" style={{ color: "#fff" }}>
             3778 **** **** 1234
           </Typography>
-          <img src="./assets/image/master-image.svg" alt="" />
+          <img src="./assets/image/master-white.svg" alt="" />
         </BottomContainer>
       </CardContainer>
 
-      <CardContainer2>
+      {/* <CardContainer2>
         <TopContainer>
           <BalanceContainer>
             <Typography
@@ -108,7 +108,7 @@ const CreditCard = () => {
           <Typography variant="title1">3778 **** **** 1234</Typography>
           <img src="./assets/image/master-black.svg" alt="" />
         </BottomContainer>
-      </CardContainer2>
+      </CardContainer2> */}
     </>
   );
 };

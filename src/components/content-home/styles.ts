@@ -14,9 +14,9 @@ export const FirstRow = styled.div`
   gap: 20px;
   max-width: 100%;
 
-  // @media (max-width: 1410px) {
-  //   grid-template-columns: 1fr;
-  // }
+  @media (max-width: 1410px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const CenterRow = styled.div`
@@ -26,9 +26,9 @@ export const CenterRow = styled.div`
   gap: 20px;
   max-width: 100%;
 
-  // @media (max-width: 1024px) {
-  //   grid-template-columns: 1fr;
-  // }
+  @media (max-width: 1410px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const LastRow = styled.div`
@@ -38,9 +38,9 @@ export const LastRow = styled.div`
   gap: 20px;
   max-width: 100%;
 
-  // @media (max-width: 1024px) {
-  //   grid-template-columns: 1fr;
-  // }
+  @media (max-width: 1410px) {
+    grid-template-columns: 1fr;
+  }
 `;
 export const Item1 = styled.div`
   background-color: red;

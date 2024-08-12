@@ -20,13 +20,31 @@ const ContentHome = () => {
     <GridContainer>
       <FirstRow>
         <Item1>
-          <CreditCard />
+          <CreditCard
+            variant="variant1"
+            balance="$5,756"
+            cardHolder="Eddy Cusuma"
+            validThru="12/22"
+            cardNumber="3778 **** **** 1234"
+          />
         </Item1>
         <Item2>
-          <CreditCard />
+          <CreditCard
+            variant="variant2"
+            balance="$5,756"
+            cardHolder="Eddy Cusuma"
+            validThru="12/22"
+            cardNumber="3778 **** **** 1234"
+          />
         </Item2>
         <Item3>
-          <CreditCard />
+          <CreditCard
+            variant="variant2"
+            balance="$5,756"
+            cardHolder="Eddy Cusuma"
+            validThru="12/22"
+            cardNumber="3778 **** **** 1234"
+          />
         </Item3>
       </FirstRow>
       <CenterRow>

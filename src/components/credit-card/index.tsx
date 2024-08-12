@@ -5,7 +5,6 @@ import {
   BalanceContainer,
   BottomContainer,
   CardContainer,
-  CardContainer2,
   CardHolderContainer,
   CenterContainer,
   TopContainer,
@@ -13,102 +12,109 @@ import {
 } from "./styles";
 import Typography from "../typography";
 
-const CreditCard = () => {
+interface CreditCardProps {
+  variant: "variant1" | "variant2";
+  balance: string;
+  cardHolder: string;
+  validThru: string;
+  cardNumber: string;
+}
+
+const CreditCard = ({
+  variant,
+  balance,
+  cardHolder,
+  validThru,
+  cardNumber,
+}: CreditCardProps) => {
+  const isDefault = variant === "variant1";
   return (
     <>
-      <CardContainer>
-        <TopContainer>
-          <BalanceContainer>
-            <Typography variant="description4" style={{ margin: 0 }}>
-              Balance
-            </Typography>
-            <Typography variant="title2" style={{ color: "#fff", margin: 0 }}>
-              $5,756
-            </Typography>
-          </BalanceContainer>
-          <img src="./assets/image/chip-white.svg" alt="" />
-        </TopContainer>
-        <CenterContainer>
-          <CardHolderContainer>
-            <Typography
-              variant="description4"
-              style={{ opacity: 0.7, margin: 0 }}
-            >
-              CARD HOLDER
-            </Typography>
-            <Typography variant="description4" style={{ margin: 0 }}>
-              Eddy Cusuma
-            </Typography>
-          </CardHolderContainer>
-
-          <ValidContainer>
-            <Typography
-              variant="description4"
-              style={{ opacity: 0.7, margin: 0 }}
-            >
-              VALID THRU
-            </Typography>
-            <Typography variant="description4" style={{ margin: 0 }}>
-              12/22
-            </Typography>
-          </ValidContainer>
-        </CenterContainer>
-        <BottomContainer>
-          <Typography variant="title1" style={{ color: "#fff" }}>
-            3778 **** **** 1234
-          </Typography>
-          <img src="./assets/image/master-white.svg" alt="" />
-        </BottomContainer>
-      </CardContainer>
-
-      {/* <CardContainer2>
+      <CardContainer variant={variant}>
         <TopContainer>
           <BalanceContainer>
             <Typography
               variant="description4"
-              style={{ margin: 0, color: "#718EBF" }}
+              style={{ margin: 0, color: isDefault ? "#fff" : "#718EBF" }}
             >
               Balance
             </Typography>
             <Typography
               variant="title2"
-              style={{ margin: 0, color: "#343C6A" }}
+              style={{ margin: 0, color: isDefault ? "#fff" : "#343C6A" }}
             >
-              $5,756
+              {balance}
             </Typography>
           </BalanceContainer>
-          <img src="./assets/image/chip-black.svg" alt="" />
+          <Image
+            src={
+              isDefault
+                ? "./assets/image/chip-white.svg"
+                : "./assets/image/chip-black.svg"
+            }
+            alt=""
+            width={35}
+            height={35}
+          />
         </TopContainer>
         <CenterContainer>
           <CardHolderContainer>
-            <Typography variant="description3" style={{ margin: 0 }}>
+            <Typography
+              variant="description4"
+              style={{
+                opacity: isDefault ? 0.7 : 1,
+                color: isDefault ? "#fff" : "#718EBF",
+                margin: 0,
+              }}
+            >
               CARD HOLDER
             </Typography>
             <Typography
               variant="description4"
-              style={{ margin: 0, color: "#343C6A" }}
+              style={{ margin: 0, color: isDefault ? "#fff" : "#343C6A" }}
             >
-              Eddy Cusuma
+              {cardHolder}
             </Typography>
           </CardHolderContainer>
 
           <ValidContainer>
-            <Typography variant="description3" style={{ margin: 0 }}>
+            <Typography
+              variant="description4"
+              style={{
+                opacity: isDefault ? 0.7 : 1,
+                color: isDefault ? "#fff" : "#718EBF",
+                margin: 0,
+              }}
+            >
               VALID THRU
             </Typography>
             <Typography
               variant="description4"
-              style={{ margin: 0, color: "#343C6A" }}
+              style={{ margin: 0, color: isDefault ? "#fff" : "#343C6A" }}
             >
-              12/22
+              {validThru}
             </Typography>
           </ValidContainer>
         </CenterContainer>
         <BottomContainer>
-          <Typography variant="title1">3778 **** **** 1234</Typography>
-          <img src="./assets/image/master-black.svg" alt="" />
+          <Typography
+            variant="title1"
+            style={{ color: isDefault ? "#fff" : "#343C6A" }}
+          >
+            {cardNumber}
+          </Typography>
+          <Image
+            src={
+              isDefault
+                ? "./assets/image/master-white.svg"
+                : "./assets/image/master-black.svg"
+            }
+            alt=""
+            width={44}
+            height={33}
+          />
         </BottomContainer>
-      </CardContainer2> */}
+      </CardContainer>
     </>
   );
 };

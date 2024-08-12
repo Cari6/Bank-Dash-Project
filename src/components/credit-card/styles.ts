@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import css from "styled-jsx/css";
 
 export interface CardContainerProps {
   variant: "variant1" | "variant2";
 }
 
 export const CardContainer = styled.div<CardContainerProps>`
+  max-width: 400px;
   min-width: 360px;
   padding: 20px;
   border-radius: 25px;
+  flex: 1;
 
   ${(props) =>
     props.variant === "variant1" &&

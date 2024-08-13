@@ -13,7 +13,7 @@ import Input from "../input";
 
 const HeaderMobile = ({ isSideBarOpen, setSideBarOpen }: any) => {
   return (
-    <HeaderMobileContainer>
+    <HeaderMobileContainer className="header-mobile">
       <ContainerTop>
         <MenuIcon>
           <IconButton

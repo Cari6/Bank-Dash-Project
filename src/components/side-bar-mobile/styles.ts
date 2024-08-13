@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ isOpen: boolean }>`
+export const Container = styled.div<{ $isOpen: boolean }>`
   background: #fff;
   width: 250px;
   position: absolute;
@@ -12,7 +12,7 @@ export const Container = styled.div<{ isOpen: boolean }>`
   overflow-y: auto;
   max-height: 100vh;
   transform: ${(props) =>
-    props.isOpen ? "translateX(250px)" : "translateX(0)"};
+    props.$isOpen ? "translateX(250px)" : "translateX(0)"};
   transition: transform 0.3s ease-in-out;
 `;
 

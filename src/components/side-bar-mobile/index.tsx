@@ -11,7 +11,7 @@ interface SideBarMobileProps {
 const SideBarMobile = ({ isOpen, setSideBarOpen }: SideBarMobileProps) => {
   return (
     <>
-      <Container isOpen={isOpen}>
+      <Container $isOpen={isOpen}>
         <SideBarContainer>
           <Sidebar onItemClick={setSideBarOpen} />
         </SideBarContainer>

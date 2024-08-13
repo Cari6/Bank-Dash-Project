@@ -1,7 +1,6 @@
 import React from "react";
 import {
   CardIcon,
-  EconometricsIcon,
   HomeIcon,
   InvestmentIcon,
   LoanIcon,
@@ -20,7 +19,6 @@ const icons = (props?: IconProps) => ({
   card: <CardIcon {...props} />,
   loan: <LoanIcon {...props} />,
   service: <ServiceIcon {...props} />,
-  econometrics: <EconometricsIcon {...props} />,
   setting: <Settingsicon {...props} />,
 });
 
@@ -33,7 +31,7 @@ interface IconComponentProps extends IconProps {
 const Icon = ({ name, ...props }: IconComponentProps) => {
   const IconComponent = icons(props)[name];
 
-  if (!IconComponent) return null;
+  if (!IconComponent) return <></>;
 
   return IconComponent;
 };

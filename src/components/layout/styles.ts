@@ -3,7 +3,6 @@ import styled, { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle<{ isSidebarOpen: boolean }>`
   body {
     overflow: ${(props) => (props.isSidebarOpen ? "hidden" : "auto")};
-    
   }
 `;
 

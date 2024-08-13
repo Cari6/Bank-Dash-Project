@@ -1,4 +1,4 @@
-import { ContentHome, Typography } from "@/src/components";
+import { ContentHome } from "@/src/components";
 
 const Home = () => {
   return (

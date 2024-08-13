@@ -1,22 +1,23 @@
 "use client";
 import React from "react";
 import {
-  FirstRow,
+  Cards,
   GridContainer,
   Item1,
   Item2,
+  Item3,
   Item4,
   Item5,
   Item6,
-  Item7,
 } from "./styles";
 import CreditCard from "../credit-card";
+import CardTransaction from "../card-transaction";
 
 const ContentHome = () => {
   return (
     <GridContainer>
       <Item1>
-        <FirstRow>
+        <Cards>
           <CreditCard
             variant="variant1"
             balance="$5,756"
@@ -31,21 +32,15 @@ const ContentHome = () => {
             validThru="12/22"
             cardNumber="3778 **** **** 1234"
           />
-        </FirstRow>
+        </Cards>
       </Item1>
       <Item2>
-        <CreditCard
-          variant="variant2"
-          balance="$5,756"
-          cardHolder="Eddy Cusuma"
-          validThru="12/22"
-          cardNumber="3778 **** **** 1234"
-        />
+        <CardTransaction />
       </Item2>
+      <Item3>item3</Item3>
       <Item4>item4</Item4>
       <Item5>item5</Item5>
       <Item6>item6</Item6>
-      <Item7>item7</Item7>
     </GridContainer>
   );
 };

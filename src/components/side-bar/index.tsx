@@ -12,7 +12,7 @@ import {
 import { sidebarItems } from "@/src/utils/constants";
 
 interface SideBarProps {
-  onItemClick: () => void;
+  onItemClick?: () => void;
 }
 
 const SideBar = ({ onItemClick }: SideBarProps) => {

@@ -14,3 +14,24 @@ export const sidebarItems: {
   { iconName: "service", title: "Services", route: "/services" },
   { iconName: "setting", title: "Setting", route: "/setting" },
 ];
+
+export const cardTransactionItems = [
+  {
+    icon: "/assets/image/transaction-card.svg",
+    title: "Deposit from my Card",
+    date: "28 January 2021",
+    value: "-$850",
+  },
+  {
+    icon: "/assets/image/transaction-paypal.svg",
+    title: "Deposit Paypal",
+    date: "25 January 2021",
+    value: "+$2,500",
+  },
+  {
+    icon: "/assets/image/transaction-transfer.svg",
+    title: "Jemi Wilson",
+    date: "21 January 2021",
+    value: "+$5,400",
+  },
+];

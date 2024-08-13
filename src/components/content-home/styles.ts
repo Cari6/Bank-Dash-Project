@@ -10,8 +10,6 @@ export const GridContainer = styled.div`
     "activity activity statistics"
     "transfer history history";
   gap: 20px;
-  padding: 20px;
-  background-color: red;
   @media (max-width: 1490px) {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -24,7 +22,7 @@ export const GridContainer = styled.div`
   }
 `;
 
-export const FirstRow = styled.div`
+export const Cards = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   // height: 235px;
@@ -35,32 +33,9 @@ export const FirstRow = styled.div`
   }
 `;
 
-export const CenterRow = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  // height: 367px;
-  gap: 20px;
-  max-width: 100%;
-
-  @media (max-width: 1490px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-export const LastRow = styled.div`
-  display: grid;
-  grid-template-columns: 3fr 4fr;
-  // height: 323px;
-  gap: 20px;
-  max-width: 100%;
-
-  @media (max-width: 1490px) {
-    grid-template-columns: 1fr;
-  }
-`;
 export const Item1 = styled.div`
   grid-area: cards;
-  background-color: red;
+  // background-color: red;
   @media (max-width: 1490px) {
     display: flex;
     justify-content: center;
@@ -69,7 +44,7 @@ export const Item1 = styled.div`
 
 export const Item2 = styled.div`
   grid-area: transactions;
-  background-color: yellow;
+  // background-color: #fff;
   @media (max-width: 1490px) {
     display: flex;
     justify-content: center;
@@ -77,6 +52,7 @@ export const Item2 = styled.div`
 `;
 
 export const Item3 = styled.div`
+  grid-area: activity;
   background-color: blue;
   @media (max-width: 1490px) {
     display: flex;
@@ -85,7 +61,7 @@ export const Item3 = styled.div`
 `;
 
 export const Item4 = styled.div`
-  grid-area: activity;
+  grid-area: statistics;
   background-color: green;
   @media (max-width: 1490px) {
     display: flex;
@@ -94,7 +70,7 @@ export const Item4 = styled.div`
 `;
 
 export const Item5 = styled.div`
-  grid-area: statistics;
+  grid-area: transfer;
   background-color: orange;
   @media (max-width: 1490px) {
     display: flex;
@@ -103,17 +79,8 @@ export const Item5 = styled.div`
 `;
 
 export const Item6 = styled.div`
-  grid-area: transfer;
-  background-color: purple;
-  @media (max-width: 1490px) {
-    display: flex;
-    justify-content: center;
-  }
-`;
-
-export const Item7 = styled.div`
   grid-area: history;
-  background-color: silver;
+  background-color: purple;
   @media (max-width: 1490px) {
     display: flex;
     justify-content: center;

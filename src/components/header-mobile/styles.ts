@@ -1,7 +1,14 @@
 import styled from "styled-components";
 
 export const HeaderMobileContainer = styled.div`
-  margin: 25px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 998;
+  background-color: #fff;
+  padding: 20px;
+  height: 150px;
   @media (min-width: 1024px) {
     display: none;
   }

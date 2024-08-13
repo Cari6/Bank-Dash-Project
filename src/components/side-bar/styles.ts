@@ -2,6 +2,7 @@ import styled from "styled-components";
 import NextLink from "next/link";
 
 export const SideBarContainer = styled.div`
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;

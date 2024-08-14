@@ -17,3 +17,4 @@ export { default as CardQuickTransfer } from "./card-quick-transfer";
 export { default as ListContact } from "./card-quick-transfer";
 export { default as TransferInput } from "./card-quick-transfer";
 export { default as Contacts } from "./card-quick-transfer";
+export { default as Button } from "./button";

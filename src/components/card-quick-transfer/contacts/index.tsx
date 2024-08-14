@@ -4,10 +4,8 @@ import { AvatarProps } from "../../avatar";
 import styled from "styled-components";
 
 const CustomAvatar = styled(Avatar)`
-  margin-right: 30px;
-  @media (max-width: 475px) {
-    margin-right: 20px;
-  }
+  margin-right: 15px;
+  gap: 10px;
 `;
 
 const Contacts = ({ url, title, subtitle }: AvatarProps) => {

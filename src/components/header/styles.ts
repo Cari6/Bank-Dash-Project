@@ -11,13 +11,11 @@ export const HeaderContainer = styled.header`
   top: 0;
   left: 250px;
   z-index: 1000;
-  
 
-  @media (max-width: 1090px) {
+  @media (max-width: 1000px) {
  left:0;
  display:none;
   }
-
   
 }`;
 

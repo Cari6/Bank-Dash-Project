@@ -71,7 +71,6 @@ export const Item4 = styled.div`
 
 export const Item5 = styled.div`
   grid-area: transfer;
-  background-color: orange;
   @media (max-width: 1490px) {
     display: flex;
     justify-content: center;

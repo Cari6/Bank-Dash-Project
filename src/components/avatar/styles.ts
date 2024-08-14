@@ -9,7 +9,6 @@ export const AvatarContainer = styled.div`
 
 export const AvatarImage = styled.div`
   border-radius: 50%;
-  margin-bottom: 10px;
 `;
 
 export const TextTitle = styled.div`
@@ -17,7 +16,6 @@ export const TextTitle = styled.div`
   // font-weight: 700;
   font-weight: 400;
   color: #232323;
-  margin-bottom: 5px;
 `;
 
 export const TextSubtitle = styled.div`

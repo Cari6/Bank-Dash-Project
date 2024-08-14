@@ -1,7 +1,5 @@
 "use client";
-
 import React from "react";
-
 import Typography from "../typography";
 import Input from "../input";
 import IconButton from "../icon-button";

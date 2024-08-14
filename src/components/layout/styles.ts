@@ -12,7 +12,7 @@ export const MainContent = styled.main<{ isOpen: boolean }>`
   padding: 40px;
   overflow-y: ${(props) => (props.isOpen ? "hidden" : "auto")};
 
-  @media (max-width: 1090px) {
+  @media (max-width: 1000px) {
     margin: 0;
     margin-top: 150px;
     padding: 20px;
@@ -24,7 +24,7 @@ export const MainContent = styled.main<{ isOpen: boolean }>`
 `;
 
 export const SideBarContainer = styled.div`
-  @media (max-width: 1090px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `;

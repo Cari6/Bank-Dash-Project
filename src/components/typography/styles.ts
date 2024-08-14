@@ -37,6 +37,11 @@ export const styles: StylesProps = {
     fontWeight: 400,
     color: "#fff",
   },
+  description5: {
+    fontSize: "16px",
+    fontWeight: 400,
+    color: "#fff",
+  },
 };
 
 export type Variant =
@@ -46,4 +51,5 @@ export type Variant =
   | "description1"
   | "description2"
   | "description3"
-  | "description4";
+  | "description4"
+  | "description5";

@@ -9,7 +9,7 @@ export const HeaderMobileContainer = styled.div`
   background-color: #fff;
   padding: 20px;
   height: 150px;
-  @media (min-width: 1024px) {
+  @media (min-width: 1090px) {
     display: none;
   }
 `;
@@ -24,5 +24,5 @@ export const MenuIcon = styled.div`
 `;
 
 export const InputMobileContainer = styled.div`
-  margin: 20px 0;
+  margin: 10px 0;
 `;

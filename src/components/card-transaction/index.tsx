@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import ItemCardTransaction from "../item-card-transaction";
 import { cardTransactionItems } from "@/src/utils/constants";
 import { CardTransactionContainer } from "./styles";
+import ItemCardTransaction from "./item-card-transaction";
 
 const CardTransaction = () => {
   return (

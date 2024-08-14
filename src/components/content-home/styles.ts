@@ -28,7 +28,7 @@ export const Cards = styled.div`
   // height: 235px;
   gap: 20px;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 1090px) {
     grid-template-columns: 1fr;
   }
 `;

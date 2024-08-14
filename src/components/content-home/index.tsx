@@ -12,6 +12,7 @@ import {
 } from "./styles";
 import CreditCard from "../credit-card";
 import CardTransaction from "../card-transaction";
+import CardQuickTransfer from "../card-quick-transfer";
 
 const ContentHome = () => {
   return (
@@ -39,7 +40,9 @@ const ContentHome = () => {
       </Item2>
       <Item3>item3</Item3>
       <Item4>item4</Item4>
-      <Item5>item5</Item5>
+      <Item5>
+        <CardQuickTransfer />
+      </Item5>
       <Item6>item6</Item6>
     </GridContainer>
   );

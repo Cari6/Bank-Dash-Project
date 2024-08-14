@@ -6,4 +6,5 @@ export const CardTransactionContainer = styled.div`
   flex-direction: column;
   border-radius: 20px;
   width: 100%;
+  padding: 10px;
 `;

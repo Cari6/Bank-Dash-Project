@@ -7,7 +7,7 @@ import {
   TextContainer,
   TextValue,
 } from "./styles";
-import Typography from "../typography";
+import Typography from "../../typography";
 interface ItemCardTransactionProps {
   icon: string;
   title: string;

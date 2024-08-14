@@ -35,3 +35,21 @@ export const cardTransactionItems = [
     value: "+$5,400",
   },
 ];
+
+export const contacts = [
+  {
+    url: "/assets/image/avatar-contact1.svg",
+    title: "Livia Bator",
+    subtitle: "CEO",
+  },
+  {
+    url: "/assets/image/avatar-contact2.svg",
+    title: "Randy Press",
+    subtitle: "Director",
+  },
+  {
+    url: "/assets/image/avatar-contact3.svg",
+    title: "Workman",
+    subtitle: "Designer",
+  },
+];

@@ -1,20 +1,35 @@
+"use client";
 import Image from "next/image";
-import { styles } from "./styles";
+import {
+  AvatarContainer,
+  AvatarImage,
+  TextSubtitle,
+  TextTitle,
+} from "./styles";
 
-interface AvatarProps {
+export interface AvatarProps {
   url: string;
   size?: number;
+  title?: string;
+  subtitle?: string;
+  className?: string;
 }
 
-const Avatar = ({ url, size = 50 }: AvatarProps) => {
+const Avatar = ({
+  url,
+  size = 50,
+  title,
+  subtitle,
+  className,
+}: AvatarProps) => {
   return (
-    <Image
-      src={url}
-      alt={url}
-      width={size}
-      height={size}
-      style={styles().avatar}
-    />
+    <AvatarContainer className={className}>
+      <AvatarImage>
+        <Image src={url} alt={url} width={size} height={size} />
+      </AvatarImage>
+      <TextTitle>{title}</TextTitle>
+      <TextSubtitle>{subtitle}</TextSubtitle>
+    </AvatarContainer>
   );
 };
 

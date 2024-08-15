@@ -5,5 +5,5 @@ export const CardContainer = styled.div`
   border-radius: 20px;
   width: 100%;
   padding: 20px;
-  max-width: 460px;
+  max-width: 400px;
 `;

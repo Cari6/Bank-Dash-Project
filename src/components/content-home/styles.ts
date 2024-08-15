@@ -11,6 +11,7 @@ export const GridContainer = styled.div`
     "transfer history history";
   gap: 20px;
   @media (max-width: 1490px) {
+    margin: 0 40px;
     grid-template-columns: 1fr;
     grid-template-areas:
       "cards"
@@ -20,16 +21,24 @@ export const GridContainer = styled.div`
       "transfer"
       "history";
   }
+
+  @media (max-width: 570px) {
+    margin: 0;
+  }
 `;
 
 export const Cards = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  // height: 235px;
   gap: 20px;
 
-  @media (max-width: 1090px) {
+  @media (max-width: 1490px) {
+    width: 100%;
+  }
+
+  @media (max-width: 890px) {
     grid-template-columns: 1fr;
+    max-width: 443px;
   }
 `;
 

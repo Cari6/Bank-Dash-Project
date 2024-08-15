@@ -4,7 +4,7 @@ export const ItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 6px;
 `;
 
 export const LeftContainer = styled.div`

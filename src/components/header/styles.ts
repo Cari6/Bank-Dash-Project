@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header`
   left: 250px;
   z-index: 1000;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1160px) {
  left:0;
  display:none;
   }

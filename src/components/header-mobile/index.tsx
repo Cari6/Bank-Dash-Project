@@ -4,7 +4,6 @@ import {
   ContainerTop,
   HeaderMobileContainer,
   InputMobileContainer,
-  MenuIcon,
 } from "./styles";
 import IconButton from "../icon-button";
 import Typography from "../typography";
@@ -15,13 +14,11 @@ const HeaderMobile = ({ isSideBarOpen, setSideBarOpen }: any) => {
   return (
     <HeaderMobileContainer className="header-mobile">
       <ContainerTop>
-        <MenuIcon>
-          <IconButton
-            url="/assets/image/menu-icon.svg"
-            style={{ backgroundColor: "transparent" }}
-            onClick={() => setSideBarOpen(!isSideBarOpen)}
-          />
-        </MenuIcon>
+        <IconButton
+          url="/assets/image/menu-icon.svg"
+          style={{ backgroundColor: "transparent" }}
+          onClick={() => setSideBarOpen(!isSideBarOpen)}
+        />
 
         <Typography variant="h1">Overview</Typography>
 

@@ -1,7 +1,11 @@
 import React from "react";
 import Typography from "../../typography";
-import Input from "../../input";
-import { CustomButton, InputButton, TransferInputContainer } from "./styles";
+import {
+  CustomButton,
+  CustomInput,
+  InputButton,
+  TransferInputContainer,
+} from "./styles";
 
 const TransferInput = () => {
   return (
@@ -10,7 +14,7 @@ const TransferInput = () => {
         Write Amount
       </Typography>
       <InputButton>
-        <Input />
+        <CustomInput />
         <CustomButton title="Send" icon="/assets/image/send.svg" />
       </InputButton>
     </TransferInputContainer>

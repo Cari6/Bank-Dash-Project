@@ -8,7 +8,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const Input = ({ placeholder, icon, ...props }: InputProps) => {
   return (
-    <div style={styles().inputContainer}>
+    <div style={{ ...styles().inputContainer }}>
       <style>
         {`
           .input-with-placeholder::placeholder {

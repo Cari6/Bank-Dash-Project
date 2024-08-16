@@ -62,7 +62,7 @@ export const Item2 = styled.div`
 
 export const Item3 = styled.div`
   grid-area: activity;
-  background-color: blue;
+  // background-color: blue;
   @media (max-width: 1490px) {
     display: flex;
     justify-content: center;

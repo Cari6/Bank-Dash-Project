@@ -14,7 +14,7 @@ export const InputButton = styled.div`
 `;
 
 export const CustomInput = styled(Input)`
-  width: 100px;
+  width: 70px;
   padding-right: 20px;
 `;
 export const CustomButton = styled(Button)`

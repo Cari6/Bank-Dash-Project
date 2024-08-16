@@ -5,6 +5,7 @@ export const AvatarContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: space-between;
 `;
 
 export const AvatarImage = styled.div`
@@ -13,7 +14,6 @@ export const AvatarImage = styled.div`
 
 export const TextTitle = styled.div`
   font-size: 16px;
-  // font-weight: 700;
   font-weight: 400;
   color: #232323;
 `;

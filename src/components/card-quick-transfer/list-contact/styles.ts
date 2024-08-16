@@ -9,5 +9,4 @@ export const ListContactContainer = styled.div`
 
 export const ContactContainer = styled.div`
   display: flex;
-  align-items: center;
 `;

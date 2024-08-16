@@ -71,7 +71,6 @@ export const Item3 = styled.div`
 
 export const Item4 = styled.div`
   grid-area: statistics;
-  background-color: green;
   @media (max-width: 1490px) {
     display: flex;
     justify-content: center;
@@ -88,9 +87,37 @@ export const Item5 = styled.div`
 
 export const Item6 = styled.div`
   grid-area: history;
-  background-color: purple;
   @media (max-width: 1490px) {
     display: flex;
     justify-content: center;
   }
+`;
+
+export const BarChartContainer = styled.div`
+  background-color: #fff;
+  flex: 1;
+  max-width: 100%;
+  padding: 30px;
+  height: 320px;
+  border-radius: 20px;
+`;
+
+export const PieChartContainer = styled.div`
+  background-color: #fff;
+  flex: 1;
+  max-width: 100%;
+  padding: 10px;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+`;
+
+export const LineChartContainer = styled.div`
+  background-color: #fff;
+  flex: 1;
+  max-width: 100%;
+  padding: 10px;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
 `;

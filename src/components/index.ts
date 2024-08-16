@@ -9,7 +9,6 @@ export { default as Header } from "./header";
 export { default as SideBar } from "./side-bar";
 export { default as SideBarMobile } from "./side-bar-mobile";
 export { default as HeaderMobile } from "./header-mobile";
-export { default as ContentHome } from "./content-home";
 export { default as CreditCard } from "./credit-card";
 export { default as CardTransaction } from "./card-transaction";
 export { default as ItemCardTransaction } from "./card-transaction";

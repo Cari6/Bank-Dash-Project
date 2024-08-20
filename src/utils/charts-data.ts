@@ -40,12 +40,8 @@ export const pieChartDashboardOptions = (isSmallScreen: boolean) => ({
     },
   },
   chartArea: {
-    left: 0,
     top: 20,
-    right: 0,
     bottom: 20,
-    width: "100%",
-    height: "100%",
   },
 });
 
@@ -79,5 +75,39 @@ export const lineChartDashboardOptions = {
   chartArea: {
     right: 20,
     left: 50,
+  },
+};
+
+export const columnChartTransactionsData = [
+  ["mounth", "amount", { role: "style" }, { role: "annotation" }],
+  ["Aug", 10000, "color:#EDF0F7", ""],
+  ["Sep", 12600, "color:#EDF0F7", ""],
+  ["Oct", 11000, "color:#EDF0F7", ""],
+  ["Nov", 5000, "color:#EDF0F7", ""],
+  ["Dec", 12500, "color:#16DBCC", "$12500"],
+  ["Jan", 9000, "color:#EDF0F7", ""],
+];
+
+export const columnChartTransanctionsOptions = {
+  legend: { position: "none" },
+  annotations: {
+    alwaysOutside: true,
+    textStyle: {
+      fontSize: 16,
+      color: "#555",
+    },
+    stem: { color: "none", length: 10 },
+  },
+  vAxis: {
+    gridlines: { color: "transparent" },
+    minorGridlines: { color: "transparent" },
+    textPosition: "none",
+    baselineColor: "transparent",
+  },
+  chartArea: {
+    top: 10,
+    bottom: 10,
+    left: 10,
+    right: 10,
   },
 };

@@ -6,8 +6,10 @@ export const CardContainer = styled.div`
   width: 100%;
   height: 280px;
   padding: 20px;
-  max-width: 400px;
   justify-content: space-around;
   display: flex;
   flex-direction: column;
+  @media (max-width: 890px) {
+    max-width: 400px;
+  }
 `;

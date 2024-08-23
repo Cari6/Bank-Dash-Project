@@ -5,6 +5,7 @@ export const GridContainerTransactions = styled.div`
   grid-template-columns: repeat(3, 1fr)
   grid-template-rows:auto;
   gap:20px;
+  max-width: 1300px;
   grid-template-areas:
     "cards cards expenses"
     "transactions transactions transactions ";
@@ -53,19 +54,26 @@ export const Item2 = styled.div`
   grid-area: expenses;
 `;
 export const Item3 = styled.div`
-  background-color: green;
+  // background-color: green;
   grid-area: transactions;
 `;
 
 export const ColumnChartContainer = styled.div`
   background-color: #fff;
-  max-width: 100%;
   height: 230px;
   border-radius: 20px;
-  margin: 0;
-  display: flex;
-  justify-content: center;
   overflow: hidden;
+  padding-bottom: 15px;
+  max-width: 49%;
+
+  @media (max-width: 890px) {
+    padding-left: 50px;
+    max-width: inherit;
+  }
+  @media (min-width: 1490px) {
+    padding-left: 50px;
+    max-width: inherit;
+  }
 `;
 export const TitleCardContainer = styled.div`
   display: flex;

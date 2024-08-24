@@ -2,18 +2,23 @@
 import React from "react";
 import { ButtonContainer } from "./styles";
 import Image from "next/image";
-import Typography from "../typography";
 
 interface ButtonProps {
   title: string;
   icon?: string;
   className?: string;
+  variant?: "default" | "outline";
 }
 
-const Button = ({ title, icon, className }: ButtonProps) => {
+const Button = ({
+  title,
+  icon,
+  className,
+  variant = "default",
+}: ButtonProps) => {
   return (
-    <ButtonContainer className={className}>
-      <Typography variant="description5">{title}</Typography>
+    <ButtonContainer className={className} variant={variant}>
+      {title}
       {icon && <Image src={icon} alt="" width={26} height={22} />}
     </ButtonContainer>
   );

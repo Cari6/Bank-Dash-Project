@@ -5,7 +5,6 @@ export const SideBarContainer = styled.div`
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -17,6 +16,8 @@ export const SideBarContainer = styled.div`
 
 export const Logo = styled.div`
   margin-top: 30px;
+  display: flex;
+  justify-content: center;
 `;
 
 export const ItemListContainer = styled.div`

@@ -28,14 +28,21 @@ const Table = () => {
         {tableData.map((data, index) => (
           <TRBody key={index}>
             <TD>
-              <Image
-                src={getIcon(data.amount)}
-                alt=""
-                width={20}
-                height={20}
-                style={{ marginRight: 10 }}
-              />
-              {data.description}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
+              >
+                <Image
+                  src={getIcon(data.amount)}
+                  alt=""
+                  width={20}
+                  height={20}
+                  style={{ marginRight: 10 }}
+                />
+                {data.description}
+              </div>
             </TD>
             <TD>{data.transactionId}</TD>
             <TD>{data.type}</TD>

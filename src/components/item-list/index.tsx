@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
-import Typography from "../typography";
-import { styles } from "./styles";
 import Icon, { IconName } from "../icon";
+import { ItemActive, ItemlistContainer } from "./styles";
+import Typography from "../typography";
 
 interface ItemListProps {
   title: string;
@@ -11,25 +12,16 @@ interface ItemListProps {
 
 const ItemList = ({ title, iconName, isActive }: ItemListProps) => {
   return (
-    <div style={styles().itemListContainer}>
-      {isActive && (
-        <div
-          style={{
-            position: "absolute",
-            width: "6px",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            borderRadius: "0 10px 10px 0",
-            backgroundColor: "#2D60FF",
-          }}
-        />
-      )}
-      <Icon name={iconName} />
-      <Typography variant="title2" style={{ marginLeft: 25 }}>
+    <ItemlistContainer>
+      {isActive && <ItemActive />}
+      <Icon name={iconName} isActive={isActive} />
+      <Typography
+        variant="title2"
+        style={{ marginLeft: 25, color: isActive ? "#2d60ff" : "initial" }}
+      >
         {title}
       </Typography>
-    </div>
+    </ItemlistContainer>
   );
 };
 

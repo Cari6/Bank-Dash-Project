@@ -11,12 +11,22 @@ export const sidebarItems = [
     iconName: "investment",
     title: "Investments",
     route: "/investments",
-    id: "",
+    id: "investments",
   },
-  { iconName: "card", title: "Credit Cards", route: "/credit-cards", id: "" },
-  { iconName: "loan", title: "Loans", route: "/loans", id: "" },
-  { iconName: "service", title: "Services", route: "/services", id: "" },
-  { iconName: "setting", title: "Setting", route: "/setting", id: "" },
+  {
+    iconName: "card",
+    title: "Credit Cards",
+    route: "/credit-cards",
+    id: "credit-cards",
+  },
+  { iconName: "loan", title: "Loans", route: "/loans", id: "loans" },
+  {
+    iconName: "service",
+    title: "Services",
+    route: "/services",
+    id: "services",
+  },
+  { iconName: "setting", title: "Setting", route: "/setting", id: "setting" },
 ];
 
 export const cardTransactionItems = [
@@ -66,7 +76,7 @@ export const tableHead = [
   "Date",
   "Amount",
 ];
-export const tableData = [
+export const tableTransactionsData = [
   {
     description: "Spotify Subscription",
     transactionId: "#12548796",
@@ -146,5 +156,95 @@ export const tableData = [
     card: "****3456",
     date: "01 Jan, 05:20 PM",
     amount: "+$1,500",
+  },
+];
+
+export const tableIncomeData = [
+  {
+    description: "Freepik Sales",
+    transactionId: "#12548796",
+    type: "Transfer",
+    card: "****1234",
+    date: "25 Jan, 10:40 PM",
+    amount: "+$750",
+  },
+
+  {
+    description: "Emilly",
+    transactionId: "#12548796",
+    type: "Transfer",
+    card: "****1234",
+    date: "15 Jan, 10:40 PM",
+    amount: "+$840",
+  },
+
+  {
+    description: "Freelance Payment",
+    transactionId: "#12548801",
+    type: "Income",
+    card: "****3456",
+    date: "01 Jan, 05:20 PM",
+    amount: "+$1,500",
+  },
+];
+
+export const tableExpenseData = [
+  {
+    description: "Spotify Subscription",
+    transactionId: "#12548796",
+    type: "Shopping",
+    card: "****1234",
+    date: "28 Jan, 12:30 AM",
+    amount: "-$2,500",
+  },
+
+  {
+    description: "Mobile Service",
+    transactionId: "#12548796",
+    type: "Shopping",
+    card: "****1234",
+    date: "20 Jan, 10:40 PM",
+    amount: "-$150",
+  },
+  {
+    description: "Wilson",
+    transactionId: "#12548796",
+    type: "Transfer",
+    card: "****1234",
+    date: "14 Jan, 03:29 PM",
+    amount: "-$1,050",
+  },
+
+  {
+    description: "Netflix Subscription",
+    transactionId: "#12548797",
+    type: "Shopping",
+    card: "****5678",
+    date: "10 Jan, 02:15 PM",
+    amount: "-$15.99",
+  },
+  {
+    description: "Amazon Purchase",
+    transactionId: "#12548798",
+    type: "Shopping",
+    card: "****9876",
+    date: "08 Jan, 09:30 AM",
+    amount: "-$120.45",
+  },
+  {
+    description: "Gym Membership",
+    transactionId: "#12548799",
+    type: "Shopping",
+    card: "****5432",
+    date: "05 Jan, 07:00 AM",
+    amount: "-$45.00",
+  },
+  {
+    description: "Utility Bill",
+    transactionId: "#12548800",
+    type: "Transfer",
+    card: "****8765",
+    date: "03 Jan, 11:45 AM",
+    amount: "-$90.25",
   },
 ];

@@ -26,14 +26,16 @@ export type IconName = keyof ReturnType<typeof icons>;
 
 interface IconComponentProps extends IconProps {
   name: IconName;
+  isActive?: boolean;
 }
 
-const Icon = ({ name, ...props }: IconComponentProps) => {
-  const IconComponent = icons(props)[name];
+const Icon = ({ name, isActive, ...props }: IconComponentProps) => {
+  const color = isActive ? "#2d60ff" : "#b1b1b1";
+  const IconComponent = icons({ ...props, color })[name];
 
   if (!IconComponent) return <></>;
 
-  return IconComponent;
+  return <>{IconComponent}</>;
 };
 
 export default Icon;

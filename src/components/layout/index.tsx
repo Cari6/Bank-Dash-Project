@@ -12,6 +12,11 @@ const keywords = [
   { path: "/", keyword: "dashboard" },
   { path: "/transactions", keyword: "transactions" },
   { path: "/accounts", keyword: "accounts" },
+  { path: "/investments", keyword: "investments" },
+  { path: "/credit-cards", keyword: "credit-cards" },
+  { path: "/loans", keyword: "loans" },
+  { path: "/services", keyword: "services" },
+  { path: "/setting", keyword: "setting" },
 ];
 
 const Layout = ({ children }: { children: ReactNode }) => {

@@ -1,10 +1,15 @@
 import React from "react";
-import { TableContainer, TBody, TH, TD, THead, TRBody, TRHead } from "./styles";
-import { tableData, tableHead } from "@/src/utils/constants";
-import Button from "../button";
+import { TBody, TH, TD, THead, TRBody, TRHead, TableContainer } from "./styles";
+import {
+  tableExpenseData,
+  tableHead,
+  tableIncomeData,
+  tableTransactionsData,
+} from "@/src/utils/constants";
+import Button from "../../button";
 import Image from "next/image";
 
-const Table = () => {
+const TransactionsTable = () => {
   const getAmountColor = (amount: string) => {
     return amount.startsWith("+") ? "#41D4A8" : "#FF4B4A";
   };
@@ -25,7 +30,7 @@ const Table = () => {
         </TRHead>
       </THead>
       <TBody>
-        {tableData.map((data, index) => (
+        {tableTransactionsData.map((data, index) => (
           <TRBody key={index}>
             <TD>
               <div
@@ -61,4 +66,4 @@ const Table = () => {
   );
 };
 
-export default Table;
+export default TransactionsTable;

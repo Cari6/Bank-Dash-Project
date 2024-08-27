@@ -9,7 +9,12 @@ import {
   Item3,
   TitleCardContainer,
 } from "./styles";
-import { CreditCard, Table, Typography } from "@/src/components";
+import {
+  CreditCard,
+  TableMobile,
+  TabTable,
+  Typography,
+} from "@/src/components";
 import Chart from "react-google-charts";
 import {
   columnChartTransactionsData,
@@ -78,7 +83,8 @@ const TransactionsPage = () => {
         >
           Recent Transactions
         </Typography>
-        <Table />
+        {/* <TableMobile /> */}
+        <TabTable />
       </Item3>
     </GridContainerTransactions>
   );

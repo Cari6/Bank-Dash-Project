@@ -7,7 +7,7 @@ const HomeIcon = ({ size = "25", color = "#b1b1b1" }: IconProps) => {
       width={size}
       height={size}
       viewBox="0 0 25 25"
-      fill="none"
+      fill={color}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_105_76)">

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Table from "../table/transactions-table";
 import IncomeTable from "../table/income-table";
 import ExpenseTable from "../table/expense-table";
+import { Tab, TabActive, TabContainer, TableWrapper } from "./styles";
 
 const TabTable = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -22,40 +23,32 @@ const TabTable = () => {
   };
 
   return (
-    <div>
-      <div style={{ display: "flex", cursor: "pointer" }}>
-        <div
-          onClick={() => setActiveTab(0)}
-          style={{
-            marginRight: "10px",
-            padding: "10px",
-            backgroundColor: activeTab === 0 ? "#ccc" : "#eee",
-          }}
-        >
-          All Transactions
+    <>
+      <TabContainer>
+        <div>
+          <Tab onClick={() => setActiveTab(0)} isActive={activeTab === 0}>
+            All Transactions
+          </Tab>
+          {activeTab === 0 && <TabActive />}
         </div>
-        <div
-          onClick={() => setActiveTab(1)}
-          style={{
-            marginRight: "10px",
-            padding: "10px",
-            backgroundColor: activeTab === 1 ? "#ccc" : "#eee",
-          }}
-        >
-          Income
+
+        <div>
+          <Tab onClick={() => setActiveTab(1)} isActive={activeTab === 1}>
+            Income
+          </Tab>
+          {activeTab === 1 && <TabActive />}
         </div>
-        <div
-          onClick={() => setActiveTab(2)}
-          style={{
-            padding: "10px",
-            backgroundColor: activeTab === 2 ? "#ccc" : "#eee",
-          }}
-        >
-          Expense
+
+        <div>
+          <Tab onClick={() => setActiveTab(2)} isActive={activeTab === 2}>
+            Expense
+          </Tab>
+          {activeTab === 2 && <TabActive />}
         </div>
-      </div>
-      <div style={{ marginTop: "20px" }}>{renderTable()}</div>
-    </div>
+      </TabContainer>
+
+      <TableWrapper>{renderTable()}</TableWrapper>
+    </>
   );
 };
 

@@ -123,7 +123,7 @@ export const tableTransactionsData = [
     type: "Shopping",
     card: "****5678",
     date: "10 Jan, 02:15 PM",
-    amount: "-$15.99",
+    amount: "-$3,500",
   },
   {
     description: "Amazon Purchase",
@@ -131,7 +131,7 @@ export const tableTransactionsData = [
     type: "Shopping",
     card: "****9876",
     date: "08 Jan, 09:30 AM",
-    amount: "-$120.45",
+    amount: "-$1,500",
   },
   {
     description: "Gym Membership",
@@ -139,7 +139,7 @@ export const tableTransactionsData = [
     type: "Shopping",
     card: "****5432",
     date: "05 Jan, 07:00 AM",
-    amount: "-$45.00",
+    amount: "-$5,000",
   },
   {
     description: "Utility Bill",
@@ -147,7 +147,7 @@ export const tableTransactionsData = [
     type: "Transfer",
     card: "****8765",
     date: "03 Jan, 11:45 AM",
-    amount: "-$90.25",
+    amount: "-$980",
   },
   {
     description: "Freelance Payment",
@@ -221,7 +221,7 @@ export const tableExpenseData = [
     type: "Shopping",
     card: "****5678",
     date: "10 Jan, 02:15 PM",
-    amount: "-$15.99",
+    amount: "-$3,500",
   },
   {
     description: "Amazon Purchase",
@@ -229,7 +229,7 @@ export const tableExpenseData = [
     type: "Shopping",
     card: "****9876",
     date: "08 Jan, 09:30 AM",
-    amount: "-$120.45",
+    amount: "-$1,500",
   },
   {
     description: "Gym Membership",
@@ -237,7 +237,7 @@ export const tableExpenseData = [
     type: "Shopping",
     card: "****5432",
     date: "05 Jan, 07:00 AM",
-    amount: "-$45.00",
+    amount: "-$5,000",
   },
   {
     description: "Utility Bill",
@@ -245,6 +245,6 @@ export const tableExpenseData = [
     type: "Transfer",
     card: "****8765",
     date: "03 Jan, 11:45 AM",
-    amount: "-$90.25",
+    amount: "-$980",
   },
 ];

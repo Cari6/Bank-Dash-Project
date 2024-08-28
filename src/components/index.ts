@@ -17,8 +17,5 @@ export { default as ListContact } from "./card-quick-transfer";
 export { default as TransferInput } from "./card-quick-transfer";
 export { default as Contacts } from "./card-quick-transfer";
 export { default as Button } from "./button";
-export { default as TransactionsTable } from "./table/transactions-table";
-export { default as IncomeTable } from "./table/income-table";
-export { default as ExpenseTable } from "./table/expense-table";
 export { default as TableMobile } from "./table-mobile";
 export { default as TabTable } from "./tab-table";

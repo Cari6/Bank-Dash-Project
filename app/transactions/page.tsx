@@ -83,6 +83,11 @@ const TransactionsPage = () => {
         >
           Recent Transactions
         </Typography>
+        {/* <Tabs />
+        <div>
+          <TransactionTable />
+        </div>
+        <TransactionsMobileTable /> */}
         {/* <TableMobile /> */}
         <TabTable />
       </Item3>

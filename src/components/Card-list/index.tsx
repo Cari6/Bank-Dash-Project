@@ -7,14 +7,7 @@ const CardList = () => {
   return (
     <CardContainer>
       {cardListItems.map((item, index) => (
-        <ItemCardList
-          key={index}
-          url={item.url}
-          cardType={item.cardType}
-          bankName={item.bankName}
-          cardNumber={item.cardNumber}
-          name={item.name}
-        />
+        <ItemCardList key={index} {...item} />
       ))}
     </CardContainer>
   );

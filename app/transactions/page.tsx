@@ -11,7 +11,7 @@ import {
   TransactionsMobileTableContainer,
   TransactionsTableContainer,
 } from "./styles";
-import { CreditCard, TableMobile, Typography } from "@/src/components";
+import { CreditCard, Typography } from "@/src/components";
 import Chart from "react-google-charts";
 import {
   columnChartTransactionsData,
@@ -22,11 +22,15 @@ import {
   tabOptionsTransactions,
 } from "@/src/utils/tabs-transactions";
 import TransactionsTable from "@/src/components/table";
-import Tabs from "@/src/components/tab-table";
+import Tabs from "@/src/components/tabs";
 import TransactionsMobileTable from "@/src/components/table-mobile";
 
 const TransactionsPage = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
+
+  const handleActiveTab = (id: number) => {
+    setActiveTab(id);
+  };
 
   return (
     <GridContainerTransactions>
@@ -93,7 +97,7 @@ const TransactionsPage = () => {
         <Tabs
           tabOptions={tabOptionsTransactions}
           activeTab={activeTab}
-          onTabChange={setActiveTab}
+          onTabChange={handleActiveTab}
         />
         <TransactionsTableContainer>
           <TransactionsTable {...renderTable[activeTab]} />

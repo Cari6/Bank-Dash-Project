@@ -20,32 +20,30 @@ const ItemCardList = ({
   name,
 }: CardListProps) => {
   return (
-    <>
-      <CardContainer>
-        <CardType>
-          <Image src={url} alt="" width={60} height={60} />
-          <ItemMobile>
-            <Typography variant="description2">Card Type</Typography>
-            <Typography variant="description3">{cardType}</Typography>
-          </ItemMobile>
-        </CardType>
+    <CardContainer>
+      <CardType>
+        <Image src={url} alt="" width={60} height={60} />
         <ItemMobile>
-          <Typography variant="description2">Bank</Typography>
-          <Typography variant="description3">{bankName}</Typography>
+          <Typography variant="description2">Card Type</Typography>
+          <Typography variant="description3">{cardType}</Typography>
         </ItemMobile>
-        <CardItem>
-          <Typography variant="description2">Card Number</Typography>
-          <Typography variant="description3">{cardNumber}</Typography>
-        </CardItem>
-        <CardItem>
-          <Typography variant="description2">Namain Card</Typography>
-          <Typography variant="description3">{name}</Typography>
-        </CardItem>
-        <ItemMobile>
-          <Button title="View Details" variant="outline" />
-        </ItemMobile>
-      </CardContainer>
-    </>
+      </CardType>
+      <ItemMobile>
+        <Typography variant="description2">Bank</Typography>
+        <Typography variant="description3">{bankName}</Typography>
+      </ItemMobile>
+      <CardItem>
+        <Typography variant="description2">Card Number</Typography>
+        <Typography variant="description3">{cardNumber}</Typography>
+      </CardItem>
+      <CardItem>
+        <Typography variant="description2">Namain Card</Typography>
+        <Typography variant="description3">{name}</Typography>
+      </CardItem>
+      <ItemMobile>
+        <Button title="View Details" variant="outline" />
+      </ItemMobile>
+    </CardContainer>
   );
 };
 

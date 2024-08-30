@@ -272,3 +272,31 @@ export const cardListItems = [
     name: "Edward",
   },
 ];
+
+export const cardSettingItems = [
+  {
+    url: "/assets/image/setting-card.svg",
+    title: "Block Card",
+    description: "Instantly block your card",
+  },
+  {
+    url: "/assets/image/setting-pin.svg",
+    title: "Change Pin Code",
+    description: "Choose another pin code",
+  },
+  {
+    url: "/assets/image/setting-google.svg",
+    title: "Add to Google Pay",
+    description: "Whitdraw without any card",
+  },
+  {
+    url: "/assets/image/setting-apple.svg",
+    title: "Add to Apple Pay",
+    description: "Whitdraw without any card",
+  },
+  {
+    url: "/assets/image/setting-apple.svg",
+    title: "Add to Apple Store",
+    description: "Whitdraw without any card",
+  },
+];

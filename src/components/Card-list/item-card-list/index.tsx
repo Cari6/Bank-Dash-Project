@@ -37,7 +37,7 @@ const ItemCardList = ({
         <Typography variant="description3">{cardNumber}</Typography>
       </CardItem>
       <CardItem>
-        <Typography variant="description2">Namain Card</Typography>
+        <Typography variant="description2">Name on Card</Typography>
         <Typography variant="description3">{name}</Typography>
       </CardItem>
       <ItemMobile>

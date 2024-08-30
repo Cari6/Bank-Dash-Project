@@ -11,12 +11,13 @@ import {
   Item5,
   PieChartContainer,
 } from "./styles";
-import { CardList, CreditCard, Typography } from "@/src/components";
+import { CardList, CreditCard, FormCard, Typography } from "@/src/components";
 import {
   pieChartCreditCardsData,
   pieChartCreditCardsOptions,
 } from "@/src/utils/charts-data";
 import Chart from "react-google-charts";
+import CardSetting from "@/src/components/card-setting";
 
 const CreditCardsPage = () => {
   return (
@@ -87,6 +88,7 @@ const CreditCardsPage = () => {
         >
           Add New Card
         </Typography>
+        <FormCard />
       </Item4>
       <Item5>
         <Typography
@@ -95,6 +97,7 @@ const CreditCardsPage = () => {
         >
           Card Setting
         </Typography>
+        <CardSetting />
       </Item5>
     </GridContainer>
   );

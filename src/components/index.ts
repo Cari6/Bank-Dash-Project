@@ -21,3 +21,6 @@ export { default as TableMobile } from "./table-mobile";
 export { default as Tabs } from "./tabs";
 export { default as itemCardList } from "./Card-list/item-card-list";
 export { default as CardList } from "./Card-list";
+export { default as FormCard } from "./card-form";
+export { default as SettingCard } from "./card-setting";
+export { default as ItemSettingCard } from "./card-setting/item-setting-card";

@@ -39,11 +39,11 @@ export const Item3 = styled.div`
   grid-area: list;
 `;
 export const Item4 = styled.div`
-  background-color: green;
+  // background-color: orange;
   grid-area: newCard;
 `;
 export const Item5 = styled.div`
-  background-color: purple;
+  // background-color: purple;
   grid-area: setting;
 `;
 

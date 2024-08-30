@@ -1,22 +1,37 @@
-import { StylesProps } from "../../utils/styles-props";
+import styled, { css } from "styled-components";
 
-export const styles = (): StylesProps => ({
-  inputContainer: {
-    display: "flex",
-    alignItems: "center",
-    width: "150",
-    height: "40px",
-    padding: "0px 20px 0px 20px",
-    backgroundColor: "#F5F7FA",
-    borderRadius: "25px",
-    transition: " box-shadow 0.3s",
-  },
-  input: {
-    backgroundColor: "transparent",
-    border: "none",
-    outline: "none",
-    minWidth: 0,
-    flex: 1,
-    marginLeft: "10px",
-  },
-});
+interface InputContainerProps {
+  variant: "default" | "variant1";
+}
+
+export const InputContainer = styled.div<InputContainerProps>`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  padding: 0px 20px;
+  background-color: #f5f7fa;
+  border-radius: 25px;
+  transition: box-shadow 0.3s;
+  ${(props) =>
+    props.variant === "variant1" &&
+    css`
+      background-color: #fff;
+      border-radius: 15px;
+      border: 1px solid #dfeaf2;
+    `}
+`;
+
+export const StyledInput = styled.input`
+  background-color: transparent;
+  border: none;
+  outline: none;
+  min-width: 0;
+  max-width: 150px;
+  flex: 1;
+  margin-left: 10px;
+
+  &::placeholder {
+    color: #8ba3cb;
+  }
+`;

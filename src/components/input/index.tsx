@@ -1,35 +1,24 @@
+"use client";
 import Image from "next/image";
-import { styles } from "./styles";
+import { InputContainer, StyledInput } from "./styles";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   placeholder?: string;
   icon?: string;
+  variant?: "default" | "variant1";
 }
 
-const Input = ({ placeholder, icon, ...props }: InputProps) => {
+const Input = ({
+  placeholder,
+  icon,
+  variant = "default",
+  ...props
+}: InputProps) => {
   return (
-    <div style={{ ...styles().inputContainer }}>
-      <style>
-        {`
-          .input-with-placeholder::placeholder {
-            color:#8BA3CB;
-          
-          }
-          .input-with-placeholder:hover {
-          border-color: #cb8b90;
-        
-          }
-        `}
-      </style>
+    <InputContainer variant={variant}>
       {icon && <Image src={icon} alt={icon} width={18} height={18} />}
-      <input
-        type="text"
-        placeholder={placeholder}
-        style={styles().input}
-        className="input-with-placeholder"
-        {...props}
-      />
-    </div>
+      <StyledInput type="text" placeholder={placeholder} {...props} />
+    </InputContainer>
   );
 };
 

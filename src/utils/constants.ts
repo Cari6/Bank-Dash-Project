@@ -248,3 +248,27 @@ export const tableExpenseData = [
     amount: "-$980",
   },
 ];
+
+export const cardListItems = [
+  {
+    url: "/assets/image/card-list-1.svg",
+    cardType: "Secondary",
+    bankName: "DBL Bank",
+    cardNumber: "**** **** 5600",
+    name: "William",
+  },
+  {
+    url: "/assets/image/card-list-2.svg",
+    cardType: "Secondary",
+    bankName: "BRC Bank",
+    cardNumber: "**** **** 4300",
+    name: "Michel",
+  },
+  {
+    url: "/assets/image/card-list-3.svg",
+    cardType: "Secondary",
+    bankName: "ABM Bank",
+    cardNumber: "**** **** 7560",
+    name: "Edward",
+  },
+];

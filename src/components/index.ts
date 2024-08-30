@@ -18,4 +18,6 @@ export { default as TransferInput } from "./card-quick-transfer";
 export { default as Contacts } from "./card-quick-transfer";
 export { default as Button } from "./button";
 export { default as TableMobile } from "./table-mobile";
-export { default as TabTable } from "./tab-table";
+export { default as Tabs } from "./tab-table";
+export { default as itemCardList } from "./Card-list/item-card-list";
+export { default as CardList } from "./Card-list";

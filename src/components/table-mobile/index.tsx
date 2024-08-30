@@ -9,10 +9,12 @@ import {
   TD,
   TRBody,
 } from "./style";
-import { tableTransactionsData } from "@/src/utils/constants";
 import Image from "next/image";
+import { TransactionsTableProps } from "../table/interfaces";
 
-const TableMobile = () => {
+const TransactionsMobileTable = ({
+  tableTransactionsData,
+}: TransactionsTableProps) => {
   const getAmountColor = (amount: string) => {
     return amount.startsWith("+") ? "#41D4A8" : "#FF4B4A";
   };
@@ -54,4 +56,4 @@ const TableMobile = () => {
   );
 };
 
-export default TableMobile;
+export default TransactionsMobileTable;

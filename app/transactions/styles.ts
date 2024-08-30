@@ -81,3 +81,14 @@ export const TitleCardContainer = styled.div`
   margin-bottom: 20px;
   width: 100%;
 `;
+
+export const TransactionsTableContainer = styled.div`
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+export const TransactionsMobileTableContainer = styled.div`
+  @media (min-width: 600px) {
+    display: none;
+  }
+`;

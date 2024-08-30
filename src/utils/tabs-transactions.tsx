@@ -12,7 +12,7 @@ export const renderTable: { [key: number]: TransactionsTableProps } = {
   2: { tableHead: tableHead, tableTransactionsData: tableExpenseData },
 };
 
-export const tabOptions = [
+export const tabOptionsTransactions = [
   { id: 0, title: "All Transactions" },
   { id: 1, title: "Income" },
   { id: 2, title: "Expense" },

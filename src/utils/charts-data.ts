@@ -111,3 +111,30 @@ export const columnChartTransanctionsOptions = {
     right: 10,
   },
 };
+
+export const pieChartCreditCardsData = [
+  ["", ""],
+  ["ABM Bank", 35],
+  ["DBL Bank", 30],
+  ["MCP Bank", 20],
+  ["BRC Bank", 15],
+];
+
+export const pieChartCreditCardsOptions = {
+  pieHole: 0.4,
+  is3D: false,
+  legend: { position: "bottom" },
+  chartArea: {
+    top: 0,
+    bottom: 30,
+    left: 0,
+    right: 0,
+  },
+  pieSliceText: "none",
+  slices: {
+    0: { color: "#16DBCC" },
+    1: { color: "#4C78FF" },
+    2: { color: "#FFBB38" },
+    3: { color: "#FF82AC" },
+  },
+};

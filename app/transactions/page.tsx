@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import {
   Cards,
   ColumnChartContainer,
@@ -8,20 +8,26 @@ import {
   Item2,
   Item3,
   TitleCardContainer,
+  TransactionsMobileTableContainer,
+  TransactionsTableContainer,
 } from "./styles";
-import {
-  CreditCard,
-  TableMobile,
-  TabTable,
-  Typography,
-} from "@/src/components";
+import { CreditCard, TableMobile, Typography } from "@/src/components";
 import Chart from "react-google-charts";
 import {
   columnChartTransactionsData,
   columnChartTransanctionsOptions,
 } from "@/src/utils/charts-data";
+import {
+  renderTable,
+  tabOptionsTransactions,
+} from "@/src/utils/tabs-transactions";
+import TransactionsTable from "@/src/components/table";
+import Tabs from "@/src/components/tab-table";
+import TransactionsMobileTable from "@/src/components/table-mobile";
 
 const TransactionsPage = () => {
+  const [activeTab, setActiveTab] = useState<number>(0);
+
   return (
     <GridContainerTransactions>
       <Item1>
@@ -83,13 +89,18 @@ const TransactionsPage = () => {
         >
           Recent Transactions
         </Typography>
-        {/* <Tabs />
-        <div>
-          <TransactionTable />
-        </div>
-        <TransactionsMobileTable /> */}
-        {/* <TableMobile /> */}
-        <TabTable />
+
+        <Tabs
+          tabOptions={tabOptionsTransactions}
+          activeTab={activeTab}
+          onTabChange={setActiveTab}
+        />
+        <TransactionsTableContainer>
+          <TransactionsTable {...renderTable[activeTab]} />
+        </TransactionsTableContainer>
+        <TransactionsMobileTableContainer>
+          <TransactionsMobileTable {...renderTable[activeTab]} />
+        </TransactionsMobileTableContainer>
       </Item3>
     </GridContainerTransactions>
   );

@@ -6,9 +6,6 @@ export const TableMobileContainer = styled.table`
   padding: 20px;
   width: 100%;
   border-spacing: 0;
-  @media (min-width: 600px) {
-    display: none;
-  }
 `;
 
 export const TD = styled.td`

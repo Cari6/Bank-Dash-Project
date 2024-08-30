@@ -54,8 +54,6 @@ export const Cards = styled.div`
 
 export const Item1 = styled.div`
   grid-area: cards;
-
-  // background-color: red;
   @media (max-width: 1490px) {
     display: flex;
     align-items: center;
@@ -65,7 +63,6 @@ export const Item1 = styled.div`
 
 export const Item2 = styled.div`
   grid-area: transactions;
-  // background-color: #fff;
   @media (max-width: 1490px) {
     display: flex;
     align-items: center;
@@ -75,7 +72,6 @@ export const Item2 = styled.div`
 
 export const Item3 = styled.div`
   grid-area: activity;
-  // background-color: blue;
   @media (max-width: 1490px) {
     display: flex;
     align-items: center;

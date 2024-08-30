@@ -7,6 +7,7 @@ interface TabProps {
 export const TabContainer = styled.div`
   display: flex;
   cursor: pointer;
+  margin-bottom: 15px;
 `;
 
 export const Tab = styled.div<TabProps>`

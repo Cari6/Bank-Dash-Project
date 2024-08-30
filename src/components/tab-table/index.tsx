@@ -1,28 +1,33 @@
 import React, { useState } from "react";
 import { Tab, TabActive, TabContainer, TableWrapper } from "./styles";
 import TransactionsTable from "../table";
-import { renderTable, tabOptions } from "@/src/utils/tabs-transactions";
 
-const TabTable = () => {
-  const [activeTab, setActiveTab] = useState<number>(0);
+interface TabOption {
+  id: number;
+  title: string;
+}
 
+interface TabTableProps {
+  tabOptions: TabOption[];
+  activeTab: number;
+  onTabChange: (id: number) => void;
+}
+
+const Tabs = ({ tabOptions, activeTab, onTabChange }: TabTableProps) => {
   return (
     <>
       <TabContainer>
         {tabOptions.map(({ id, title }) => (
           <div key={id}>
-            <Tab onClick={() => setActiveTab(id)} isActive={activeTab === id}>
+            <Tab onClick={() => onTabChange(id)} isActive={activeTab === id}>
               {title}
             </Tab>
             {activeTab === id && <TabActive />}
           </div>
         ))}
       </TabContainer>
-      <TableWrapper>
-        <TransactionsTable {...renderTable[activeTab]} />
-      </TableWrapper>
     </>
   );
 };
 
-export default TabTable;
+export default Tabs;

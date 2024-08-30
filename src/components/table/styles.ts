@@ -15,10 +15,6 @@ export const TableContainer = styled.table`
       }
     }
   }
-
-  @media (max-width: 600px) {
-    display: none;
-  }
 `;
 export const THead = styled.thead`
   text-align: left;

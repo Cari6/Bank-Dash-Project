@@ -16,15 +16,17 @@ const Tabs = ({ tabOptions, activeTab, onTabChange }: TabTableProps) => {
   const activeIndex = tabOptions.findIndex((option) => option.id === activeTab);
   return (
     <TabContainer>
-      {tabOptions.map(({ id, title }) => (
-        <Tab
-          key={id}
-          onClick={() => onTabChange(id)}
-          isActive={activeTab === id}
-        >
-          {title}
-        </Tab>
-      ))}
+      <div style={{ display: "flex" }}>
+        {tabOptions.map(({ id, title }) => (
+          <Tab
+            key={id}
+            onClick={() => onTabChange(id)}
+            isActive={activeTab === id}
+          >
+            {title}
+          </Tab>
+        ))}
+      </div>
       <TabActive position={activeIndex} count={tabOptions.length} />
     </TabContainer>
   );

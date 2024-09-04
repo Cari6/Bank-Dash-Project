@@ -2,13 +2,14 @@ import styled, { css } from "styled-components";
 
 interface InputContainerProps {
   variant: "default" | "variant1";
+  isWidthIcon?: boolean;
 }
 
 export const InputContainer = styled.div<InputContainerProps>`
   display: flex;
   align-items: center;
   height: 50px;
-  padding: 0px 20px;
+
   background-color: #f5f7fa;
   border-radius: 25px;
   transition: box-shadow 0.3s;
@@ -18,6 +19,11 @@ export const InputContainer = styled.div<InputContainerProps>`
       background-color: #fff;
       border-radius: 15px;
       border: 1px solid #dfeaf2;
+    `}
+
+  ${(props) =>
+    css`
+      padding: ${props.isWidthIcon ? " 0px 20px" : " 0px 5px"};
     `}
 `;
 

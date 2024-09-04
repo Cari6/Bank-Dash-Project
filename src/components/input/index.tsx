@@ -14,8 +14,9 @@ const Input = ({
   variant = "default",
   ...props
 }: InputProps) => {
+  const isWidthIcon = !!icon;
   return (
-    <InputContainer variant={variant}>
+    <InputContainer variant={variant} isWidthIcon={isWidthIcon}>
       {icon && <Image src={icon} alt={icon} width={18} height={18} />}
       <StyledInput type="text" placeholder={placeholder} {...props} />
     </InputContainer>

@@ -10,10 +10,9 @@ interface TabActiveProps {
 }
 
 export const TabContainer = styled.div`
-  display: flex;
+  display: inline-block;
   cursor: pointer;
   margin-bottom: 15px;
-  width: 100%;
   position: relative;
 `;
 
@@ -21,8 +20,9 @@ export const Tab = styled.div<TabProps>`
   padding: 10px 20px;
   color: ${({ isActive }) => (isActive ? "#1814F3" : "#718EBF")};
   position: relative;
-  flex: 1;
   text-align: center;
+  width: 200px;
+  max-width: 200px;
 `;
 
 export const TabActive = styled.div<TabActiveProps>`

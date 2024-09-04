@@ -13,16 +13,19 @@ interface TabTableProps {
 }
 
 const Tabs = ({ tabOptions, activeTab, onTabChange }: TabTableProps) => {
+  const activeIndex = tabOptions.findIndex((option) => option.id === activeTab);
   return (
     <TabContainer>
       {tabOptions.map(({ id, title }) => (
-        <div key={id}>
-          <Tab onClick={() => onTabChange(id)} isActive={activeTab === id}>
-            {title}
-          </Tab>
-          {activeTab === id && <TabActive />}
-        </div>
+        <Tab
+          key={id}
+          onClick={() => onTabChange(id)}
+          isActive={activeTab === id}
+        >
+          {title}
+        </Tab>
       ))}
+      <TabActive position={activeIndex} count={tabOptions.length} />
     </TabContainer>
   );
 };

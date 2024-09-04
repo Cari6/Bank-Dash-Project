@@ -7,8 +7,7 @@ interface InputContainerProps {
 export const InputContainer = styled.div<InputContainerProps>`
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 40px;
+  height: 50px;
   padding: 0px 20px;
   background-color: #f5f7fa;
   border-radius: 25px;

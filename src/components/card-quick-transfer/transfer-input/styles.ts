@@ -19,7 +19,7 @@ export const CustomInput = styled(Input)`
 `;
 export const CustomButton = styled(Button)`
   border-radius: 50px;
-  height: 40px;
+  height: 50px;
   margin-left: -30px;
   right: 0;
   top: 0;

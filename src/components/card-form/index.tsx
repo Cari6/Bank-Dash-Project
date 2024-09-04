@@ -3,9 +3,13 @@ import Input from "../input";
 import { CardContainer, CustomButton, InputContainer, Item } from "./styles";
 import Typography from "../typography";
 
-const FormCard = () => {
+interface FormCardProps {
+  height?: string;
+}
+
+const FormCard = ({ height }: FormCardProps) => {
   return (
-    <CardContainer>
+    <CardContainer style={{ minHeight: height }}>
       <Typography variant="description3" style={{ lineHeight: 1.8 }}>
         Credit Card generally means a plastic card issued by Scheduled
         Commercial Banks assigned to a Cardholder, with a credit limit, that can

@@ -20,7 +20,8 @@ const ListContact = () => {
 
       <IconButton
         url="/assets/image/icon-arrow.svg"
-        iconSize={20}
+        iconSize={18}
+        size={43}
         style={{
           backgroundColor: "#fff",
           boxShadow: "4px 4px 18px -2px rgba(231, 228, 232, 0.8)",

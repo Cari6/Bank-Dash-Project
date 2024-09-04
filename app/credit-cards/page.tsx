@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import {
   Cards,
@@ -11,15 +11,37 @@ import {
   Item5,
   PieChartContainer,
 } from "./styles";
-import { CardList, CreditCard, FormCard, Typography } from "@/src/components";
+import {
+  CardList,
+  CreditCard,
+  FormCard,
+  SettingCard,
+  Typography,
+} from "@/src/components";
 import {
   pieChartCreditCardsData,
   pieChartCreditCardsOptions,
 } from "@/src/utils/charts-data";
 import Chart from "react-google-charts";
-import CardSetting from "@/src/components/card-setting";
-
 const CreditCardsPage = () => {
+  const settingCardRef = useRef<HTMLDivElement>(null);
+  const [settingCardHeight, setSettingCardHeight] = useState<number>(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (settingCardRef.current) {
+        setSettingCardHeight(settingCardRef.current.clientHeight);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <GridContainer>
       <Item1>
@@ -88,7 +110,7 @@ const CreditCardsPage = () => {
         >
           Add New Card
         </Typography>
-        <FormCard />
+        <FormCard height={`${settingCardHeight}px`} />
       </Item4>
       <Item5>
         <Typography
@@ -97,7 +119,7 @@ const CreditCardsPage = () => {
         >
           Card Setting
         </Typography>
-        <CardSetting />
+        <SettingCard ref={settingCardRef} />
       </Item5>
     </GridContainer>
   );

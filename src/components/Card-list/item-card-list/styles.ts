@@ -17,13 +17,13 @@ export const CardType = styled.div`
 `;
 
 export const ItemMobile = styled.div`
-  @media (min-width: 1420px) {
+  @media (min-width: 780px) {
     display: block;
   }
 `;
 
 export const CardItem = styled.div`
-  @media (max-width: 1420px) {
+  @media (max-width: 780px) {
     display: none;
   }
 `;

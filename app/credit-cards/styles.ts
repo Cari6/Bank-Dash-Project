@@ -10,7 +10,7 @@ export const GridContainer = styled.div`
     "cards cards cards"
     "expense list list"
     "newCard newCard setting";
-  @media (max-width: 920px) {
+  @media (max-width: 1370px) {
     grid-template-columns: 1fr;
     grid-template-areas:
       "cards"

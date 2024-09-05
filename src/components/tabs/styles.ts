@@ -14,6 +14,11 @@ export const TabContainer = styled.div`
   cursor: pointer;
   margin-bottom: 15px;
   position: relative;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Tab = styled.div<TabProps>`
@@ -23,6 +28,12 @@ export const Tab = styled.div<TabProps>`
   text-align: center;
   width: 200px;
   max-width: 200px;
+    
+
+  @media (max-width: 600px) {
+    display:flex;
+    justify-content: center;
+    padding:10px 5px;
 `;
 
 export const TabActive = styled.div<TabActiveProps>`

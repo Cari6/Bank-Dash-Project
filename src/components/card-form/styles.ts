@@ -11,7 +11,7 @@ export const InputContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 20px 0;
+  // margin: 20px 0;
   gap: 16px;
 
   & > div {
@@ -26,13 +26,11 @@ export const InputContainer = styled.div`
 `;
 
 export const Item = styled.div`
-  width: 100%;
-  margin-bottom: 10px;
   height: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 `;
 export const CustomButton = styled(Button)`
   border-radius: 9px;
+  margin-top: 20px;
 `;

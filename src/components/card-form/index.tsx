@@ -3,43 +3,35 @@ import Input from "../input";
 import { CardContainer, CustomButton, InputContainer, Item } from "./styles";
 import Typography from "../typography";
 
-interface FormCardProps {
+export interface FormCardProps {
   height?: string;
+  description?: string;
+  titleButton: string;
+  itemsForm: { text: string; placeholder: string }[];
 }
 
-const FormCard = ({ height }: FormCardProps) => {
+const FormCard = ({
+  height,
+  description,
+  itemsForm,
+  titleButton,
+}: FormCardProps) => {
   return (
     <CardContainer style={{ minHeight: height }}>
       <Typography variant="description3" style={{ lineHeight: 1.8 }}>
-        Credit Card generally means a plastic card issued by Scheduled
-        Commercial Banks assigned to a Cardholder, with a credit limit, that can
-        be used to purchase goods and services on credit or obtain cash
-        advances.
+        {description}
       </Typography>
 
       <InputContainer>
-        <Item>
-          <Typography>Card Type</Typography>
-          <Input variant="variant1" placeholder="Classic" />
-        </Item>
-
-        <Item>
-          <Typography>Name on Card</Typography>
-          <Input variant="variant1" placeholder="My Cards" />
-        </Item>
-
-        <Item>
-          <Typography>Card Number</Typography>
-          <Input variant="variant1" placeholder="**** **** **** ****" />
-        </Item>
-
-        <Item>
-          <Typography>Expiration Date</Typography>
-          <Input variant="variant1" placeholder="25 January 2025" />
-        </Item>
+        {itemsForm.map((item, index) => (
+          <Item key={index}>
+            <Typography>{item.text}</Typography>
+            <Input variant="variant1" placeholder={item.placeholder} />
+          </Item>
+        ))}
       </InputContainer>
 
-      <CustomButton title="Add Card" variant="default" />
+      <CustomButton title={titleButton} variant="default" />
     </CardContainer>
   );
 };

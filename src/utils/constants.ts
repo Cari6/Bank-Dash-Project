@@ -1,3 +1,5 @@
+import { FormCardProps } from "../components/card-form";
+
 export const sidebarItems = [
   { iconName: "home", title: "Dashboard", route: "/", id: "dashboard" },
   {
@@ -271,6 +273,26 @@ export const cardListItems = [
     cardNumber: "**** **** 7560",
     name: "Edward",
   },
+];
+
+export const formCreditCard: FormCardProps["itemsForm"] = [
+  { text: "Card Type", placeholder: "Classic" },
+  { text: "Name On Card", placeholder: "My Cards" },
+  { text: "Card Number", placeholder: "**** **** **** ****" },
+  { text: "Expiration Date", placeholder: "25 January 2025" },
+];
+
+export const formSetting: FormCardProps["itemsForm"] = [
+  { text: "Your Name", placeholder: "Charlene Reed" },
+  { text: "User Name", placeholder: "Charlene Reed" },
+  { text: "Email", placeholder: "charlenereed@gmail.com" },
+  { text: "Password", placeholder: "**********" },
+  { text: "Date of Birth", placeholder: "25 January 1990" },
+  { text: "Present Address", placeholder: "San Jose, California, USA" },
+  { text: "Permanent Address", placeholder: "San Jose, California, USA" },
+  { text: "City", placeholder: "San Jose" },
+  { text: "Postal Code", placeholder: "45962" },
+  { text: "Country", placeholder: "USA" },
 ];
 
 export const cardSettingItems = [

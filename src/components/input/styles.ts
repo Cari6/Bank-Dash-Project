@@ -31,10 +31,8 @@ export const StyledInput = styled.input`
   background-color: transparent;
   border: none;
   outline: none;
-  min-width: 0;
-  max-width: 150px;
   flex: 1;
-  margin-left: 10px;
+  margin: 0 10px;
 
   &::placeholder {
     color: #8ba3cb;

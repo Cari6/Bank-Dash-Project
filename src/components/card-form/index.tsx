@@ -8,6 +8,7 @@ export interface FormCardProps {
   description?: string;
   titleButton: string;
   itemsForm: { text: string; placeholder: string }[];
+  padding?: string;
 }
 
 const FormCard = ({
@@ -15,9 +16,10 @@ const FormCard = ({
   description,
   itemsForm,
   titleButton,
+  padding = "30px",
 }: FormCardProps) => {
   return (
-    <CardContainer style={{ minHeight: height }}>
+    <CardContainer style={{ minHeight: height, padding }}>
       <Typography variant="description3" style={{ lineHeight: 1.8 }}>
         {description}
       </Typography>

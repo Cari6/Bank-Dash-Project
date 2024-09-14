@@ -13,3 +13,5 @@ export const ButtonContainer = styled.div`
   justify-content: flex-end;
   margin-top: 20px;
 `;
+
+export const SwitchContainer = styled.div``;

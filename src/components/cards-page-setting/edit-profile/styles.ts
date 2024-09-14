@@ -1,10 +1,15 @@
 import styled from "styled-components";
-import { styles } from "../../typography/styles";
+import Button from "../../button";
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+`;
+
+export const ContainerTop = styled.div`
+  display: flex;
   gap: 30px;
-  // background-color: red;
+
   @media (max-width: 700px) {
     flex-direction: column;
     align-items: center;
@@ -30,6 +35,17 @@ export const AvatarContainerMobile = styled.div`
   }
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+`;
+
+export const CustomButton = styled(Button)`
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+`;
 export const FormContainer = styled.div`
   width: 100%;
   display: block;

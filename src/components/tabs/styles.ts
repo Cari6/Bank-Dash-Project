@@ -15,7 +15,7 @@ export const TabContainer = styled.div`
   margin-bottom: 15px;
   position: relative;
 
-  @media (max-width: 600px) {
+  @media (max-width: 740px) {
     display: flex;
     flex-direction: column;
   }

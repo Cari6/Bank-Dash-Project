@@ -1,3 +1,4 @@
+import { Button } from "@/src/components";
 import styled from "styled-components";
 
 export const GridContainer = styled.div`
@@ -52,4 +53,17 @@ export const PieChartContainer = styled.div`
   background-color: #fff;
   border-radius: 20px;
   height: 310px;
+`;
+
+export const CardContainer = styled.div`
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+`;
+
+export const CustomButton = styled(Button)`
+  margin-top: 20px;
+  @media (max-width: 890px) {
+    width: 100%;
+  }
 `;

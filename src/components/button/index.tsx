@@ -7,7 +7,7 @@ interface ButtonProps {
   title: string;
   icon?: string;
   className?: string;
-  variant?: "default" | "outline";
+  variant?: "default" | "outline" | "form";
 }
 
 const Button = ({

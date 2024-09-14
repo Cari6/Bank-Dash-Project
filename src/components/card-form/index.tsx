@@ -1,26 +1,20 @@
 import React from "react";
 import Input from "../input";
-import { CardContainer, CustomButton, InputContainer, Item } from "./styles";
+import { CardContainer, InputContainer, Item } from "./styles";
 import Typography from "../typography";
 
 export interface FormCardProps {
-  height?: string;
   description?: string;
-  titleButton: string;
   itemsForm: { text: string; placeholder: string }[];
-  padding?: string;
 }
 
-const FormCard = ({
-  height,
-  description,
-  itemsForm,
-  titleButton,
-  padding = "30px",
-}: FormCardProps) => {
+const FormCard = ({ description, itemsForm }: FormCardProps) => {
   return (
-    <CardContainer style={{ minHeight: height, padding }}>
-      <Typography variant="description3" style={{ lineHeight: 1.8 }}>
+    <CardContainer>
+      <Typography
+        variant="description3"
+        style={{ lineHeight: 1.8, marginBottom: 20 }}
+      >
         {description}
       </Typography>
 
@@ -32,8 +26,6 @@ const FormCard = ({
           </Item>
         ))}
       </InputContainer>
-
-      <CustomButton title={titleButton} variant="default" />
     </CardContainer>
   );
 };

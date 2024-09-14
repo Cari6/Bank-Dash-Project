@@ -282,7 +282,7 @@ export const formCreditCard: FormCardProps["itemsForm"] = [
   { text: "Expiration Date", placeholder: "25 January 2025" },
 ];
 
-export const formSetting: FormCardProps["itemsForm"] = [
+export const formEditProfile: FormCardProps["itemsForm"] = [
   { text: "Your Name", placeholder: "Charlene Reed" },
   { text: "User Name", placeholder: "Charlene Reed" },
   { text: "Email", placeholder: "charlenereed@gmail.com" },
@@ -293,6 +293,22 @@ export const formSetting: FormCardProps["itemsForm"] = [
   { text: "City", placeholder: "San Jose" },
   { text: "Postal Code", placeholder: "45962" },
   { text: "Country", placeholder: "USA" },
+];
+
+export const formPreferences: FormCardProps["itemsForm"] = [
+  { text: "Currency", placeholder: "USD" },
+  {
+    text: "Time Zone",
+    placeholder: "(GMT-12:00) International Date Line West",
+  },
+];
+
+export const formSecurity: FormCardProps["itemsForm"] = [
+  { text: "Current Password", placeholder: "**********" },
+  {
+    text: "New Password",
+    placeholder: "**********",
+  },
 ];
 
 export const cardSettingItems = [

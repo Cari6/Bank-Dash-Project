@@ -1,4 +1,25 @@
 import styled, { css } from "styled-components";
+export const ButtonContainer = styled.div<{
+  variant: "default" | "outline" | "form";
+}>`
+  display: inline-flex;
+  justify-content: center;
+  padding: 10px 20px;
+  align-items: center;
+  text-align: center;
+  width: auto;
+  height: auto;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  ${({ variant }) =>
+    variant === "outline"
+      ? outlineStyles
+      : variant === "form"
+      ? formStyles
+      : defaultStyles}
+`;
 
 const defaultStyles = css`
   background-color: #1814f3;
@@ -22,15 +43,14 @@ const outlineStyles = css`
   }
 `;
 
-export const ButtonContainer = styled.div<{ variant: "default" | "outline" }>`
-  display: inline-flex;
-  padding: 10px 20px;
-  align-items: center;
-  width: auto;
-  height: auto;
-  gap: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+const formStyles = css`
+  background-color: #1814f3;
+  border-radius: 9px;
+  border: none;
+  color: #fff;
+  width: 190px;
 
-  ${({ variant }) => (variant === "outline" ? outlineStyles : defaultStyles)}
+  &:hover {
+    background-color: #0e0b97;
+  }
 `;

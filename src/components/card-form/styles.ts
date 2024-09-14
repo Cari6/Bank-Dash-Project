@@ -4,7 +4,6 @@ import Button from "../button";
 export const CardContainer = styled.div`
   background-color: #fff;
   border-radius: 20px;
-  padding: 30px;
 `;
 
 export const InputContainer = styled.div`
@@ -28,8 +27,4 @@ export const Item = styled.div`
   height: 80px;
   display: flex;
   flex-direction: column;
-`;
-export const CustomButton = styled(Button)`
-  border-radius: 9px;
-  margin-top: 20px;
 `;

@@ -46,7 +46,3 @@ export const CustomButton = styled(Button)`
     width: 100%;
   }
 `;
-export const FormContainer = styled.div`
-  width: 100%;
-  display: block;
-`;

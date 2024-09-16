@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-export const ButtonContainer = styled.div<{
+export const ButtonContainer = styled.button<{
   variant: "default" | "outline" | "form";
 }>`
   display: inline-flex;

@@ -3,7 +3,7 @@ import React from "react";
 import { ButtonContainer } from "./styles";
 import Image from "next/image";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
   icon?: string;
   className?: string;
@@ -15,9 +15,10 @@ const Button = ({
   icon,
   className,
   variant = "default",
+  ...props
 }: ButtonProps) => {
   return (
-    <ButtonContainer className={className} variant={variant}>
+    <ButtonContainer className={className} variant={variant} {...props}>
       {title}
       {icon && <Image src={icon} alt="" width={26} height={22} />}
     </ButtonContainer>

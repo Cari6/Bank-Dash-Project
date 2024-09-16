@@ -1,11 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { Container } from "./styles";
-import { Tabs } from "@/src/components";
-import {
-  renderSetting,
-  tabOptionsSetting,
-} from "@/src/utils/tabs-transactions";
+import { EditProfile, Preferences, Security, Tabs } from "@/src/components";
+import { tabOptionsSetting } from "@/src/utils/tabs-transactions";
 
 const SettingPage = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -20,7 +17,11 @@ const SettingPage = () => {
         onTabChange={handleActiveTab}
         tabOptions={tabOptionsSetting}
       />
-      <div style={{ marginTop: 20 }}>{renderSetting[activeTab]}</div>
+      <div style={{ marginTop: 20 }}>
+        {activeTab === 0 && <EditProfile />}
+        {activeTab === 1 && <Preferences />}
+        {activeTab === 2 && <Security />}
+      </div>
     </Container>
   );
 };

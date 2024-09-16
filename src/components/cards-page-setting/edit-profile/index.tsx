@@ -6,13 +6,13 @@ import {
   Container,
   ContainerTop,
   CustomButton,
-  FormContainer,
 } from "./styles";
 import Avatar from "../../avatar";
 import IconButton from "../../icon-button";
-import FormCard from "../../card-form";
-import { formEditProfile } from "@/src/utils/constants";
-import Button from "../../button";
+import EditProfileForm from "./form";
+import { useForm } from "react-hook-form";
+
+interface EditProfileProps {}
 
 const EditProfile = () => {
   return (
@@ -37,14 +37,8 @@ const EditProfile = () => {
             style={{ position: "absolute", right: 0, bottom: 30 }}
           />
         </AvatarContainerMobile>
-
-        <FormContainer>
-          <FormCard itemsForm={formEditProfile} />
-        </FormContainer>
+        <EditProfileForm />
       </ContainerTop>
-      <ButtonContainer>
-        <CustomButton title="Save" variant="form" />
-      </ButtonContainer>
     </Container>
   );
 };

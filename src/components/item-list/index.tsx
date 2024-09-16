@@ -1,19 +1,19 @@
 "use client";
 import React from "react";
 import Icon, { IconName } from "../icon";
-import { ItemActive, ItemlistContainer } from "./styles";
+import { ItemlistContainer } from "./styles";
 import Typography from "../typography";
 
 interface ItemListProps {
   title: string;
   iconName: IconName;
   isActive?: boolean;
+  position: number;
 }
 
 const ItemList = ({ title, iconName, isActive }: ItemListProps) => {
   return (
     <ItemlistContainer>
-      {isActive && <ItemActive />}
       <Icon name={iconName} isActive={isActive} />
       <Typography
         variant="title2"

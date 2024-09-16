@@ -338,3 +338,9 @@ export const cardSettingItems = [
     description: "Whitdraw without any card",
   },
 ];
+
+export const switchPreferences = [
+  { id: 1, text: "I send or receive digital currency" },
+  { id: 2, text: "I receive merchant order" },
+  { id: 3, text: "There are recommendations for my account" },
+];

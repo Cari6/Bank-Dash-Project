@@ -22,8 +22,20 @@ export const Logo = styled.div`
 
 export const ItemListContainer = styled.div`
   margin-top: 60px;
+  position: relative;
 `;
 
 export const StyledLink = styled(NextLink)`
   text-decoration: none;
+`;
+export const ItemActive = styled.div<{ position: number }>`
+  position: absolute;
+  width: 6px;
+  height: 60px;
+  left: 0;
+  border-radius: 0 10px 10px 0;
+  background-color: #2d60ff;
+
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(${({ position }) => position * 60}px);
 `;

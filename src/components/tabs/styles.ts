@@ -14,6 +14,18 @@ export const TabContainer = styled.div`
   cursor: pointer;
   margin-bottom: 15px;
   position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #ebeef2;
+    z-index: 0;
+  }
 
   @media (max-width: 740px) {
     display: flex;
@@ -45,6 +57,7 @@ export const TabActive = styled.div<TabActiveProps>`
   left: ${({ position, count }) => (position / count) * 100}%;
   width: ${({ count }) => 100 / count}%;
   transition: left 0.3s ease;
+  z-index: 1;
 `;
 
 export const TableWrapper = styled.div`

@@ -1,28 +1,29 @@
-import React from "react";
-import {
-  ButtonContainer,
-  Container,
-  ContainerBottom,
-  ContainerTop,
-  CustomButton,
-} from "./styles";
+import React, { useState } from "react";
+import { ButtonContainer, Container, CustomButton } from "./styles";
 import Typography from "../../typography";
-import FormCard from "../../card-form";
 import { formSecurity } from "@/src/utils/constants";
-import Button from "../../button";
+import { FormCard, Switch } from "../..";
 
 const Security = () => {
+  const [checked, setChecked] = useState<boolean>(false);
+
+  const handleChange = (nextChecked: boolean) => {
+    setChecked(nextChecked);
+  };
   return (
     <Container>
-      <ContainerTop>
-        <Typography variant="description2">
-          Two-factor Authentication
-        </Typography>
-      </ContainerTop>
-      <ContainerBottom>
-        <Typography variant="description2">Change Password</Typography>
-        <FormCard itemsForm={formSecurity} />
-      </ContainerBottom>
+      <Typography variant="description2">Two-factor Authentication</Typography>
+      <Switch
+        checked={checked}
+        onChange={handleChange}
+        text="Enable or disable two factor authentication"
+      />
+
+      <Typography variant="description2" style={{ marginTop: "30px" }}>
+        Change Password
+      </Typography>
+      <FormCard itemsForm={formSecurity} />
+
       <ButtonContainer>
         <CustomButton title="Save" variant="form" />
       </ButtonContainer>

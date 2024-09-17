@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ButtonContainer,
   CustomButton,
@@ -15,6 +15,10 @@ interface FormValues {
   userName: string;
   email: string;
   password: string;
+  date: string;
+  presentAddress: string;
+  permanentAddress: string;
+  city: string;
 }
 
 const EditProfileForm = () => {
@@ -28,6 +32,10 @@ const EditProfileForm = () => {
       userName: "",
       email: "",
       password: "",
+      date: "",
+      presentAddress: "",
+      permanentAddress: "",
+      city: "",
     },
     resolver: yupResolver(EditProfileValidationSchema),
   });
@@ -85,9 +93,63 @@ const EditProfileForm = () => {
           name="password"
           render={({ field }) => (
             <Input
+              type="password"
               variant="variant1"
               placeholder="**********"
               text="Password"
+              {...field}
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="password"
+          render={({ field }) => (
+            <Input
+              type="date"
+              variant="variant1"
+              placeholder=""
+              text="Date of Birth"
+              {...field}
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="presentAddress"
+          render={({ field }) => (
+            <Input
+              variant="variant1"
+              placeholder="San Jose, California, USA"
+              text="Present Address"
+              {...field}
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="permanentAddress"
+          render={({ field }) => (
+            <Input
+              variant="variant1"
+              placeholder="San Jose, California, USA"
+              text="Permanent Address"
+              {...field}
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="city"
+          render={({ field }) => (
+            <Input
+              variant="variant1"
+              placeholder="San Jose"
+              text="City"
               {...field}
             />
           )}

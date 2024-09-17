@@ -9,9 +9,11 @@ export const EditProfileValidationSchema = Yup.object().shape({
   userName: Yup.string()
     .required("User Name is required")
     .max(15, "Name must be at most 15 characters"),
+
   email: Yup.string()
     .required("Email is required")
     .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Email is not valid"),
+
   password: Yup.string()
     .required("Password is required")
     .min(10, "Password must be at least 10 characters")
@@ -24,4 +26,18 @@ export const EditProfileValidationSchema = Yup.object().shape({
       "Password must be exactly 10 characters",
       (val) => val.length === 10
     ),
+
+  date: Yup.string().required("Date is required"),
+
+  presentAddress: Yup.string()
+    .required("Address is required")
+    .max(50, "Name must be at most 50 characters"),
+
+  permanentAddress: Yup.string()
+    .required("Address is required")
+    .max(50, "Name must be at most 50 characters"),
+
+  city: Yup.string()
+    .required("City is required")
+    .max(20, "Name must be at most 20 characters"),
 });

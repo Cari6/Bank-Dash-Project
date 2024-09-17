@@ -7,6 +7,8 @@ export const ButtonContainer = styled.button<{
   padding: 10px 20px;
   align-items: center;
   text-align: center;
+  font-weight: 500;
+  font-size: 16px;
   width: auto;
   height: auto;
   gap: 10px;

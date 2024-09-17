@@ -1,3 +1,4 @@
+import Button from "@/src/components/button";
 import { styled } from "styled-components";
 
 export const FormContainer = styled.div`
@@ -21,8 +22,15 @@ export const InputContainer = styled.div`
     }
   }
 `;
-export const Item = styled.div`
-  height: 80px;
+
+export const ButtonContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 20px;
+`;
+
+export const CustomButton = styled(Button)`
+  @media (max-width: 890px) {
+    width: 100%;
+  }
 `;

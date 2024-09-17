@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { Container, CustomButton } from "./styles";
+import { ButtonContainer, Container, CustomButton } from "./styles";
 import FormCard from "../../card-form";
 import { formPreferences, switchPreferences } from "@/src/utils/constants";
-import { ButtonContainer } from "../edit-profile/styles";
 import Typography from "../../typography";
 import Switch from "../../switch";
 

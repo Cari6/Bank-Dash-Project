@@ -2,17 +2,12 @@ import React from "react";
 import {
   AvatarContainer,
   AvatarContainerMobile,
-  ButtonContainer,
   Container,
   ContainerTop,
-  CustomButton,
 } from "./styles";
 import Avatar from "../../avatar";
 import IconButton from "../../icon-button";
 import EditProfileForm from "./form";
-import { useForm } from "react-hook-form";
-
-interface EditProfileProps {}
 
 const EditProfile = () => {
   return (

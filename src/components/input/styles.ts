@@ -5,6 +5,12 @@ interface InputContainerProps {
   isWidthIcon?: boolean;
 }
 
+export const Container = styled.div`
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const InputContainer = styled.div<InputContainerProps>`
   display: flex;
   align-items: center;

@@ -10,7 +10,7 @@ export const ContainerTop = styled.div`
   display: flex;
   gap: 30px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 890px) {
     flex-direction: column;
     align-items: center;
   }
@@ -20,7 +20,7 @@ export const AvatarContainer = styled.div`
   height: 130px;
   position: relative;
 
-  @media (max-width: 700px) {
+  @media (max-width: 890px) {
     display: none;
   }
 `;
@@ -30,19 +30,7 @@ export const AvatarContainerMobile = styled.div`
   height: 170px;
   position: relative;
 
-  @media (min-width: 700px) {
+  @media (min-width: 890px) {
     display: none;
-  }
-`;
-
-export const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 20px;
-`;
-
-export const CustomButton = styled(Button)`
-  @media (max-width: 700px) {
-    width: 100%;
   }
 `;

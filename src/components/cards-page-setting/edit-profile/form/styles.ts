@@ -10,7 +10,7 @@ export const InputContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 16px;
+  gap: 15px;
 
   & > div {
     flex: 1 1 calc(50% - 8px);
@@ -33,4 +33,8 @@ export const CustomButton = styled(Button)`
   @media (max-width: 890px) {
     width: 100%;
   }
+`;
+
+export const ContainerInner = styled.div`
+  margin-bottom: 5px;
 `;

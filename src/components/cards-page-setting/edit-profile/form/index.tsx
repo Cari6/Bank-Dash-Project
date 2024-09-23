@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import {
   ButtonContainer,
+  ContainerInner,
   CustomButton,
   FormContainer,
   InputContainer,
 } from "./styles";
-import { Input } from "@/src/components";
+import { Input, Typography } from "@/src/components";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { EditProfileValidationSchema } from "./validation";
@@ -44,6 +45,8 @@ const EditProfileForm = () => {
     console.log("data", data);
   };
 
+  const today = new Date().toISOString().split("T")[0];
+
   console.log("errors", errors);
 
   return (
@@ -53,12 +56,17 @@ const EditProfileForm = () => {
           control={control}
           name="name"
           render={({ field }) => (
-            <Input
-              variant="variant1"
-              placeholder="Charlene Reed"
-              text="Your Name"
-              {...field}
-            />
+            <ContainerInner>
+              <Input
+                variant="variant1"
+                placeholder="Charlene Reed"
+                text="Your Name"
+                {...field}
+              />
+              {errors.name && (
+                <Typography error>{errors.name.message}</Typography>
+              )}
+            </ContainerInner>
           )}
         />
 
@@ -66,12 +74,17 @@ const EditProfileForm = () => {
           control={control}
           name="userName"
           render={({ field }) => (
-            <Input
-              variant="variant1"
-              placeholder="Charlene Reed"
-              text="User Name"
-              {...field}
-            />
+            <ContainerInner>
+              <Input
+                variant="variant1"
+                placeholder="Charlene Reed"
+                text="User Name"
+                {...field}
+              />
+              {errors.userName && (
+                <Typography error>{errors.userName.message}</Typography>
+              )}
+            </ContainerInner>
           )}
         />
 
@@ -79,12 +92,17 @@ const EditProfileForm = () => {
           control={control}
           name="email"
           render={({ field }) => (
-            <Input
-              variant="variant1"
-              placeholder="charlenereed@gmail.com"
-              text="Email"
-              {...field}
-            />
+            <ContainerInner>
+              <Input
+                variant="variant1"
+                placeholder="charlenereed@gmail.com"
+                text="Email"
+                {...field}
+              />
+              {errors.email && (
+                <Typography error>{errors.email.message}</Typography>
+              )}
+            </ContainerInner>
           )}
         />
 
@@ -92,27 +110,38 @@ const EditProfileForm = () => {
           control={control}
           name="password"
           render={({ field }) => (
-            <Input
-              type="password"
-              variant="variant1"
-              placeholder="**********"
-              text="Password"
-              {...field}
-            />
+            <ContainerInner>
+              <Input
+                type="password"
+                variant="variant1"
+                placeholder="**********"
+                text="Password"
+                {...field}
+              />{" "}
+              {errors.password && (
+                <Typography error>{errors.password.message}</Typography>
+              )}
+            </ContainerInner>
           )}
         />
 
         <Controller
           control={control}
-          name="password"
+          name="date"
           render={({ field }) => (
-            <Input
-              type="date"
-              variant="variant1"
-              placeholder=""
-              text="Date of Birth"
-              {...field}
-            />
+            <ContainerInner>
+              <Input
+                type="date"
+                variant="variant1"
+                placeholder=""
+                text="Date of Birth"
+                {...field}
+                max={today}
+              />{" "}
+              {errors.date && (
+                <Typography error>{errors.date.message}</Typography>
+              )}
+            </ContainerInner>
           )}
         />
 
@@ -120,12 +149,17 @@ const EditProfileForm = () => {
           control={control}
           name="presentAddress"
           render={({ field }) => (
-            <Input
-              variant="variant1"
-              placeholder="San Jose, California, USA"
-              text="Present Address"
-              {...field}
-            />
+            <ContainerInner>
+              <Input
+                variant="variant1"
+                placeholder="San Jose, California, USA"
+                text="Present Address"
+                {...field}
+              />{" "}
+              {errors.presentAddress && (
+                <Typography error>{errors.presentAddress.message}</Typography>
+              )}
+            </ContainerInner>
           )}
         />
 
@@ -133,12 +167,17 @@ const EditProfileForm = () => {
           control={control}
           name="permanentAddress"
           render={({ field }) => (
-            <Input
-              variant="variant1"
-              placeholder="San Jose, California, USA"
-              text="Permanent Address"
-              {...field}
-            />
+            <ContainerInner>
+              <Input
+                variant="variant1"
+                placeholder="San Jose, California, USA"
+                text="Permanent Address"
+                {...field}
+              />{" "}
+              {errors.permanentAddress && (
+                <Typography error>{errors.permanentAddress.message}</Typography>
+              )}
+            </ContainerInner>
           )}
         />
 
@@ -146,12 +185,17 @@ const EditProfileForm = () => {
           control={control}
           name="city"
           render={({ field }) => (
-            <Input
-              variant="variant1"
-              placeholder="San Jose"
-              text="City"
-              {...field}
-            />
+            <ContainerInner>
+              <Input
+                variant="variant1"
+                placeholder="San Jose"
+                text="City"
+                {...field}
+              />{" "}
+              {errors.city && (
+                <Typography error>{errors.city.message}</Typography>
+              )}
+            </ContainerInner>
           )}
         />
       </InputContainer>

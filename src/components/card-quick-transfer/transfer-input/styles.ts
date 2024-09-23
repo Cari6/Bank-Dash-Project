@@ -11,6 +11,7 @@ export const TransferInputContainer = styled.div`
 `;
 export const InputButton = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const CustomInput = styled(Input)`
@@ -21,8 +22,7 @@ export const CustomButton = styled(Button)`
   border-radius: 50px;
   height: 50px;
   margin-left: -30px;
-  right: 0;
-  top: 0;
+
   transition: background-color 0.3s ease;
   &:hover {
     background-color: #0e0b97;

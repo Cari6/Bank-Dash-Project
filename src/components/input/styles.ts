@@ -18,7 +18,7 @@ export const InputContainer = styled.div<InputContainerProps>`
 
   background-color: #f5f7fa;
   border-radius: 25px;
-  transition: box-shadow 0.3s;
+
   ${(props) =>
     props.variant === "variant1" &&
     css`

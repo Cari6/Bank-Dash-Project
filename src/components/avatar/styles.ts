@@ -8,8 +8,12 @@ export const AvatarContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const AvatarImage = styled.div`
-  border-radius: 50%;
+export const AvatarImage = styled.div<{ size: number }>`
+  width: ${(props) => props.size}px; // Establecer un tamaño fijo
+  height: ${(props) => props.size}px; // Establecer un tamaño fijo
+  border-radius: 50%; // Bordes redondeados
+  overflow: hidden; // Ocultar cualquier desbordamiento de imagen
+  position: relative; // Para que el hijo (Image) se posicione correctamente
 `;
 
 export const TextTitle = styled.div`

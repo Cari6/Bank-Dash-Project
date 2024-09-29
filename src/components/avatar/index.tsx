@@ -24,8 +24,14 @@ const Avatar = ({
 }: AvatarProps) => {
   return (
     <AvatarContainer className={className}>
-      <AvatarImage>
-        <Image src={url} alt={url} width={size} height={size} />
+      <AvatarImage size={size}>
+        <Image
+          src={url}
+          alt={url}
+          width={size}
+          height={size}
+          layout="responsive"
+        />
       </AvatarImage>
       <TextTitle>{title}</TextTitle>
       <TextSubtitle>{subtitle}</TextSubtitle>

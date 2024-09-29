@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   ButtonContainer,
   ContainerInner,
@@ -43,6 +43,30 @@ const EditProfileForm = () => {
 
   const onSubmit = (data: FormValues) => {
     console.log("data", data);
+  };
+
+  const [password, setPassword] = useState("");
+  const [obscuredPassword, setObscuredPassword] = useState("");
+
+  useEffect(() => {
+    if (password) {
+      const timer = setTimeout(() => {
+        setObscuredPassword("*".repeat(password.length));
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    } else {
+      setObscuredPassword("");
+    }
+  }, [password]);
+
+  const handlePasswordChange = (
+    value: string,
+    onChange: (...event: any[]) => void
+  ) => {
+    onChange(value);
+    setPassword(value);
+    setObscuredPassword(value);
   };
 
   const today = new Date().toISOString().split("T")[0];
@@ -112,12 +136,15 @@ const EditProfileForm = () => {
           render={({ field }) => (
             <ContainerInner>
               <Input
-                type="password"
+                type="text"
                 variant="variant1"
                 placeholder="**********"
                 text="Password"
-                {...field}
-              />{" "}
+                value={obscuredPassword}
+                onChange={(e) =>
+                  handlePasswordChange(e.target.value, field.onChange)
+                }
+              />
               {errors.password && (
                 <Typography error>{errors.password.message}</Typography>
               )}

@@ -37,4 +37,5 @@ export const CustomButton = styled(Button)`
 
 export const ContainerInner = styled.div`
   margin-bottom: 5px;
+  position: relative;
 `;

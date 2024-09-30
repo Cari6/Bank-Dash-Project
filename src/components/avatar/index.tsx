@@ -30,7 +30,7 @@ const Avatar = ({
           alt={url}
           width={size}
           height={size}
-          layout="responsive"
+          style={{ objectFit: "cover" }}
         />
       </AvatarImage>
       <TextTitle>{title}</TextTitle>

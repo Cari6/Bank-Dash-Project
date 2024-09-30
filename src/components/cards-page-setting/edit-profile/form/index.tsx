@@ -6,7 +6,7 @@ import {
   FormContainer,
   InputContainer,
 } from "./styles";
-import { Input, Typography } from "@/src/components";
+import { Icon, Input, Typography } from "@/src/components";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { EditProfileValidationSchema } from "./validation";
@@ -45,29 +45,7 @@ const EditProfileForm = () => {
     console.log("data", data);
   };
 
-  const [password, setPassword] = useState("");
-  const [obscuredPassword, setObscuredPassword] = useState("");
-
-  useEffect(() => {
-    if (password) {
-      const timer = setTimeout(() => {
-        setObscuredPassword("*".repeat(password.length));
-      }, 2000);
-
-      return () => clearTimeout(timer);
-    } else {
-      setObscuredPassword("");
-    }
-  }, [password]);
-
-  const handlePasswordChange = (
-    value: string,
-    onChange: (...event: any[]) => void
-  ) => {
-    onChange(value);
-    setPassword(value);
-    setObscuredPassword(value);
-  };
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -136,18 +114,30 @@ const EditProfileForm = () => {
           render={({ field }) => (
             <ContainerInner>
               <Input
-                type="text"
+                type={isPasswordVisible ? "text" : "password"}
                 variant="variant1"
                 placeholder="**********"
                 text="Password"
-                value={obscuredPassword}
-                onChange={(e) =>
-                  handlePasswordChange(e.target.value, field.onChange)
-                }
+                {...field}
               />
               {errors.password && (
                 <Typography error>{errors.password.message}</Typography>
               )}
+              <div
+                style={{
+                  position: "absolute",
+                  right: 15,
+                  bottom: 7,
+                  cursor: "pointer",
+                }}
+                onClick={() => setIsPasswordVisible((presState) => !presState)}
+              >
+                {isPasswordVisible ? (
+                  <Icon name="card" />
+                ) : (
+                  <Icon name="home" />
+                )}
+              </div>
             </ContainerInner>
           )}
         />

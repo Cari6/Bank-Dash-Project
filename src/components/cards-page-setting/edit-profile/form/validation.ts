@@ -19,12 +19,7 @@ export const EditProfileValidationSchema = Yup.object().shape({
     .min(10, "Password must be at least 10 characters")
     .matches(
       /^(?=.*[A-Za-z].{9,})(?=.*\d).*$/,
-      "Password must contain at least 9 letters and 1 digit"
-    )
-    .test(
-      "len",
-      "Password must be exactly 10 characters",
-      (val) => val.length === 10
+      "Password must contain at least 9 letters and 1 digit",
     ),
 
   date: Yup.string().required("Date is required"),

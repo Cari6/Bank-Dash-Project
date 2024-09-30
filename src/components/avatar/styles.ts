@@ -9,11 +9,11 @@ export const AvatarContainer = styled.div`
 `;
 
 export const AvatarImage = styled.div<{ size: number }>`
-  width: ${(props) => props.size}px; // Establecer un tamaño fijo
-  height: ${(props) => props.size}px; // Establecer un tamaño fijo
-  border-radius: 50%; // Bordes redondeados
-  overflow: hidden; // Ocultar cualquier desbordamiento de imagen
-  position: relative; // Para que el hijo (Image) se posicione correctamente
+  width: ${(props) => props.size}px;
+  height: ${(props) => props.size}px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
 `;
 
 export const TextTitle = styled.div`

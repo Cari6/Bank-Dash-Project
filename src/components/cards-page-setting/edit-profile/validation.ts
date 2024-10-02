@@ -19,7 +19,7 @@ export const EditProfileValidationSchema = Yup.object().shape({
     .min(10, "Password must be at least 10 characters")
     .matches(
       /^(?=.*[A-Za-z].{9,})(?=.*\d).*$/,
-      "Password must contain at least 9 letters and 1 digit",
+      "Password must contain at least 9 letters and 1 digit"
     ),
 
   date: Yup.string().required("Date is required"),
@@ -35,4 +35,6 @@ export const EditProfileValidationSchema = Yup.object().shape({
   city: Yup.string()
     .required("City is required")
     .max(20, "Name must be at most 20 characters"),
+
+  avatarUrl: Yup.string(),
 });

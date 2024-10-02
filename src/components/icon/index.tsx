@@ -1,9 +1,11 @@
 import React from "react";
 import {
   CardIcon,
+  CloseEyeIcon,
   HomeIcon,
   InvestmentIcon,
   LoanIcon,
+  OpenEyeIcon,
   ServiceIcon,
   Settingsicon,
   TransferIcon,
@@ -20,6 +22,8 @@ const icons = (props?: IconProps) => ({
   loan: <LoanIcon {...props} />,
   service: <ServiceIcon {...props} />,
   setting: <Settingsicon {...props} />,
+  openEye: <OpenEyeIcon {...props} />,
+  closeEye: <CloseEyeIcon {...props} />,
 });
 
 export type IconName = keyof ReturnType<typeof icons>;

@@ -9,8 +9,11 @@ import IconButton from "../icon-button";
 import Typography from "../typography";
 import Avatar from "../avatar";
 import Input from "../input";
+import { useUserData } from "@/src/hooks/data-profile";
 
 const HeaderMobile = ({ isSideBarOpen, setSideBarOpen }: any) => {
+  const { user } = useUserData();
+
   return (
     <HeaderMobileContainer className="header-mobile">
       <ContainerTop>
@@ -22,7 +25,7 @@ const HeaderMobile = ({ isSideBarOpen, setSideBarOpen }: any) => {
 
         <Typography variant="h1">Overview</Typography>
 
-        <Avatar url="/assets/image/avatar.svg" />
+        <Avatar url={user.avatarUrl ?? "/assets/image/avatar.svg"} />
       </ContainerTop>
       <InputMobileContainer>
         <Input

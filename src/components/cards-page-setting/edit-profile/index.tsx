@@ -18,6 +18,7 @@ import { EditProfileValidationSchema } from "./validation";
 import Typography from "../../typography";
 import Input from "../../input";
 import Icon from "../../icon";
+import { useUserData } from "@/src/hooks/data-profile";
 
 interface FormValues {
   name: string;
@@ -32,8 +33,14 @@ interface FormValues {
 }
 
 const EditProfile = () => {
+  const { user, setUser } = useUserData();
+
+  const [localAvatarUrl, setLocalAvatarUrl] = useState<string>(
+    user.avatarUrl ?? "/assets/image/avatar.svg"
+  );
+
   const [avatarUrl, setAvatarUrl] = useState<string>(
-    "/assets/image/avatar.svg"
+    user.avatarUrl ?? "/assets/image/avatar.svg"
   );
 
   useEffect(() => {
@@ -46,6 +53,7 @@ const EditProfile = () => {
 
       if (parsedData.avatarUrl) {
         setAvatarUrl(parsedData.avatarUrl);
+        setLocalAvatarUrl(parsedData.avatarUrl);
       }
     }
   }, []);
@@ -57,32 +65,48 @@ const EditProfile = () => {
     formState: { errors },
   } = useForm<FormValues>({
     defaultValues: {
-      name: "",
-      userName: "",
-      email: "",
-      password: "",
-      date: "",
-      presentAddress: "",
-      permanentAddress: "",
-      city: "",
-      avatarUrl: "",
+      name: user.name || "",
+      userName: user.userName || "",
+      email: user.email || "",
+      password: user.password || "",
+      date: user.date || "",
+      presentAddress: user.presentAddress || "",
+      permanentAddress: user.permanentAddress || "",
+      city: user.city || "",
+      avatarUrl: user.avatarUrl || "",
     },
     resolver: yupResolver(EditProfileValidationSchema),
   });
 
   const onSubmit = (data: FormValues) => {
-    const profileData = { ...data, avatarUrl };
+    const profileData = { ...data, avatarUrl: localAvatarUrl };
     localStorage.setItem("profileData", JSON.stringify(profileData));
-    console.log("data", profileData);
+    setUser(profileData);
+    setAvatarUrl(localAvatarUrl);
   };
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = event.target.files?.[0];
+  //   if (file) {
+  //     const imageUrl = URL.createObjectURL(file);
+  //     setAvatarUrl(imageUrl);
+  //     setUser((prevUser) => ({ ...prevUser, avatarUrl: imageUrl }));
+  //   }
+  // };
+
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setAvatarUrl(imageUrl);
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        const base64Image = reader.result as string;
+        setLocalAvatarUrl(base64Image);
+      };
+
+      reader.readAsDataURL(file);
     }
   };
 
@@ -96,13 +120,11 @@ const EditProfile = () => {
 
   const today = new Date().toISOString().split("T")[0];
 
-  console.log("errors", errors);
-
   return (
     <Container>
       <ContainerTop>
         <AvatarContainer>
-          <Avatar url={avatarUrl} size={130} />
+          <Avatar url={localAvatarUrl} size={130} />
           <IconButton
             url="/assets/image/edit-profile.svg"
             size={30}
@@ -120,7 +142,7 @@ const EditProfile = () => {
         </AvatarContainer>
 
         <AvatarContainerMobile>
-          <Avatar url={avatarUrl} size={170} />
+          <Avatar url={localAvatarUrl} size={170} />
           <IconButton
             url="/assets/image/edit-profile.svg"
             size={40}

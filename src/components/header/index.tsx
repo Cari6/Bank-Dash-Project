@@ -5,8 +5,11 @@ import Input from "../input";
 import IconButton from "../icon-button";
 import Avatar from "../avatar";
 import { ContainerRight, HeaderContainer, TitleContainer } from "./styles";
+import { useUserData } from "@/src/hooks/data-profile";
 
 const Header = () => {
+  const { user } = useUserData();
+
   return (
     <HeaderContainer>
       <TitleContainer>
@@ -20,7 +23,7 @@ const Header = () => {
 
         <IconButton url="/assets/image/setting-header.svg" />
         <IconButton url="/assets/image/notification.svg" />
-        <Avatar url="/assets/image/avatar.svg" />
+        <Avatar url={user.avatarUrl ?? "/assets/image/avatar.svg"} />
       </ContainerRight>
     </HeaderContainer>
   );

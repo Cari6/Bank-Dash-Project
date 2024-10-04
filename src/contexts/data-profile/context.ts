@@ -4,10 +4,8 @@ export interface UserData {
   name: string;
   userName: string;
   email: string;
-  password: string;
   date: string;
-  presentAddress: string;
-  permanentAddress: string;
+  address: string;
   city: string;
   avatarUrl?: string;
 }

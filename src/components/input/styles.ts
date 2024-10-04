@@ -6,7 +6,6 @@ interface InputContainerProps {
 }
 
 export const Container = styled.div`
-  height: 80px;
   display: flex;
   flex-direction: column;
 `;
@@ -14,10 +13,10 @@ export const Container = styled.div`
 export const InputContainer = styled.div<InputContainerProps>`
   display: flex;
   align-items: center;
-  height: 50px;
-
   background-color: #f5f7fa;
   border-radius: 25px;
+  margin: 5px 0;
+  position: relative;
 
   ${(props) =>
     props.variant === "variant1" &&
@@ -39,6 +38,7 @@ export const StyledInput = styled.input`
   outline: none;
   flex: 1;
   margin: 0 10px;
+  height: 50px;
 
   &::placeholder {
     color: #8ba3cb;

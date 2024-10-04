@@ -14,21 +14,9 @@ export const EditProfileValidationSchema = Yup.object().shape({
     .required("Email is required")
     .matches(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Email is not valid"),
 
-  password: Yup.string()
-    .required("Password is required")
-    .min(10, "Password must be at least 10 characters")
-    .matches(
-      /^(?=.*[A-Za-z].{9,})(?=.*\d).*$/,
-      "Password must contain at least 9 letters and 1 digit"
-    ),
-
   date: Yup.string().required("Date is required"),
 
-  presentAddress: Yup.string()
-    .required("Address is required")
-    .max(50, "Name must be at most 50 characters"),
-
-  permanentAddress: Yup.string()
+  address: Yup.string()
     .required("Address is required")
     .max(50, "Name must be at most 50 characters"),
 

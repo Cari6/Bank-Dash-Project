@@ -17,17 +17,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { EditProfileValidationSchema } from "./validation";
 import Typography from "../../typography";
 import Input from "../../input";
-import Icon from "../../icon";
 import { useUserData } from "@/src/hooks/data-profile";
 
 interface FormValues {
   name: string;
   userName: string;
   email: string;
-  password: string;
   date: string;
-  presentAddress: string;
-  permanentAddress: string;
+  address: string;
   city: string;
   avatarUrl?: string;
 }
@@ -36,7 +33,7 @@ const EditProfile = () => {
   const { user, setUser } = useUserData();
 
   const [localAvatarUrl, setLocalAvatarUrl] = useState<string>(
-    user.avatarUrl ?? "/assets/image/avatar.svg",
+    user.avatarUrl ?? "/assets/image/avatar.svg"
   );
 
   useEffect(() => {
@@ -63,10 +60,8 @@ const EditProfile = () => {
       name: user.name ?? "",
       userName: user.userName ?? "",
       email: user.email ?? "",
-      password: user.password ?? "",
       date: user.date ?? "",
-      presentAddress: user.presentAddress ?? "",
-      permanentAddress: user.permanentAddress ?? "",
+      address: user.address ?? "",
       city: user.city ?? "",
       avatarUrl: user.avatarUrl ?? "",
     },
@@ -77,6 +72,7 @@ const EditProfile = () => {
     const profileData = { ...data, avatarUrl: localAvatarUrl };
     localStorage.setItem("profileData", JSON.stringify(profileData));
     setUser(profileData);
+    alert("The profile has been edited successfully!");
   };
 
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -100,8 +96,6 @@ const EditProfile = () => {
       fileInputRef.current.click();
     }
   };
-
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -155,11 +149,9 @@ const EditProfile = () => {
                     variant="variant1"
                     placeholder="Charlene Reed"
                     text="Your Name"
+                    errorMessage={errors.name?.message}
                     {...field}
                   />
-                  {errors.name && (
-                    <Typography error>{errors.name.message}</Typography>
-                  )}
                 </ContainerInner>
               )}
             />
@@ -173,11 +165,9 @@ const EditProfile = () => {
                     variant="variant1"
                     placeholder="Charlene Reed"
                     text="User Name"
+                    errorMessage={errors.userName?.message}
                     {...field}
                   />
-                  {errors.userName && (
-                    <Typography error>{errors.userName.message}</Typography>
-                  )}
                 </ContainerInner>
               )}
             />
@@ -191,47 +181,9 @@ const EditProfile = () => {
                     variant="variant1"
                     placeholder="charlenereed@gmail.com"
                     text="Email"
+                    errorMessage={errors.email?.message}
                     {...field}
                   />
-                  {errors.email && (
-                    <Typography error>{errors.email.message}</Typography>
-                  )}
-                </ContainerInner>
-              )}
-            />
-
-            <Controller
-              control={control}
-              name="password"
-              render={({ field }) => (
-                <ContainerInner>
-                  <Input
-                    type={isPasswordVisible ? "text" : "password"}
-                    variant="variant1"
-                    placeholder="**********"
-                    text="Password"
-                    {...field}
-                  />
-                  {errors.password && (
-                    <Typography error>{errors.password.message}</Typography>
-                  )}
-                  <div
-                    style={{
-                      position: "absolute",
-                      right: 15,
-                      bottom: 5,
-                      cursor: "pointer",
-                    }}
-                    onClick={() =>
-                      setIsPasswordVisible((presState) => !presState)
-                    }
-                  >
-                    {isPasswordVisible ? (
-                      <Icon name="closeEye" />
-                    ) : (
-                      <Icon name="openEye" />
-                    )}
-                  </div>
                 </ContainerInner>
               )}
             />
@@ -246,52 +198,26 @@ const EditProfile = () => {
                     variant="variant1"
                     placeholder=""
                     text="Date of Birth"
+                    errorMessage={errors.date?.message}
                     {...field}
                     max={today}
-                  />{" "}
-                  {errors.date && (
-                    <Typography error>{errors.date.message}</Typography>
-                  )}
+                  />
                 </ContainerInner>
               )}
             />
 
             <Controller
               control={control}
-              name="presentAddress"
+              name="address"
               render={({ field }) => (
                 <ContainerInner>
                   <Input
                     variant="variant1"
                     placeholder="San Jose, California, USA"
-                    text="Present Address"
+                    text="Address"
+                    errorMessage={errors.address?.message}
                     {...field}
-                  />{" "}
-                  {errors.presentAddress && (
-                    <Typography error>
-                      {errors.presentAddress.message}
-                    </Typography>
-                  )}
-                </ContainerInner>
-              )}
-            />
-
-            <Controller
-              control={control}
-              name="permanentAddress"
-              render={({ field }) => (
-                <ContainerInner>
-                  <Input
-                    variant="variant1"
-                    placeholder="San Jose, California, USA"
-                    text="Permanent Address"
-                    {...field}
-                  />{" "}
-                  {errors.permanentAddress && (
-                    <Typography error>
-                      {errors.permanentAddress.message}
-                    </Typography>
-                  )}
+                  />
                 </ContainerInner>
               )}
             />
@@ -305,11 +231,9 @@ const EditProfile = () => {
                     variant="variant1"
                     placeholder="San Jose"
                     text="City"
+                    errorMessage={errors.city?.message}
                     {...field}
-                  />{" "}
-                  {errors.city && (
-                    <Typography error>{errors.city.message}</Typography>
-                  )}
+                  />
                 </ContainerInner>
               )}
             />

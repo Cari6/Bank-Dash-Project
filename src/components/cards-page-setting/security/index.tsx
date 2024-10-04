@@ -49,7 +49,7 @@ const Security = () => {
         text="Enable or disable two factor authentication"
       />
 
-      <Typography variant="description2" style={{ marginTop: "30px" }}>
+      <Typography variant="description2" style={{ margin: "30px 0 20px 0 " }}>
         Change Password
       </Typography>
 
@@ -60,30 +60,13 @@ const Security = () => {
           render={({ field }) => (
             <ContainerInner>
               <Input
-                type={isPasswordVisible ? "text" : "password"}
                 variant="variant1"
                 placeholder="**********"
                 text="Current Password"
+                errorMessage={errors.currentPassword?.message}
+                isPassword
                 {...field}
               />
-              {errors.currentPassword && (
-                <Typography error>{errors.currentPassword.message}</Typography>
-              )}
-              <div
-                style={{
-                  position: "absolute",
-                  right: 15,
-                  bottom: 5,
-                  cursor: "pointer",
-                }}
-                onClick={() => setIsPasswordVisible((presState) => !presState)}
-              >
-                {isPasswordVisible ? (
-                  <Icon name="closeEye" />
-                ) : (
-                  <Icon name="openEye" />
-                )}
-              </div>
             </ContainerInner>
           )}
         />
@@ -94,30 +77,13 @@ const Security = () => {
           render={({ field }) => (
             <ContainerInner>
               <Input
-                type={isPasswordVisible ? "text" : "password"}
                 variant="variant1"
                 placeholder="**********"
                 text="New Password"
+                errorMessage={errors.newPassword?.message}
+                isPassword
                 {...field}
               />
-              {errors.newPassword && (
-                <Typography error>{errors.newPassword.message}</Typography>
-              )}
-              <div
-                style={{
-                  position: "absolute",
-                  right: 15,
-                  bottom: 5,
-                  cursor: "pointer",
-                }}
-                onClick={() => setIsPasswordVisible((presState) => !presState)}
-              >
-                {isPasswordVisible ? (
-                  <Icon name="closeEye" />
-                ) : (
-                  <Icon name="openEye" />
-                )}
-              </div>
             </ContainerInner>
           )}
         />

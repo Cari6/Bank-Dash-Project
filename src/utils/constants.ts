@@ -275,21 +275,6 @@ export const cardListItems = [
   },
 ];
 
-export const formCreditCard: FormCardProps["itemsForm"] = [
-  { text: "Card Type", placeholder: "Classic" },
-  { text: "Name On Card", placeholder: "My Cards" },
-  { text: "Card Number", placeholder: "**** **** **** ****" },
-  { text: "Expiration Date", placeholder: "25 January 2025" },
-];
-
-export const formPreferences: FormCardProps["itemsForm"] = [
-  { text: "Currency", placeholder: "USD" },
-  {
-    text: "Time Zone",
-    placeholder: "(GMT-12:00) International Date Line West",
-  },
-];
-
 export const cardSettingItems = [
   {
     url: "/assets/image/setting-card.svg",

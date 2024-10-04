@@ -60,10 +60,3 @@ export const CardContainer = styled.div`
   padding: 30px;
   border-radius: 20px;
 `;
-
-export const CustomButton = styled(Button)`
-  margin-top: 20px;
-  @media (max-width: 890px) {
-    width: 100%;
-  }
-`;

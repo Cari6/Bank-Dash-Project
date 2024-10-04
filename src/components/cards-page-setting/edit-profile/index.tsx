@@ -15,7 +15,6 @@ import IconButton from "../../icon-button";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { EditProfileValidationSchema } from "./validation";
-import Typography from "../../typography";
 import Input from "../../input";
 import { useUserData } from "@/src/hooks/data-profile";
 
@@ -72,7 +71,7 @@ const EditProfile = () => {
     const profileData = { ...data, avatarUrl: localAvatarUrl };
     localStorage.setItem("profileData", JSON.stringify(profileData));
     setUser(profileData);
-    alert("The profile has been edited successfully!");
+    alert("The profile has been edited successfully");
   };
 
   const fileInputRef = useRef<HTMLInputElement>(null);

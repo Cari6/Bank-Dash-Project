@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../button";
 
 export const CardContainer = styled.div`
   background-color: #fff;
@@ -26,4 +27,11 @@ export const Item = styled.div`
   height: 80px;
   display: flex;
   flex-direction: column;
+`;
+
+export const CustomButton = styled(Button)`
+  margin-top: 20px;
+  @media (max-width: 890px) {
+    width: 100%;
+  }
 `;

@@ -1,10 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import { ButtonContainer, Container, CustomButton } from "./styles";
-import FormCard from "../../card-form";
-import { formPreferences, switchPreferences } from "@/src/utils/constants";
+import {
+  ButtonContainer,
+  Container,
+  CustomButton,
+  InputContainer,
+} from "./styles";
+import { switchPreferences } from "@/src/utils/constants";
 import Typography from "../../typography";
 import Switch from "../../switch";
+import Input from "../../input";
 
 const Preferences = () => {
   const [checked, setChecked] = useState<boolean[]>(
@@ -18,8 +23,14 @@ const Preferences = () => {
   };
   return (
     <Container>
-      <FormCard itemsForm={formPreferences} />
-
+      <InputContainer>
+        <Input variant="variant1" placeholder="USD" text="Currency" />
+        <Input
+          variant="variant1"
+          placeholder="(GMT-12:00) International Date Line West"
+          text="Time Zone"
+        />
+      </InputContainer>
       <Typography variant="description2" style={{ margin: "20px 0" }}>
         Notification
       </Typography>

@@ -11,10 +11,8 @@ export const UserDataProvider = ({
     name: "",
     userName: "",
     email: "",
-    password: "",
     date: "",
-    presentAddress: "",
-    permanentAddress: "",
+    address: "",
     city: "",
     avatarUrl: "/assets/image/avatar.svg",
   });

@@ -24,8 +24,10 @@ import {
 import TransactionsTable from "@/src/components/table";
 import Tabs from "@/src/components/tabs";
 import TransactionsMobileTable from "@/src/components/table-mobile";
+import { useCards } from "@/src/contexts/data-formCard/provider";
 
 const TransactionsPage = () => {
+  const { cards } = useCards();
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const handleActiveTab = (id: number) => {
@@ -39,7 +41,7 @@ const TransactionsPage = () => {
           <Typography variant="title1" style={{ margin: 0 }}>
             My Cards
           </Typography>
-          <Typography
+          {/* <Typography
             variant="title1"
             style={{
               margin: 0,
@@ -49,23 +51,19 @@ const TransactionsPage = () => {
             }}
           >
             + Add Card
-          </Typography>
+          </Typography> */}
         </TitleCardContainer>
         <Cards>
-          <CreditCard
-            variant="variant1"
-            balance="$5,756"
-            cardHolder="Eddy Cusuma"
-            validThru="12/22"
-            cardNumber="3778 **** **** 1234"
-          />
-          <CreditCard
-            variant="variant2"
-            balance="$5,756"
-            cardHolder="Eddy Cusuma"
-            validThru="12/22"
-            cardNumber="3778 **** **** 1234"
-          />
+          {cards.map((card, index) => (
+            <CreditCard
+              key={index}
+              variant={index % 2 === 0 ? "variant1" : "variant2"}
+              balance="$5,756"
+              cardHolder={card.nameOnCard}
+              validThru={card.expirationDate}
+              cardNumber={card.cardNumber}
+            />
+          ))}
         </Cards>
       </Item1>
       <Item2>

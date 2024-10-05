@@ -1,4 +1,3 @@
-import { Button } from "@/src/components";
 import styled from "styled-components";
 
 export const GridContainer = styled.div`
@@ -25,26 +24,43 @@ export const GridContainer = styled.div`
 export const Cards = styled.div`
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
 `;
 export const Item1 = styled.div`
-  // background-color: red;
   grid-area: cards;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  width: 100%;
+
+  & > * {
+    flex: 0 0 auto;
+    min-width: 360px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #b1b1b1;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
 `;
 export const Item2 = styled.div`
-  // background-color: blue;
   grid-area: expense;
 `;
 export const Item3 = styled.div`
-  // background-color: yellow;
   grid-area: list;
 `;
 export const Item4 = styled.div`
-  // background-color: orange;
   grid-area: newCard;
 `;
 export const Item5 = styled.div`
-  // background-color: purple;
   grid-area: setting;
 `;
 

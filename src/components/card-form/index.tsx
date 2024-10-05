@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
-import { CardContainer, CustomButton, InputContainer, Item } from "./styles";
+import React from "react";
+import { CardContainer, CustomButton, InputContainer, Select } from "./styles";
 import Typography from "../typography";
 import { Controller, useForm } from "react-hook-form";
 import Input from "../input";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormCardValidationSchema } from "./validation";
+import { useCards } from "@/src/contexts/data-formCard/provider";
 
 interface FormCardValues {
   cardType: string;
@@ -14,10 +15,10 @@ interface FormCardValues {
 }
 
 const FormCard = () => {
+  const { addCard } = useCards();
   const {
     control,
     handleSubmit,
-    setValue,
     reset,
     formState: { errors },
   } = useForm<FormCardValues>({
@@ -30,21 +31,46 @@ const FormCard = () => {
     resolver: yupResolver(FormCardValidationSchema),
   });
 
-  useEffect(() => {
-    const savedData = localStorage.getItem("cardData");
-    if (savedData) {
-      const parsedData = JSON.parse(savedData);
-      Object.keys(parsedData).forEach((key) => {
-        setValue(key as keyof FormCardValues, parsedData[key]);
-      });
-    }
-  }, []);
+  const formatCardNumber = (value: string) => {
+    const cleanedValue = value.replace(/\D+/g, "").slice(0, 16);
+
+    return cleanedValue.match(/.{1,4}/g)?.join(" ") || "";
+  };
+
+  const maskCardNumber = (cardNumber: string) => {
+    const cleanedValue = cardNumber.replace(/\D+/g, "").slice(0, 16);
+    const formatted = cleanedValue.replace(
+      /^(\d{4})(\d{4})(\d{4})(\d{4})$/,
+      "$1 **** **** $4"
+    );
+
+    return formatted;
+  };
+
+  const formatToMMYYYY = (value: string) => {
+    const [year, month] = value.split("-");
+    return `${month}/${year}`;
+  };
 
   const onSubmit = (data: FormCardValues) => {
-    localStorage.setItem("cardData", JSON.stringify(data));
+    const maskedCardNumber = maskCardNumber(data.cardNumber);
+
+    const formattedData = {
+      ...data,
+      cardNumber: maskedCardNumber,
+      expirationDate: formatToMMYYYY(data.expirationDate),
+    };
+
+    const existingCards = JSON.parse(localStorage.getItem("cardData") || "[]");
+
+    const updatedCards = Array.isArray(existingCards)
+      ? [...existingCards, formattedData]
+      : [formattedData];
+
+    addCard(formattedData);
     alert("The card has been added successfully");
     reset();
-    console.log("data", data);
+    console.log("data", updatedCards);
   };
 
   console.log("errors", errors);
@@ -65,13 +91,21 @@ const FormCard = () => {
           control={control}
           name="cardType"
           render={({ field }) => (
-            <Input
-              variant="variant1"
-              text="Card Type"
-              placeholder="Classic"
-              errorMessage={errors.cardType?.message}
-              {...field}
-            />
+            <div>
+              <Typography style={{ margin: "0 0 5px 0 " }}>
+                Card Type
+              </Typography>
+              <Select {...field}>
+                <option value="">Select Card Type</option>
+                <option value="Primary">Primary</option>
+                <option value="Secondary">Secondary</option>
+              </Select>
+              {errors.cardType && (
+                <Typography error style={{ marginTop: 15 }}>
+                  {errors.cardType.message}
+                </Typography>
+              )}
+            </div>
           )}
         />
 
@@ -99,6 +133,10 @@ const FormCard = () => {
               placeholder="**** **** **** ****"
               errorMessage={errors.cardNumber?.message}
               {...field}
+              onChange={(e) => {
+                const formattedValue = formatCardNumber(e.target.value);
+                field.onChange(formattedValue);
+              }}
             />
           )}
         />
@@ -108,12 +146,14 @@ const FormCard = () => {
           name="expirationDate"
           render={({ field }) => (
             <Input
-              type="date"
+              type="month"
               variant="variant1"
               text="Expiration Date"
-              placeholder="25 January 2015"
               errorMessage={errors.expirationDate?.message}
               {...field}
+              onChange={(e) => {
+                field.onChange(e.target.value);
+              }}
             />
           )}
         />

@@ -195,7 +195,6 @@ const EditProfile = () => {
                   <Input
                     type="date"
                     variant="variant1"
-                    placeholder=""
                     text="Date of Birth"
                     errorMessage={errors.date?.message}
                     {...field}

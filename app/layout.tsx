@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import UserDataProvider from "@/src/contexts/data-profile/provider";
+import { CardsProvider } from "@/src/contexts/data-formCard/provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <UserDataProvider>
-          <Layout>{children}</Layout>
+          <CardsProvider>
+            <Layout>{children}</Layout>
+          </CardsProvider>
         </UserDataProvider>
       </body>
     </html>

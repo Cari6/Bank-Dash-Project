@@ -24,8 +24,10 @@ import {
   pieChartCreditCardsOptions,
 } from "@/src/utils/charts-data";
 import Chart from "react-google-charts";
+import { useCards } from "@/src/contexts/data-formCard/provider";
 
 const CreditCardsPage = () => {
+  const { cards, deleteCard } = useCards();
   const settingCardRef = useRef<HTMLDivElement>(null);
   const [settingCardHeight, setSettingCardHeight] = useState<number>(0);
 
@@ -53,27 +55,18 @@ const CreditCardsPage = () => {
           My Cards
         </Typography>
         <Cards>
-          <CreditCard
-            variant="variant1"
-            balance="$5,756"
-            cardHolder="Eddy Cusuma"
-            validThru="12/22"
-            cardNumber="3778 **** **** 1234"
-          />
-          <CreditCard
-            variant="variant2"
-            balance="$5,756"
-            cardHolder="Eddy Cusuma"
-            validThru="12/22"
-            cardNumber="3778 **** **** 1234"
-          />
-          <CreditCard
-            variant="variant1"
-            balance="$5,756"
-            cardHolder="Eddy Cusuma"
-            validThru="12/22"
-            cardNumber="3778 **** **** 1234"
-          />
+          {cards.map((card, index) => (
+            <CreditCard
+              key={index}
+              variant={index % 2 === 0 ? "variant1" : "variant2"}
+              balance="$5,756"
+              cardHolder={card.nameOnCard}
+              validThru={card.expirationDate}
+              cardNumber={card.cardNumber}
+              onDelete={() => deleteCard(card.id)}
+              showDeleteButton
+            />
+          ))}
         </Cards>
       </Item1>
       <Item2>

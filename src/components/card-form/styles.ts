@@ -35,3 +35,13 @@ export const CustomButton = styled(Button)`
     width: 100%;
   }
 `;
+
+export const Select = styled.select`
+  padding: 10px;
+  height: 50px;
+  border: 1px solid #dfeaf2;
+  border-radius: 15px;
+  box-sizing: border-box;
+  outline: none;
+  width: 100%;
+`;

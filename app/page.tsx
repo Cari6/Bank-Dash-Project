@@ -29,23 +29,25 @@ import {
   pieChartDashboardData,
   pieChartDashboardOptions,
 } from "@/src/utils/charts-data";
+import { useCards } from "@/src/contexts/data-formCard/provider";
 
 export const Home = () => {
-  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(
-    window.innerWidth < 890
-  );
+  const { cards } = useCards();
+  // const [isSmallScreen, setIsSmallScreen] = useState<boolean>(
+  //   window.innerWidth < 890
+  // );
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 890);
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsSmallScreen(window.innerWidth < 890);
 
-      window.addEventListener("resize", handleResize);
+  //     window.addEventListener("resize", handleResize);
 
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    };
-  }, []);
+  //     return () => {
+  //       window.removeEventListener("resize", handleResize);
+  //     };
+  //   };
+  // }, []);
 
   return (
     <GridContainer>
@@ -54,7 +56,7 @@ export const Home = () => {
           <Typography variant="title1" style={{ margin: 0 }}>
             My Cards
           </Typography>
-          <Typography
+          {/* <Typography
             variant="title1"
             style={{
               margin: 0,
@@ -64,23 +66,19 @@ export const Home = () => {
             }}
           >
             See All
-          </Typography>
+          </Typography> */}
         </TitleCardContainer>
         <Cards>
-          <CreditCard
-            variant="variant1"
-            balance="$5,756"
-            cardHolder="Eddy Cusuma"
-            validThru="12/22"
-            cardNumber="3778 **** **** 1234"
-          />
-          <CreditCard
-            variant="variant2"
-            balance="$5,756"
-            cardHolder="Eddy Cusuma"
-            validThru="12/22"
-            cardNumber="3778 **** **** 1234"
-          />
+          {cards.map((card, index) => (
+            <CreditCard
+              key={index}
+              variant={index % 2 === 0 ? "variant1" : "variant2"}
+              balance="$5,756"
+              cardHolder={card.nameOnCard}
+              validThru={card.expirationDate}
+              cardNumber={card.cardNumber}
+            />
+          ))}
         </Cards>
       </Item1>
       <Item2>
@@ -120,10 +118,11 @@ export const Home = () => {
           <Chart
             chartType="PieChart"
             data={pieChartDashboardData}
-            options={pieChartDashboardOptions(isSmallScreen)}
+            // options={pieChartDashboardOptions(isSmallScreen)}
+            options={pieChartDashboardOptions}
             max-width="100%"
             height="100%"
-            key={`chart-${isSmallScreen}`}
+            // key={`chart-${isSmallScreen}`}
           />
         </PieChartContainer>
       </Item4>

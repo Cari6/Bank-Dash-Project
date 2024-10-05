@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import IconButton from "../icon-button";
 
 export interface CardContainerProps {
   variant: "variant1" | "variant2";
@@ -6,9 +7,12 @@ export interface CardContainerProps {
 
 export const CardContainer = styled.div<CardContainerProps>`
   min-width: 360px;
+  max-width: 400px;
+
   padding: 20px;
   border-radius: 25px;
   flex: 1;
+  position: relative;
 
   ${(props) =>
     props.variant === "variant1" &&
@@ -60,9 +64,15 @@ export const CardHolderContainer = styled.div`
   flex-direction: column;
   justify-content: start;
 `;
-
 export const ValidContainer = styled.div``;
 export const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const CustomIconButton = styled(IconButton)`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
 `;

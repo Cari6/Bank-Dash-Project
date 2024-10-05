@@ -17,44 +17,43 @@ export const GridContainerTransactions = styled.div`
     "expenses expenses"
     "transactions transactions"}
 
-    // @media(max-width: 890px){
-    // grid-template-columns: 1fr;
-    // grid-template-areas:
-    // "cards"
-    // "expenses"
-    // "transactions"
-    }
+  
 `;
 
 export const Cards = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 20px;
-
-  @media (max-width: 1490px) {
-    width: 100%;
-  }
-
-  @media (max-width: 890px) {
-    grid-template-columns: 1fr;
-    max-width: 443px;
-  }
 `;
 export const Item1 = styled.div`
-  //   background-color: red;
   grid-area: cards;
-  @media (max-width: 1490px) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  width: 100%;
+
+  & > * {
+    flex: 0 0 auto;
+    min-width: 360px;
+  }
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #b1b1b1;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #888;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
   }
 `;
 export const Item2 = styled.div`
-  //   background-color: blue;
   grid-area: expenses;
 `;
 export const Item3 = styled.div`
-  // background-color: green;
   grid-area: transactions;
 `;
 

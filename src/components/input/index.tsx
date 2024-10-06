@@ -30,7 +30,7 @@ const Input = ({
   return (
     <Container>
       <Typography style={{ margin: 0 }}>{text}</Typography>
-      <InputContainer variant={variant} isWidthIcon={isWidthIcon}>
+      <InputContainer $variant={variant} $isWidthIcon={isWidthIcon}>
         {icon && <Image src={icon} alt={icon} width={18} height={18} />}
         <StyledInput
           type={isPassword && !isPasswordVisible ? "password" : "text"}

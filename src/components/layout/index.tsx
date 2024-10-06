@@ -40,7 +40,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
   return (
     <div>
-      <GlobalStyle isSidebarOpen={isSideBarOpen} />
+      <GlobalStyle $isSidebarOpen={isSideBarOpen} />
       <SideBarContainer>
         <SideBar itemActive={itemActive} />
       </SideBarContainer>
@@ -56,7 +56,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         isSideBarOpen={isSideBarOpen}
         setSideBarOpen={handleClickSideBar}
       />
-      <MainContent isOpen={isSideBarOpen}>{children}</MainContent>
+      <MainContent $isOpen={isSideBarOpen}>{children}</MainContent>
     </div>
   );
 };

@@ -28,7 +28,7 @@ export const ItemListContainer = styled.div`
 export const StyledLink = styled(NextLink)`
   text-decoration: none;
 `;
-export const ItemActive = styled.div<{ position: number }>`
+export const ItemActive = styled.div<{ $position: number }>`
   position: absolute;
   width: 6px;
   height: 60px;
@@ -37,5 +37,5 @@ export const ItemActive = styled.div<{ position: number }>`
   background-color: #2d60ff;
 
   transition: transform 0.3s ease-in-out;
-  transform: translateY(${({ position }) => position * 60}px);
+  transform: translateY(${({ $position }) => $position * 60}px);
 `;

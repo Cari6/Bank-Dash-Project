@@ -18,8 +18,8 @@ export const TextContainer = styled.div`
   margin-left: 10px;
 `;
 
-export const TextValue = styled.div<{ isNegative: boolean }>`
-  color: ${(props) => (props.isNegative ? "#FF4B4A" : "#41D4A8")};
+export const TextValue = styled.div<{ $isNegative: boolean }>`
+  color: ${(props) => (props.$isNegative ? "#FF4B4A" : "#41D4A8")};
   font-size: 16px;
   font-weight: 500;
 `;

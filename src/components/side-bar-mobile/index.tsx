@@ -21,7 +21,7 @@ const SideBarMobile = ({
           <Sidebar onItemClick={setSideBarOpen} itemActive={itemActive} />
         </SideBarContainer>
       </Container>
-      <Overlay onClick={setSideBarOpen} isOpen={isOpen} />
+      <Overlay onClick={setSideBarOpen} $isOpen={isOpen} />
     </>
   );
 };

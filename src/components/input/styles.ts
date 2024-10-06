@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 
 interface InputContainerProps {
-  variant: "default" | "variant1";
-  isWidthIcon?: boolean;
+  $variant: "default" | "variant1";
+  $isWidthIcon?: boolean;
 }
 
 export const Container = styled.div`
@@ -19,7 +19,7 @@ export const InputContainer = styled.div<InputContainerProps>`
   position: relative;
 
   ${(props) =>
-    props.variant === "variant1" &&
+    props.$variant === "variant1" &&
     css`
       background-color: #fff;
       border-radius: 15px;
@@ -28,7 +28,7 @@ export const InputContainer = styled.div<InputContainerProps>`
 
   ${(props) =>
     css`
-      padding: ${props.isWidthIcon ? " 0px 20px" : " 0px 5px"};
+      padding: ${props.$isWidthIcon ? " 0px 20px" : " 0px 5px"};
     `}
 `;
 

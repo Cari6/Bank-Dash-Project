@@ -2,7 +2,7 @@ import styled from "styled-components";
 import IconButton from "../icon-button";
 
 export interface CardContainerProps {
-  variant: "variant1" | "variant2";
+  $variant: "variant1" | "variant2";
 }
 
 export const CardContainer = styled.div<CardContainerProps>`
@@ -15,7 +15,7 @@ export const CardContainer = styled.div<CardContainerProps>`
   position: relative;
 
   ${(props) =>
-    props.variant === "variant1" &&
+    props.$variant === "variant1" &&
     `
       background: linear-gradient(
         to bottom,
@@ -28,7 +28,7 @@ export const CardContainer = styled.div<CardContainerProps>`
     `}
 
   ${(props) =>
-    props.variant === "variant2" &&
+    props.$variant === "variant2" &&
     `
       background: linear-gradient(
         to bottom,
@@ -72,7 +72,8 @@ export const BottomContainer = styled.div`
 
 export const CustomIconButton = styled(IconButton)`
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: -8px;
+  right: -8px;
   z-index: 1;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;

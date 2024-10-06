@@ -18,7 +18,7 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <ButtonContainer className={className} variant={variant} {...props}>
+    <ButtonContainer className={className} $variant={variant} {...props}>
       {title}
       {icon && <Image src={icon} alt="" width={26} height={22} />}
     </ButtonContainer>

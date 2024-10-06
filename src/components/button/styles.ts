@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 export const ButtonContainer = styled.button<{
-  variant: "default" | "outline" | "form";
+  $variant: "default" | "outline" | "form";
 }>`
   display: inline-flex;
   justify-content: center;
@@ -15,10 +15,10 @@ export const ButtonContainer = styled.button<{
   cursor: pointer;
   transition: background-color 0.3s ease;
 
-  ${({ variant }) =>
-    variant === "outline"
+  ${({ $variant }) =>
+    $variant === "outline"
       ? outlineStyles
-      : variant === "form"
+      : $variant === "form"
       ? formStyles
       : defaultStyles}
 `;

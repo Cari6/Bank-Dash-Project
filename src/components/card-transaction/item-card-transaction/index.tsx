@@ -32,7 +32,7 @@ const ItemCardTransaction = ({
           <Typography variant="description3">{date}</Typography>
         </TextContainer>
       </LeftContainer>
-      <TextValue isNegative={isNegative}>{value}</TextValue>
+      <TextValue $isNegative={isNegative}>{value}</TextValue>
     </ItemContainer>
   );
 };

@@ -11,7 +11,7 @@ import {
   TransactionsMobileTableContainer,
   TransactionsTableContainer,
 } from "./styles";
-import { CreditCard, Typography } from "@/src/components";
+import { AddCard, CreditCard, Typography } from "@/src/components";
 import Chart from "react-google-charts";
 import {
   columnChartTransactionsData,
@@ -41,7 +41,7 @@ const TransactionsPage = () => {
           <Typography variant="title1" style={{ margin: 0 }}>
             My Cards
           </Typography>
-          {/* <Typography
+          <Typography
             variant="title1"
             style={{
               margin: 0,
@@ -50,20 +50,27 @@ const TransactionsPage = () => {
               alignSelf: "end",
             }}
           >
-            + Add Card
-          </Typography> */}
+            See All
+          </Typography>
         </TitleCardContainer>
         <Cards>
-          {cards.map((card, index) => (
-            <CreditCard
-              key={index}
-              variant={index % 2 === 0 ? "variant1" : "variant2"}
-              balance="$5,756"
-              cardHolder={card.nameOnCard}
-              validThru={card.expirationDate}
-              cardNumber={card.cardNumber}
-            />
-          ))}
+          {cards.length === 0 ? (
+            <Typography>No cards added yet.</Typography>
+          ) : (
+            cards
+              .slice(0, 1)
+              .map((card, index) => (
+                <CreditCard
+                  key={index}
+                  variant={index % 2 === 0 ? "variant1" : "variant2"}
+                  balance="$5,756"
+                  cardHolder={card.nameOnCard}
+                  validThru={card.expirationDate}
+                  cardNumber={card.cardNumber}
+                />
+              ))
+          )}
+          <AddCard />
         </Cards>
       </Item1>
       <Item2>

@@ -11,8 +11,10 @@ import {
   Item4,
   Item5,
   PieChartContainer,
+  TitleCardContainer,
 } from "./styles";
 import {
+  AddCard,
   CardList,
   CreditCard,
   FormCard,
@@ -25,10 +27,14 @@ import {
 } from "@/src/utils/charts-data";
 import Chart from "react-google-charts";
 import { useCards } from "@/src/contexts/data-formCard/provider";
+import { useSearchParams } from "next/navigation";
 
 const CreditCardsPage = () => {
   const { cards, deleteCard } = useCards();
   const settingCardRef = useRef<HTMLDivElement>(null);
+  const formCardRef = useRef<HTMLDivElement>(null);
+  const searchParams = useSearchParams();
+
   const [settingCardHeight, setSettingCardHeight] = useState<number>(0);
 
   useEffect(() => {
@@ -45,17 +51,37 @@ const CreditCardsPage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const focusForm = searchParams.get("focusForm");
+    if (focusForm === "true") {
+      formCardRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [searchParams]);
+
   return (
     <GridContainer>
       <Item1>
-        <Typography
-          variant="title1"
-          style={{ alignSelf: "flex-start", marginBottom: 20, marginTop: 0 }}
-        >
-          My Cards
-        </Typography>
+        {cards.length > 0 && (
+          <TitleCardContainer>
+            <Typography variant="title1" style={{ margin: 0 }}>
+              My Cards
+            </Typography>
+            <Typography
+              variant="title1"
+              style={{
+                margin: 0,
+                fontSize: 16,
+                cursor: "pointer",
+                alignSelf: "end",
+              }}
+            >
+              See All
+            </Typography>
+          </TitleCardContainer>
+        )}
+
         <Cards>
-          {cards.map((card, index) => (
+          {cards.slice(0, 2).map((card, index) => (
             <CreditCard
               key={index}
               variant={index % 2 === 0 ? "variant1" : "variant2"}
@@ -97,7 +123,7 @@ const CreditCardsPage = () => {
           <CardList />
         </div>
       </Item3>
-      <Item4>
+      <Item4 ref={formCardRef}>
         <Typography
           variant="title1"
           style={{ alignSelf: "flex-start", marginBottom: 20, marginTop: 0 }}

@@ -7,8 +7,8 @@ export interface CardContainerProps {
 
 export const CardContainer = styled.div<CardContainerProps>`
   min-width: 360px;
+  width: 100%;
   max-width: 400px;
-
   padding: 20px;
   border-radius: 25px;
   flex: 1;

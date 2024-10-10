@@ -12,6 +12,7 @@ import {
   UserIcon,
 } from "../icons";
 import { IconProps } from "@/src/types/icon-props";
+import AddIcon from "../icons/add";
 
 const icons = (props?: IconProps) => ({
   home: <HomeIcon {...props} />,
@@ -24,6 +25,7 @@ const icons = (props?: IconProps) => ({
   setting: <Settingsicon {...props} />,
   openEye: <OpenEyeIcon {...props} />,
   closeEye: <CloseEyeIcon {...props} />,
+  add: <AddIcon {...props} />,
 });
 
 export type IconName = keyof ReturnType<typeof icons>;

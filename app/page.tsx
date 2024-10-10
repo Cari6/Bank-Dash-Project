@@ -16,6 +16,7 @@ import {
   TitleCardContainer,
 } from "./styles";
 import {
+  AddCard,
   CardQuickTransfer,
   CardTransaction,
   CreditCard,
@@ -34,7 +35,7 @@ import { useCards } from "@/src/contexts/data-formCard/provider";
 export const Home = () => {
   const { cards } = useCards();
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(
-    typeof window !== "undefined" && window?.innerWidth < 890,
+    typeof window !== "undefined" && window?.innerWidth < 890
   );
 
   useEffect(() => {
@@ -56,7 +57,7 @@ export const Home = () => {
           <Typography variant="title1" style={{ margin: 0 }}>
             My Cards
           </Typography>
-          {/* <Typography
+          <Typography
             variant="title1"
             style={{
               margin: 0,
@@ -66,19 +67,27 @@ export const Home = () => {
             }}
           >
             See All
-          </Typography> */}
+          </Typography>
         </TitleCardContainer>
         <Cards>
-          {cards.map((card, index) => (
-            <CreditCard
-              key={index}
-              variant={index % 2 === 0 ? "variant1" : "variant2"}
-              balance="$5,756"
-              cardHolder={card.nameOnCard}
-              validThru={card.expirationDate}
-              cardNumber={card.cardNumber}
-            />
-          ))}
+          {cards.length === 0 ? (
+            <Typography>No cards added yet.</Typography>
+          ) : (
+            cards
+              .slice(0, 1)
+              .map((card, index) => (
+                <CreditCard
+                  key={index}
+                  variant={index % 2 === 0 ? "variant1" : "variant2"}
+                  balance="$5,756"
+                  cardHolder={card.nameOnCard}
+                  validThru={card.expirationDate}
+                  cardNumber={card.cardNumber}
+                />
+              ))
+          )}
+
+          <AddCard />
         </Cards>
       </Item1>
       <Item2>
@@ -119,7 +128,6 @@ export const Home = () => {
             chartType="PieChart"
             data={pieChartDashboardData}
             options={pieChartDashboardOptions(isSmallScreen)}
-            // options={pieChartDashboardOptions}
             max-width="100%"
             height="100%"
             key={`chart-${isSmallScreen}`}

@@ -11,6 +11,7 @@ export const GridContainerTransactions = styled.div`
     "transactions transactions transactions ";
 
     @media(max-width: 1490px){
+      margin: 0 40px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "cards cards"
@@ -21,33 +22,28 @@ export const GridContainerTransactions = styled.div`
 `;
 
 export const Cards = styled.div`
-  display: flex;
+  display: grid;
   gap: 20px;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 1490px) {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+  }
+  @media (max-width: 890px) {
+    max-width: 443px;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 export const Item1 = styled.div`
   grid-area: cards;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 10px;
-  width: 100%;
-
-  & > * {
-    flex: 0 0 auto;
-    min-width: 360px;
-  }
-
-  &::-webkit-scrollbar {
-    height: 6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #b1b1b1;
-    border-radius: 10px;
-  }
-  &::-webkit-scrollbar-thumb:hover {
-    background: #888;
-  }
-  &::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  @media (max-width: 1490px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 `;
 export const Item2 = styled.div`

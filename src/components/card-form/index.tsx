@@ -33,7 +33,6 @@ const FormCard = () => {
 
   const formatCardNumber = (value: string) => {
     const cleanedValue = value.replace(/\D+/g, "").slice(0, 16);
-
     return cleanedValue.match(/.{1,4}/g)?.join(" ") || "";
   };
 
@@ -168,3 +167,6 @@ const FormCard = () => {
 };
 
 export default FormCard;
+function uuidv4() {
+  throw new Error("Function not implemented.");
+}

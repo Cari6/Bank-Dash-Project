@@ -28,3 +28,4 @@ export { default as EditProfile } from "./cards-page-setting/edit-profile";
 export { default as Preferences } from "./cards-page-setting/preferences";
 export { default as Security } from "./cards-page-setting/security";
 export { default as Switch } from "./switch";
+export { default as AddCard } from "./icon-button-card";

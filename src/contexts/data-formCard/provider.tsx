@@ -1,21 +1,11 @@
 "use client";
-import { v4 as uuidv4 } from "uuid";
-
 import { useContext, useEffect, useState } from "react";
 import { Card, CardsContext } from "./context";
 
 export const CardsProvider = ({ children }: { children: React.ReactNode }) => {
   const [cards, setCards] = useState<Card[]>([]);
 
-  useEffect(() => {
-    const storedCards = localStorage.getItem("cardData");
-    if (storedCards) {
-      setCards(JSON.parse(storedCards));
-    }
-  }, []);
-
-  const addCard = (card: Omit<Card, "id">) => {
-    const newCard = { ...card, id: uuidv4() };
+  const addCard = (newCard: Card) => {
     const updatedCards = [...cards, newCard];
     setCards(updatedCards);
     localStorage.setItem("cardData", JSON.stringify(updatedCards));
@@ -26,6 +16,13 @@ export const CardsProvider = ({ children }: { children: React.ReactNode }) => {
     setCards(updatedCards);
     localStorage.setItem("cardData", JSON.stringify(updatedCards));
   };
+
+  useEffect(() => {
+    const storedCards = localStorage.getItem("cardData");
+    if (storedCards) {
+      setCards(JSON.parse(storedCards));
+    }
+  }, []);
 
   return (
     <CardsContext.Provider value={{ cards, addCard, deleteCard }}>

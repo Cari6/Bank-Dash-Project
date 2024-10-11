@@ -6,6 +6,7 @@ import Input from "../input";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormCardValidationSchema } from "./validation";
 import { useCards } from "@/src/contexts/data-formCard/provider";
+import { v4 as uuidv4 } from "uuid";
 
 interface FormCardValues {
   cardType: string;
@@ -40,7 +41,7 @@ const FormCard = () => {
     const cleanedValue = cardNumber.replace(/\D+/g, "").slice(0, 16);
     const formatted = cleanedValue.replace(
       /^(\d{4})(\d{4})(\d{4})(\d{4})$/,
-      "$1 **** **** $4"
+      "$1 **** **** $4",
     );
 
     return formatted;
@@ -56,20 +57,14 @@ const FormCard = () => {
 
     const formattedData = {
       ...data,
+      id: uuidv4(),
       cardNumber: maskedCardNumber,
       expirationDate: formatToMMYYYY(data.expirationDate),
     };
 
-    const existingCards = JSON.parse(localStorage.getItem("cardData") || "[]");
-
-    const updatedCards = Array.isArray(existingCards)
-      ? [...existingCards, formattedData]
-      : [formattedData];
-
     addCard(formattedData);
     alert("The card has been added successfully");
     reset();
-    console.log("data", updatedCards);
   };
 
   console.log("errors", errors);
@@ -167,6 +162,3 @@ const FormCard = () => {
 };
 
 export default FormCard;
-function uuidv4() {
-  throw new Error("Function not implemented.");
-}

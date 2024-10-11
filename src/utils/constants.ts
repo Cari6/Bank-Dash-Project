@@ -1,5 +1,3 @@
-import { FormCardProps } from "../components/card-form";
-
 export const sidebarItems = [
   { iconName: "home", title: "Dashboard", route: "/", id: "dashboard" },
   {
@@ -8,12 +6,19 @@ export const sidebarItems = [
     route: "/transactions",
     id: "transactions",
   },
-  { iconName: "user", title: "Accounts", route: "/accounts", id: "accounts" },
+  {
+    iconName: "user",
+    title: "Accounts",
+    route: "/accounts",
+    id: "accounts",
+    disabled: true,
+  },
   {
     iconName: "investment",
     title: "Investments",
     route: "/investments",
     id: "investments",
+    disabled: true,
   },
   {
     iconName: "card",
@@ -21,12 +26,19 @@ export const sidebarItems = [
     route: "/credit-cards",
     id: "credit-cards",
   },
-  { iconName: "loan", title: "Loans", route: "/loans", id: "loans" },
+  {
+    iconName: "loan",
+    title: "Loans",
+    route: "/loans",
+    id: "loans",
+    disabled: true,
+  },
   {
     iconName: "service",
     title: "Services",
     route: "/services",
     id: "services",
+    disabled: true,
   },
   { iconName: "setting", title: "Setting", route: "/setting", id: "setting" },
 ];

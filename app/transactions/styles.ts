@@ -48,6 +48,11 @@ export const Item1 = styled.div`
 `;
 export const Item2 = styled.div`
   grid-area: expenses;
+  width: 420px;
+
+  @media (max-width: 1490px) {
+    width: 100%;
+  }
 `;
 export const Item3 = styled.div`
   grid-area: transactions;

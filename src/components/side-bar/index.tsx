@@ -23,7 +23,7 @@ const SideBar = ({ onItemClick, itemActive = "" }: SideBarProps) => {
 
   useEffect(() => {
     const activeItemIndex = sidebarItems.findIndex(
-      (item) => item.id === itemActive,
+      (item) => item.id === itemActive
     );
     setActiveIndex(activeItemIndex);
   }, [itemActive]);
@@ -37,13 +37,24 @@ const SideBar = ({ onItemClick, itemActive = "" }: SideBarProps) => {
 
       <ItemListContainer>
         <ItemActive $position={activeIndex} />
-        {sidebarItems.map(({ iconName, title, route, id }, index) => (
-          <StyledLink href={route} key={id} onClick={onItemClick}>
+        {sidebarItems.map(({ iconName, title, route, id, disabled }, index) => (
+          <StyledLink
+            href={disabled ? "#" : route}
+            key={id}
+            onClick={(e) => {
+              if (disabled) {
+                e.preventDefault();
+              } else {
+                onItemClick && onItemClick();
+              }
+            }}
+          >
             <ItemList
               iconName={iconName as IconName}
               title={title}
               isActive={handleSetIsActive(id)}
               position={index}
+              disabled={disabled}
             />
           </StyledLink>
         ))}

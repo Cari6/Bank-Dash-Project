@@ -97,15 +97,17 @@ const TransactionsPage = () => {
           My Expense
         </Typography>
 
-        <ColumnChartContainer>
-          <Chart
-            chartType="ColumnChart"
-            data={columnChartTransactionsData}
-            options={columnChartTransanctionsOptions}
-            width="100%"
-            height="100%"
-          />
-        </ColumnChartContainer>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <ColumnChartContainer>
+            <Chart
+              chartType="ColumnChart"
+              data={columnChartTransactionsData}
+              options={columnChartTransanctionsOptions}
+              width="100%"
+              height="100%"
+            />
+          </ColumnChartContainer>
+        </div>
       </Item2>
       <Item3>
         <Typography

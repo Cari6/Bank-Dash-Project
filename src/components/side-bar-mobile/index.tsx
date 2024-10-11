@@ -14,15 +14,15 @@ const SideBarMobile = ({
   setSideBarOpen,
   itemActive,
 }: SideBarMobileProps) => {
+  console.log("isOpen", isOpen);
   return (
-    <>
+    <Overlay onClick={setSideBarOpen} $isOpen={isOpen}>
       <Container $isOpen={isOpen}>
         <SideBarContainer>
           <Sidebar onItemClick={setSideBarOpen} itemActive={itemActive} />
         </SideBarContainer>
       </Container>
-      <Overlay onClick={setSideBarOpen} $isOpen={isOpen} />
-    </>
+    </Overlay>
   );
 };
 

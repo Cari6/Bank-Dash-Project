@@ -9,7 +9,7 @@ export const SideBarContainer = styled.div`
   top: 0;
   left: 0;
   width: 250px;
-  height: 100%;
+  height: 100vh;
   border-right: 2px solid #e6eff5;
   z-index: 1001;
 `;
@@ -27,6 +27,7 @@ export const ItemListContainer = styled.div`
 
 export const StyledLink = styled(NextLink)`
   text-decoration: none;
+  cursor: not-allowed;
 `;
 export const ItemActive = styled.div<{ $position: number }>`
   position: absolute;

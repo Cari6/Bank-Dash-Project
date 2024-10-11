@@ -9,11 +9,17 @@ interface ItemListProps {
   iconName: IconName;
   isActive?: boolean;
   position: number;
+  disabled?: boolean;
 }
 
-const ItemList = ({ title, iconName, isActive }: ItemListProps) => {
+const ItemList = ({
+  title,
+  iconName,
+  isActive,
+  disabled = false,
+}: ItemListProps) => {
   return (
-    <ItemlistContainer>
+    <ItemlistContainer $disabled={disabled}>
       <Icon name={iconName} isActive={isActive} />
       <Typography
         variant="title2"

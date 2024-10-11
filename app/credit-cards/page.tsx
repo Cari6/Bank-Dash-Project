@@ -14,10 +14,10 @@ import {
   TitleCardContainer,
 } from "./styles";
 import {
-  AddCard,
   CardList,
   CreditCard,
   FormCard,
+  ModalCreditCards,
   SettingCard,
   Typography,
 } from "@/src/components";
@@ -28,15 +28,19 @@ import {
 import Chart from "react-google-charts";
 import { useCards } from "@/src/contexts/data-formCard/provider";
 import { useSearchParams } from "next/navigation";
+import useModalScroll from "@/src/hooks/modal-scroll";
 
 const CreditCardsPage = () => {
-  const { cards, deleteCard } = useCards();
+  const { cards } = useCards();
   const settingCardRef = useRef<HTMLDivElement>(null);
   const formCardRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();
-
   const [settingCardHeight, setSettingCardHeight] = useState<number>(0);
+  const [isModalOpen, setModalOpen] = useState(false);
 
+  const handleOpenModal = () => setModalOpen(true);
+  const handleCloseModal = () => setModalOpen(false);
+  useModalScroll(isModalOpen);
   useEffect(() => {
     const handleResize = () => {
       if (settingCardRef.current) {
@@ -74,14 +78,18 @@ const CreditCardsPage = () => {
                 cursor: "pointer",
                 alignSelf: "end",
               }}
+              onClick={handleOpenModal}
             >
               See All
             </Typography>
+            {isModalOpen && (
+              <ModalCreditCards onClose={handleCloseModal} onDelete={true} />
+            )}
           </TitleCardContainer>
         )}
 
         <Cards>
-          {cards.slice(0, 2).map((card, index) => (
+          {cards.slice(0, 3).map((card, index) => (
             <CreditCard
               key={index}
               variant={index % 2 === 0 ? "variant1" : "variant2"}
@@ -89,12 +97,12 @@ const CreditCardsPage = () => {
               cardHolder={card.nameOnCard}
               validThru={card.expirationDate}
               cardNumber={card.cardNumber}
-              onDelete={() => deleteCard(card.id)}
-              showDeleteButton
+              showDeleteButton={false}
             />
           ))}
         </Cards>
       </Item1>
+
       <Item2>
         <Typography
           variant="title1"

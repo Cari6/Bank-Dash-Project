@@ -11,7 +11,12 @@ import {
   TransactionsMobileTableContainer,
   TransactionsTableContainer,
 } from "./styles";
-import { AddCard, CreditCard, Typography } from "@/src/components";
+import {
+  AddCard,
+  CreditCard,
+  ModalCreditCards,
+  Typography,
+} from "@/src/components";
 import Chart from "react-google-charts";
 import {
   columnChartTransactionsData,
@@ -25,10 +30,16 @@ import TransactionsTable from "@/src/components/table";
 import Tabs from "@/src/components/tabs";
 import TransactionsMobileTable from "@/src/components/table-mobile";
 import { useCards } from "@/src/contexts/data-formCard/provider";
+import useModalScroll from "@/src/hooks/modal-scroll";
 
 const TransactionsPage = () => {
   const { cards } = useCards();
   const [activeTab, setActiveTab] = useState<number>(0);
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => setModalOpen(true);
+  const handleCloseModal = () => setModalOpen(false);
+  useModalScroll(isModalOpen);
 
   const handleActiveTab = (id: number) => {
     setActiveTab(id);
@@ -41,17 +52,22 @@ const TransactionsPage = () => {
           <Typography variant="title1" style={{ margin: 0 }}>
             My Cards
           </Typography>
-          <Typography
-            variant="title1"
-            style={{
-              margin: 0,
-              fontSize: 16,
-              cursor: "pointer",
-              alignSelf: "end",
-            }}
-          >
-            See All
-          </Typography>
+          {cards.length > 0 && (
+            <Typography
+              variant="title1"
+              style={{
+                margin: 0,
+                fontSize: 16,
+                cursor: "pointer",
+                alignSelf: "end",
+              }}
+              onClick={handleOpenModal}
+            >
+              See All
+            </Typography>
+          )}
+
+          {isModalOpen && <ModalCreditCards onClose={handleCloseModal} />}
         </TitleCardContainer>
         <Cards>
           {cards.length === 0 ? (

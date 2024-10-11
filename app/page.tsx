@@ -20,6 +20,7 @@ import {
   CardQuickTransfer,
   CardTransaction,
   CreditCard,
+  ModalCreditCards,
   Typography,
 } from "@/src/components";
 import {
@@ -31,12 +32,19 @@ import {
   pieChartDashboardOptions,
 } from "@/src/utils/charts-data";
 import { useCards } from "@/src/contexts/data-formCard/provider";
+import useModalScroll from "@/src/hooks/modal-scroll";
 
 export const Home = () => {
   const { cards } = useCards();
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(
     typeof window !== "undefined" && window?.innerWidth < 890
   );
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => setModalOpen(true);
+  const handleCloseModal = () => setModalOpen(false);
+
+  useModalScroll(isModalOpen);
 
   useEffect(() => {
     const handleResize = () => {
@@ -57,17 +65,22 @@ export const Home = () => {
           <Typography variant="title1" style={{ margin: 0 }}>
             My Cards
           </Typography>
-          <Typography
-            variant="title1"
-            style={{
-              margin: 0,
-              fontSize: 16,
-              cursor: "pointer",
-              alignSelf: "end",
-            }}
-          >
-            See All
-          </Typography>
+          {cards.length > 0 && (
+            <Typography
+              variant="title1"
+              style={{
+                margin: 0,
+                fontSize: 16,
+                cursor: "pointer",
+                alignSelf: "end",
+              }}
+              onClick={handleOpenModal}
+            >
+              See All
+            </Typography>
+          )}
+
+          {isModalOpen && <ModalCreditCards onClose={handleCloseModal} />}
         </TitleCardContainer>
         <Cards>
           {cards.length === 0 ? (

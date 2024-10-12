@@ -29,7 +29,7 @@ import {
 import TransactionsTable from "@/src/components/table";
 import Tabs from "@/src/components/tabs";
 import TransactionsMobileTable from "@/src/components/table-mobile";
-import { useCards } from "@/src/contexts/data-formCard/provider";
+import { useCards } from "@/src/contexts/data-form-card/provider";
 import useModalScroll from "@/src/hooks/modal-scroll";
 
 const TransactionsPage = () => {

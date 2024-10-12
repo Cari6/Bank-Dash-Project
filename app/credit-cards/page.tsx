@@ -26,7 +26,7 @@ import {
   pieChartCreditCardsOptions,
 } from "@/src/utils/charts-data";
 import Chart from "react-google-charts";
-import { useCards } from "@/src/contexts/data-formCard/provider";
+import { useCards } from "@/src/contexts/data-form-card/provider";
 import { useSearchParams } from "next/navigation";
 import useModalScroll from "@/src/hooks/modal-scroll";
 

@@ -4,11 +4,11 @@ import IconButton from "../icon-button";
 export const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
-  left: 250px;
+  left: 0;
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 1002;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -22,11 +22,11 @@ export const ModalOverlay = styled.div`
 
 export const ModalContent = styled.div`
   background-color: #f5f7fa;
-  padding: 30px;
+  padding: 40px;
   margin: 0 40px;
   border-radius: 15px;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   position: relative;
 `;
 
@@ -40,8 +40,7 @@ export const Cards = styled.div`
 
 export const CustomIconButton = styled(IconButton)`
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: 0px;
+  right: 0px;
   z-index: 1;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;

@@ -5,7 +5,7 @@ import { Controller, useForm } from "react-hook-form";
 import Input from "../input";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormCardValidationSchema } from "./validation";
-import { useCards } from "@/src/contexts/data-formCard/provider";
+import { useCards } from "@/src/contexts/data-form-card/provider";
 import { v4 as uuidv4 } from "uuid";
 
 interface FormCardValues {
@@ -41,7 +41,7 @@ const FormCard = () => {
     const cleanedValue = cardNumber.replace(/\D+/g, "").slice(0, 16);
     const formatted = cleanedValue.replace(
       /^(\d{4})(\d{4})(\d{4})(\d{4})$/,
-      "$1 **** **** $4",
+      "$1 **** **** $4"
     );
 
     return formatted;

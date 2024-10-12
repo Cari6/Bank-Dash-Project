@@ -1,7 +1,7 @@
 import React from "react";
 import { Cards, CustomIconButton, ModalContent, ModalOverlay } from "./styles";
 import CreditCard from "../credit-card";
-import { useCards } from "@/src/contexts/data-formCard/provider";
+import { useCards } from "@/src/contexts/data-form-card/provider";
 
 interface ModalCreditCardsProps {
   onClose: () => void;

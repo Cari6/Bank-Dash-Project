@@ -31,7 +31,7 @@ import {
   pieChartDashboardData,
   pieChartDashboardOptions,
 } from "@/src/utils/charts-data";
-import { useCards } from "@/src/contexts/data-formCard/provider";
+import { useCards } from "@/src/contexts/data-form-card/provider";
 import useModalScroll from "@/src/hooks/modal-scroll";
 
 export const Home = () => {

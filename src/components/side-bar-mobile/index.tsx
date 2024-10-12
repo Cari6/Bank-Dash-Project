@@ -14,7 +14,6 @@ const SideBarMobile = ({
   setSideBarOpen,
   itemActive,
 }: SideBarMobileProps) => {
-  console.log("isOpen", isOpen);
   return (
     <Overlay onClick={setSideBarOpen} $isOpen={isOpen}>
       <Container $isOpen={isOpen}>

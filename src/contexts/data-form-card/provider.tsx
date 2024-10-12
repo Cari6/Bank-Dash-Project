@@ -5,6 +5,14 @@ import { Card, CardsContext } from "./context";
 export const CardsProvider = ({ children }: { children: React.ReactNode }) => {
   const [cards, setCards] = useState<Card[]>([]);
 
+  const defaultCard: Card = {
+    id: "default",
+    cardType: "Primary",
+    nameOnCard: "Eddy Cusuma",
+    cardNumber: "3778 **** **** 1234",
+    expirationDate: "12/2022",
+  };
+
   const addCard = (newCard: Card) => {
     const updatedCards = [...cards, newCard];
     setCards(updatedCards);
@@ -20,7 +28,14 @@ export const CardsProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const storedCards = localStorage.getItem("cardData");
     if (storedCards) {
-      setCards(JSON.parse(storedCards));
+      const parsedCards = JSON.parse(storedCards);
+      if (parsedCards.length === 0) {
+        setCards([defaultCard]);
+      } else {
+        setCards(parsedCards);
+      }
+    } else {
+      setCards([defaultCard]);
     }
   }, []);
 

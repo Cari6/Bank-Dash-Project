@@ -10,6 +10,7 @@ import {
   StyledLink,
   ItemActive,
 } from "./styles";
+import Image from "next/image";
 import { sidebarItems } from "@/src/utils/constants";
 import { IconName } from "../icon";
 
@@ -32,7 +33,7 @@ const SideBar = ({ onItemClick, itemActive = "" }: SideBarProps) => {
   return (
     <SideBarContainer>
       <Logo>
-        <LogoIcon />
+        <Image src="assets/image/logo.svg" alt="" width={183} height={36} />
       </Logo>
 
       <ItemListContainer>

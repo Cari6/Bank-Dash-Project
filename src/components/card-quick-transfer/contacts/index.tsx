@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 const CustomAvatar = styled(Avatar)`
   margin-right: 15px;
+  gap: 5px;
 `;
 
 const Contacts = ({ url, title, subtitle }: AvatarProps) => {

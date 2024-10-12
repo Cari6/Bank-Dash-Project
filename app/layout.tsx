@@ -13,6 +13,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "BankDash",
   description: "Proyecto portafolio",
+  icons: {
+    icon: "/favicon1.png",
+  },
 };
 
 export default function RootLayout({

@@ -1,22 +1,17 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ $isOpen: boolean }>`
-  background: #fff;
-  width: 250px;
+export const SideBarContainer = styled.div<{ $isOpen: boolean }>`
+  display: ${(props) => (props.$isOpen ? "block" : "none")};
+  // left: ${(props) => (props.$isOpen ? "0px" : "-250px")};
+  transition: left 0.3s ease-in-out;
+  left: 0px;
+  z-index: 1000;
   position: fixed;
   top: 0;
-  left: ${(props) => (props.$isOpen ? "0px" : "-250px")};
-  bottom: 0;
-  z-index: 1000;
-  display: flex;
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 100vh;
-  transition: left 0.3s ease-in-out;
-`;
 
-export const SideBarContainer = styled.div`
-  position: relative;
+  @media (min-width: 1161px) {
+    display: none;
+  }
 `;
 
 export const Overlay = styled.div<{ $isOpen: boolean }>`
@@ -28,5 +23,10 @@ export const Overlay = styled.div<{ $isOpen: boolean }>`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: ${(props) => (props.$isOpen ? "block" : "none")};
+  // transition: display 0.3s ease-in-out;
   z-index: 999;
+
+  @media (min-width: 1161px) {
+    display: none;
+  }
 `;

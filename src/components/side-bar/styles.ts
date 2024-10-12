@@ -5,13 +5,9 @@ export const SideBarContainer = styled.div`
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 250px;
   height: 100vh;
   border-right: 2px solid #e6eff5;
-  z-index: 1001;
 `;
 
 export const Logo = styled.div`

@@ -24,6 +24,9 @@ export const MainContent = styled.main<{ $isOpen: boolean }>`
 `;
 
 export const SideBarContainer = styled.div`
+  position: fixed;
+  z-index: 1001;
+  top: 0;
   @media (max-width: 1160px) {
     display: none;
   }

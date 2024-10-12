@@ -30,3 +30,4 @@ export { default as Security } from "./cards-page-setting/security";
 export { default as Switch } from "./switch";
 export { default as AddCard } from "./icon-button-card";
 export { default as ModalCreditCards } from "./modal";
+export { default as Spinner } from "./spinner";

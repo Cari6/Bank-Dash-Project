@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Sidebar from "../side-bar";
-import { SideBarContainer, Overlay, Container } from "./styles";
+import { SideBarContainer, Overlay } from "./styles";
 
 interface SideBarMobileProps {
   isOpen: boolean;
@@ -15,13 +15,12 @@ const SideBarMobile = ({
   itemActive,
 }: SideBarMobileProps) => {
   return (
-    <Overlay onClick={setSideBarOpen} $isOpen={isOpen}>
-      <Container $isOpen={isOpen}>
-        <SideBarContainer>
-          <Sidebar onItemClick={setSideBarOpen} itemActive={itemActive} />
-        </SideBarContainer>
-      </Container>
-    </Overlay>
+    <>
+      <Overlay onClick={setSideBarOpen} $isOpen={isOpen} />
+      <SideBarContainer $isOpen={isOpen}>
+        <Sidebar onItemClick={setSideBarOpen} itemActive={itemActive} />
+      </SideBarContainer>
+    </>
   );
 };
 

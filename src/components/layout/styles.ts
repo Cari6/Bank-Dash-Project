@@ -3,6 +3,24 @@ import styled, { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle<{ $isSidebarOpen: boolean }>`
   body {
     overflow: ${(props) => (props.$isSidebarOpen ? "hidden" : "auto")};
+   
+  }
+
+   &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #b1b1b1;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #1310bf;
   }
 `;
 

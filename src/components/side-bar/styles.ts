@@ -8,6 +8,24 @@ export const SideBarContainer = styled.div`
   width: 250px;
   height: 100vh;
   border-right: 2px solid #e6eff5;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #b1b1b1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #1814f3;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #1310bf;
+  }
 `;
 
 export const Logo = styled.div`

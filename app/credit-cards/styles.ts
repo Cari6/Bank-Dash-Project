@@ -6,10 +6,16 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 20px;
+  // grid-template-areas:
+  //   "cards cards cards"
+  //   "expense list list"
+  //   "newCard newCard setting";
+
   grid-template-areas:
-    "cards cards cards"
-    "expense list list"
+    "cards cards expense"
+    "list list list"
     "newCard newCard setting";
+
   @media (max-width: 1370px) {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -22,19 +28,18 @@ export const GridContainer = styled.div`
 `;
 
 export const Cards = styled.div`
-  display: flex;
-  justify-content: start;
+  display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
+  width: 100%;
 
   @media (max-width: 1490px) {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: start;
   }
   @media (max-width: 890px) {
-    grid-template-columns: 1fr;
-    max-width: 443px;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 export const Item1 = styled.div`
@@ -63,7 +68,7 @@ export const PieChartContainer = styled.div`
   padding: 15px;
   background-color: #fff;
   border-radius: 20px;
-  height: 310px;
+  height: 230px;
 `;
 
 export const CardContainer = styled.div`

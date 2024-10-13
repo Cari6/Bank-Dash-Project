@@ -11,7 +11,6 @@ export const GridContainer = styled.div`
     "transfer history history";
   gap: 20px;
   @media (max-width: 1490px) {
-    margin: 0 40px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       "cards cards"
@@ -31,24 +30,19 @@ export const GridContainer = styled.div`
       "transfer"
       "history";
   }
-
-  @media (max-width: 570px) {
-    margin: 0;
-  }
 `;
 
 export const Cards = styled.div`
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
+  width: 100%;
 
   @media (max-width: 1490px) {
-    width: 100%;
     display: flex;
     justify-content: start;
   }
   @media (max-width: 890px) {
-    max-width: 443px;
     flex-direction: column;
     align-items: center;
   }
@@ -56,11 +50,8 @@ export const Cards = styled.div`
 
 export const Item1 = styled.div`
   grid-area: cards;
-  @media (max-width: 1490px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display:flex;
+  flex-direction:column;
   }
 `;
 
@@ -74,6 +65,7 @@ export const Item2 = styled.div`
 `;
 
 export const Item3 = styled.div`
+
   grid-area: activity;
   @media (max-width: 1490px) {
     display: flex;
@@ -116,7 +108,7 @@ export const Item6 = styled.div`
 export const BarChartContainer = styled.div`
   background-color: #fff;
   flex: 1;
-  max-width: 100%;
+  width: 100%;
   padding: 30px;
   height: 320px;
   border-radius: 20px;
@@ -125,21 +117,23 @@ export const BarChartContainer = styled.div`
 export const PieChartContainer = styled.div`
   background-color: #fff;
   flex: 1;
-  max-width: 100%;
+  width: 100%;
   padding: 10px;
   height: 320px;
   border-radius: 20px;
   display: flex;
+  justify-content: center;
 `;
 
 export const LineChartContainer = styled.div`
   background-color: #fff;
   flex: 1;
-  max-width: 100%;
+  width: 100%;
   padding: 10px;
   height: 280px;
   border-radius: 20px;
   display: flex;
+  justify-content: center;
 `;
 
 export const TitleCardContainer = styled.div`

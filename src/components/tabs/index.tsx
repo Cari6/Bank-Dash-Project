@@ -1,5 +1,11 @@
 import React from "react";
-import { Tab, TabActive, TabContainer } from "./styles";
+import {
+  Border,
+  Tab,
+  TabActive,
+  TabContainer,
+  TabContainerInner,
+} from "./styles";
 
 interface TabOption {
   id: number;
@@ -16,18 +22,20 @@ const Tabs = ({ tabOptions, activeTab, onTabChange }: TabTableProps) => {
   const activeIndex = tabOptions.findIndex((option) => option.id === activeTab);
   return (
     <TabContainer>
-      <div style={{ display: "flex" }}>
+      <TabContainerInner>
         {tabOptions.map(({ id, title }) => (
           <Tab
             key={id}
             onClick={() => onTabChange(id)}
             isActive={activeTab === id}
           >
-            {title}
+            <span>{title}</span>
           </Tab>
         ))}
-      </div>
-      <TabActive position={activeIndex} count={tabOptions.length} />
+        <TabActive position={activeIndex} count={tabOptions.length} />
+      </TabContainerInner>
+
+      <Border />
     </TabContainer>
   );
 };

@@ -15,11 +15,11 @@ export const SideBarContainer = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    background: #b1b1b1;
+    background: transparent;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #1814f3;
+    background-color: #b1b1b1;
     border-radius: 6px;
   }
 

@@ -21,9 +21,9 @@ export const pieChartDashboardData = [
   ["Investment", 20],
 ];
 
-export const pieChartDashboardOptions = (isSmallScreen: boolean) => ({
+export const pieChartDashboardOptions = {
   pieStartAngle: 305,
-  pieSliceText: isSmallScreen ? "none" : "label",
+
   slices: {
     0: { offset: 0.05, color: "#343C6A" },
     1: { offset: 0.05, color: "#FC7900" },
@@ -31,19 +31,13 @@ export const pieChartDashboardOptions = (isSmallScreen: boolean) => ({
     3: { offset: 0.05, color: "#FA00FF" },
   },
   legend: {
-    position: isSmallScreen ? "labeled" : "none",
-    alignment: "center",
-    textStyle: {
-      fontName: "Inter",
-      color: "#718EBF",
-      fontSize: 16,
-    },
+    position: "none",
   },
   chartArea: {
     top: 20,
     bottom: 20,
   },
-});
+};
 
 export const lineChartDashboardData = [
   ["Month", "Expenses"],

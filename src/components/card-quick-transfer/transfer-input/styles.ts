@@ -7,7 +7,7 @@ export const TransferInputContainer = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 `;
 export const InputButton = styled.div`
   display: flex;

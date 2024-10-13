@@ -36,28 +36,12 @@ import useModalScroll from "@/src/hooks/modal-scroll";
 
 export const Home = () => {
   const { cards } = useCards();
-  const [isSmallScreen, setIsSmallScreen] = useState<boolean>(
-    typeof window !== "undefined" && window?.innerWidth < 890
-  );
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
 
   useModalScroll(isModalOpen);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 890);
-
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    };
-  }, []);
-
   return (
     <GridContainer>
       <Item1>
@@ -140,10 +124,9 @@ export const Home = () => {
           <Chart
             chartType="PieChart"
             data={pieChartDashboardData}
-            options={pieChartDashboardOptions(isSmallScreen)}
+            options={pieChartDashboardOptions}
             max-width="100%"
             height="100%"
-            key={`chart-${isSmallScreen}`}
           />
         </PieChartContainer>
       </Item4>

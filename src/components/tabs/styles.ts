@@ -10,26 +10,19 @@ interface TabActiveProps {
 }
 
 export const TabContainer = styled.div`
-  display: inline-block;
+  display: flex;
   cursor: pointer;
   margin-bottom: 15px;
   position: relative;
-  z-index: 1;
+  width: 100%;
+`;
 
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
+export const TabContainerInner = styled.div`
+  display: flex;
+  position: relative;
+
+  @media (max-width: 400px) {
     width: 100%;
-    height: 1px;
-    background-color: #ebeef2;
-    z-index: 0;
-  }
-
-  @media (max-width: 740px) {
-    display: flex;
-    flex-direction: column;
   }
 `;
 
@@ -37,15 +30,14 @@ export const Tab = styled.div<TabProps>`
   padding: 10px 20px;
   color: ${({ isActive }) => (isActive ? "#1814F3" : "#718EBF")};
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  width: 200px;
-  max-width: 200px;
-    
-
-  @media (max-width: 600px) {
-    display:flex;
-    justify-content: center;
-    padding:10px 5px;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  overflow: hidden;
 `;
 
 export const TabActive = styled.div<TabActiveProps>`
@@ -62,4 +54,14 @@ export const TabActive = styled.div<TabActiveProps>`
 
 export const TableWrapper = styled.div`
   margin-top: 15px;
+`;
+
+export const Border = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ebeef2;
+  z-index: 0;
 `;

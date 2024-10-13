@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   Cards,
   ColumnChartContainer,
+  ColumnChartContainerInner,
   GridContainerTransactions,
   Item1,
   Item2,
@@ -97,8 +98,8 @@ const TransactionsPage = () => {
           My Expense
         </Typography>
 
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <ColumnChartContainer>
+        <ColumnChartContainer>
+          <ColumnChartContainerInner>
             <Chart
               chartType="ColumnChart"
               data={columnChartTransactionsData}
@@ -106,8 +107,8 @@ const TransactionsPage = () => {
               width="100%"
               height="100%"
             />
-          </ColumnChartContainer>
-        </div>
+          </ColumnChartContainerInner>
+        </ColumnChartContainer>
       </Item2>
       <Item3>
         <Typography

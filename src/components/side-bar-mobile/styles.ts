@@ -25,8 +25,4 @@ export const Overlay = styled.div<{ $isOpen: boolean }>`
   display: ${(props) => (props.$isOpen ? "block" : "none")};
   // transition: display 0.3s ease-in-out;
   z-index: 999;
-
-  @media (min-width: 1161px) {
-    display: none;
-  }
 `;

@@ -89,7 +89,7 @@ const CreditCardsPage = () => {
         )}
 
         <Cards>
-          {cards.slice(0, 3).map((card, index) => (
+          {cards.slice(0, 2).map((card, index) => (
             <CreditCard
               key={index}
               variant={index % 2 === 0 ? "variant1" : "variant2"}

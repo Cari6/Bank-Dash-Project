@@ -10,7 +10,7 @@ export const HeaderContainer = styled.header`
   height: 100px;
   top: 0;
   left: 250px;
-  z-index: 1000;
+  z-index: 998;
 
   @media (max-width: 1160px) {
  left:0;

@@ -20,9 +20,25 @@ export default function RootLayout({
 }>) {
   const [loading, setLoading] = useState(true);
 
+  const triggerLoading = () => {
+    setLoading(true);
+    setTimeout(() => setLoading(false), 1000);
+  };
+
   useEffect(() => {
-    setTimeout(() => setLoading(false), 2000);
+    setTimeout(() => setLoading(false), 1000);
+
+    const handleResize = () => {
+      triggerLoading();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
   return (
     <html lang="en">
       <head>
@@ -32,6 +48,7 @@ export default function RootLayout({
         />
         <title>{metadata.title as string}</title>
         <meta name="description" content={metadata.description as string} />
+        <link rel="icon" href={"/favicon1.png"} />
       </head>
       <body className={inter.className}>
         <UserDataProvider>

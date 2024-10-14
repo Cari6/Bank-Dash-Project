@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const SideBarContainer = styled.div<{ $isOpen: boolean }>`
-  display: ${(props) => (props.$isOpen ? "block" : "none")};
-  // left: ${(props) => (props.$isOpen ? "0px" : "-250px")};
+  left: ${(props) => (props.$isOpen ? "0px" : "-250px")};
   transition: left 0.3s ease-in-out;
-  left: 0px;
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -23,6 +21,5 @@ export const Overlay = styled.div<{ $isOpen: boolean }>`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: ${(props) => (props.$isOpen ? "block" : "none")};
-  // transition: display 0.3s ease-in-out;
   z-index: 999;
 `;

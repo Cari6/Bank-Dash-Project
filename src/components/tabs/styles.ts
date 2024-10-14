@@ -38,6 +38,7 @@ export const Tab = styled.div<TabProps>`
   flex-grow: 1;
   flex-shrink: 0;
   overflow: hidden;
+  white-space: nowrap;
 `;
 
 export const TabActive = styled.div<TabActiveProps>`

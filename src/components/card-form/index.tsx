@@ -41,7 +41,7 @@ const FormCard = () => {
     const cleanedValue = cardNumber.replace(/\D+/g, "").slice(0, 16);
     const formatted = cleanedValue.replace(
       /^(\d{4})(\d{4})(\d{4})(\d{4})$/,
-      "$1 **** **** $4"
+      "$1 **** **** $4",
     );
 
     return formatted;
@@ -66,8 +66,6 @@ const FormCard = () => {
     alert("The card has been added successfully");
     reset();
   };
-
-  console.log("errors", errors);
 
   return (
     <CardContainer>

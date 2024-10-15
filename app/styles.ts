@@ -5,11 +5,13 @@ export const GridContainer = styled.div`
   max-width: 1300px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
+  gap: 20px;
+
   grid-template-areas:
     "cards cards transactions"
     "activity activity statistics"
     "transfer history history";
-  gap: 20px;
+
   @media (max-width: 1490px) {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:

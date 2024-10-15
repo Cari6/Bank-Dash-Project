@@ -19,10 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [loading, setLoading] = useState(true);
+  const mobileMaxWidth = 480;
 
   const triggerLoading = () => {
-    setLoading(true);
-    setTimeout(() => setLoading(false), 1000);
+    if (window.innerWidth > mobileMaxWidth) {
+      setLoading(true);
+      setTimeout(() => setLoading(false), 1000);
+    } else {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {

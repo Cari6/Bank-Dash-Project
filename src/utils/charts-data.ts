@@ -1,5 +1,5 @@
 export const barChartDashboardData = [
-  ["", "Diposit", "Withdraw"],
+  ["", "Deposit", "Withdraw"],
   ["Sat", 490, 225],
   ["Sun", 325, 110],
   ["Mon", 325, 290],

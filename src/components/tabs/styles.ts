@@ -20,10 +20,6 @@ export const TabContainer = styled.div`
 export const TabContainerInner = styled.div`
   display: flex;
   position: relative;
-
-  @media (max-width: 400px) {
-    width: 100%;
-  }
 `;
 
 export const Tab = styled.div<TabProps>`
@@ -39,6 +35,11 @@ export const Tab = styled.div<TabProps>`
   flex-shrink: 0;
   overflow: hidden;
   white-space: nowrap;
+
+  @media (max-width: 385px) {
+    white-space: normal;
+    padding: 10px 15px;
+  }
 `;
 
 export const TabActive = styled.div<TabActiveProps>`

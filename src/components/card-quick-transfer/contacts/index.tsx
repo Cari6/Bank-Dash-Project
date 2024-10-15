@@ -9,7 +9,7 @@ const CustomAvatar = styled(Avatar)`
 `;
 
 const Contacts = ({ url, title, subtitle }: AvatarProps) => {
-  return <CustomAvatar url={url} size={70} title={title} subtitle={subtitle} />;
+  return <CustomAvatar url={url} size={65} title={title} subtitle={subtitle} />;
 };
 
 export default Contacts;

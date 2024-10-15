@@ -37,7 +37,7 @@ export const MainContent = styled.main<{ $isOpen: boolean }>`
   }
 
   @media (max-width: 400px) {
-    padding: 40px 10px;
+    padding: 10px 10px;
   }
 `;
 

@@ -128,7 +128,7 @@ const Home = () => {
             chartType="PieChart"
             data={pieChartDashboardData}
             options={pieChartDashboardOptions}
-            max-width="100%"
+            width="100%"
             height="100%"
           />
         </PieChartContainer>

@@ -35,7 +35,7 @@ import {
 import { useCards } from "@/src/contexts/data-form-card/provider";
 import useModalScroll from "@/src/hooks/modal-scroll";
 
-export const Home = () => {
+const Home = () => {
   const { cards } = useCards();
   const [isModalOpen, setModalOpen] = useState(false);
 

@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import Button from "../../button";
 
-export const Container = styled.div``;
-
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;

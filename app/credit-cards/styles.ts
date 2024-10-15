@@ -6,10 +6,6 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 20px;
-  // grid-template-areas:
-  //   "cards cards cards"
-  //   "expense list list"
-  //   "newCard newCard setting";
 
   grid-template-areas:
     "cards cards expense"
@@ -42,24 +38,29 @@ export const Cards = styled.div`
     align-items: center;
   }
 `;
+
+export const NoExistingCard = styled.div`
+  width: 100%;
+  max-width: 360px;
+  height: 229.2px;
+`;
+
 export const Item1 = styled.div`
   grid-area: cards;
-  @media (max-width: 1490px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
 `;
+
 export const Item2 = styled.div`
   grid-area: expense;
 `;
+
 export const Item3 = styled.div`
   grid-area: list;
 `;
+
 export const Item4 = styled.div`
   grid-area: newCard;
 `;
+
 export const Item5 = styled.div`
   grid-area: setting;
 `;

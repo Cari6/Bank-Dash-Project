@@ -10,7 +10,6 @@ export const CardContainer = styled.div<CardContainerProps>`
   max-width: 360px;
   padding: 20px;
   border-radius: 25px;
-  // flex: 1;
   position: relative;
 
   ${(props) =>

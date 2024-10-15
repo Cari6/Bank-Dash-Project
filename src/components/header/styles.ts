@@ -13,11 +13,10 @@ export const HeaderContainer = styled.header`
   z-index: 998;
 
   @media (max-width: 1160px) {
- left:0;
- display:none;
+    left: 0;
+    display: none;
   }
-  
-}`;
+`;
 
 export const TitleContainer = styled.div`
   margin-left: 40px;

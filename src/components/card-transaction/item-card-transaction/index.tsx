@@ -8,6 +8,7 @@ import {
   TextValue,
 } from "./styles";
 import Typography from "../../typography";
+
 interface ItemCardTransactionProps {
   icon: string;
   title: string;

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Chart } from "react-google-charts";
 import {
   BarChartContainer,
@@ -12,6 +12,7 @@ import {
   Item5,
   Item6,
   LineChartContainer,
+  NoExistingCard,
   PieChartContainer,
   TitleCardContainer,
 } from "./styles";
@@ -68,7 +69,9 @@ export const Home = () => {
         </TitleCardContainer>
         <Cards>
           {cards.length === 0 ? (
-            <Typography>No cards added yet.</Typography>
+            <NoExistingCard>
+              <Typography>No cards added yet.</Typography>
+            </NoExistingCard>
           ) : (
             cards
               .slice(0, 1)

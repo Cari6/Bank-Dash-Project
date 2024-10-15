@@ -24,7 +24,6 @@ export const CustomButton = styled(Button)`
   height: 50px;
   margin-left: -30px;
   z-index: 997;
-
   transition: background-color 0.3s ease;
   &:hover {
     background-color: #0e0b97;

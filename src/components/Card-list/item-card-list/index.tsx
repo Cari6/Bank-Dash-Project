@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { CardContainer, CardItem, CardType, ItemMobile } from "./styles";
 import Typography from "../../typography";
 import Button from "../../button";
+import { CardContainer, CardItem, CardType, ItemMobile } from "./styles";
 
 interface CardListProps {
   url: string;

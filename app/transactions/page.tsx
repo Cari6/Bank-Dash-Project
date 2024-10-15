@@ -8,6 +8,7 @@ import {
   Item1,
   Item2,
   Item3,
+  NoExistingCard,
   TitleCardContainer,
   TransactionsMobileTableContainer,
   TransactionsTableContainer,
@@ -72,7 +73,9 @@ const TransactionsPage = () => {
         </TitleCardContainer>
         <Cards>
           {cards.length === 0 ? (
-            <Typography>No cards added yet.</Typography>
+            <NoExistingCard>
+              <Typography>No cards added yet.</Typography>
+            </NoExistingCard>
           ) : (
             cards
               .slice(0, 1)

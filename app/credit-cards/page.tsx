@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-
 import {
   CardContainer,
   Cards,
@@ -10,10 +9,12 @@ import {
   Item3,
   Item4,
   Item5,
+  NoExistingCard,
   PieChartContainer,
   TitleCardContainer,
 } from "./styles";
 import {
+  AddCard,
   CardList,
   CreditCard,
   FormCard,
@@ -62,14 +63,20 @@ const CreditCardsPage = () => {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    if (cards.length === 0 && isModalOpen) {
+      handleCloseModal();
+    }
+  }, [cards, isModalOpen]);
+
   return (
     <GridContainer>
       <Item1>
-        {cards.length > 0 && (
-          <TitleCardContainer>
-            <Typography variant="title1" style={{ margin: 0 }}>
-              My Cards
-            </Typography>
+        <TitleCardContainer>
+          <Typography variant="title1" style={{ margin: 0 }}>
+            My Cards
+          </Typography>
+          {cards.length > 0 && (
             <Typography
               variant="title1"
               style={{
@@ -82,24 +89,35 @@ const CreditCardsPage = () => {
             >
               See All
             </Typography>
-            {isModalOpen && (
-              <ModalCreditCards onClose={handleCloseModal} onDelete={true} />
-            )}
-          </TitleCardContainer>
-        )}
+          )}
+
+          {isModalOpen && (
+            <ModalCreditCards onClose={handleCloseModal} onDelete={true} />
+          )}
+        </TitleCardContainer>
 
         <Cards>
-          {cards.slice(0, 2).map((card, index) => (
-            <CreditCard
-              key={index}
-              variant={index % 2 === 0 ? "variant1" : "variant2"}
-              balance="$5,756"
-              cardHolder={card.nameOnCard}
-              validThru={card.expirationDate}
-              cardNumber={card.cardNumber}
-              showDeleteButton={false}
-            />
-          ))}
+          {cards.length === 0 ? (
+            <NoExistingCard>
+              <Typography>No cards added yet.</Typography>
+            </NoExistingCard>
+          ) : (
+            cards
+              .slice(0, 1)
+              .map((card, index) => (
+                <CreditCard
+                  key={index}
+                  variant={index % 2 === 0 ? "variant1" : "variant2"}
+                  balance="$5,756"
+                  cardHolder={card.nameOnCard}
+                  validThru={card.expirationDate}
+                  cardNumber={card.cardNumber}
+                  showDeleteButton={false}
+                />
+              ))
+          )}
+
+          <AddCard />
         </Cards>
       </Item1>
 

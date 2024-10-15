@@ -76,10 +76,13 @@ export const columnChartTransactionsData = [
   ["mounth", "amount", { role: "style" }, { role: "annotation" }],
   ["Aug", 10000, "color:#EDF0F7", ""],
   ["Sep", 12600, "color:#EDF0F7", ""],
-  ["Oct", 11000, "color:#EDF0F7", ""],
-  ["Nov", 5000, "color:#EDF0F7", ""],
-  ["Dec", 12500, "color:#16DBCC", "$12500"],
-  ["Jan", 9000, "color:#EDF0F7", ""],
+  ["Oct", 9000, "color:#EDF0F7", ""],
+  ["Nov", 11000, "color:#EDF0F7", ""],
+  ["Dec", 5000, "color:#EDF0F7", ""],
+  ["Jan", 12500, "color:#16DBCC", "$12500"],
+  ["Feb", 9000, "color:#EDF0F7", ""],
+  ["Mar", 10000, "color:#EDF0F7", ""],
+  ["Apr", 13000, "color:#EDF0F7", ""],
 ];
 
 export const columnChartTransanctionsOptions = {

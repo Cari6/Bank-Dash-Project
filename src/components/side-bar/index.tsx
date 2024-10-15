@@ -1,7 +1,5 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
-import { LogoIcon } from "../icons";
 import ItemList from "../item-list";
 import {
   ItemListContainer,

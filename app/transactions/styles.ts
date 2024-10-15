@@ -6,6 +6,7 @@ export const GridContainerTransactions = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   gap: 20px;
+
   grid-template-areas:
     "cards cards expenses"
     "transactions transactions transactions ";
@@ -34,14 +35,21 @@ export const Cards = styled.div`
     align-items: center;
   }
 `;
+
+export const NoExistingCard = styled.div`
+  width: 100%;
+  max-width: 360px;
+  height: 229.2px;
+`;
+
 export const Item1 = styled.div`
   grid-area: cards;
-  display: flex;
-  flex-direction: column;
 `;
+
 export const Item2 = styled.div`
   grid-area: expenses;
 `;
+
 export const Item3 = styled.div`
   grid-area: transactions;
 `;
@@ -49,7 +57,6 @@ export const Item3 = styled.div`
 export const ColumnChartContainer = styled.div`
   display: flex;
   justify-content: center;
-  // width: 100%;
   background-color: #fff;
   border-radius: 20px;
 `;
@@ -59,18 +66,9 @@ export const ColumnChartContainerInner = styled.div`
   height: 230px;
   overflow: hidden;
   padding-bottom: 15px;
-  // max-width: 49%;
   width: 100%;
-
-  // @media (max-width: 890px) {
-  //   padding-left: 50px;
-  //   max-width: inherit;
-  // }
-  // @media (min-width: 1490px) {
-  //   padding-left: 50px;
-  //   max-width: inherit;
-  // }
 `;
+
 export const TitleCardContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -83,6 +81,7 @@ export const TransactionsTableContainer = styled.div`
     display: none;
   }
 `;
+
 export const TransactionsMobileTableContainer = styled.div`
   @media (min-width: 600px) {
     display: none;

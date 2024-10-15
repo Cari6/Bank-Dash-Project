@@ -15,9 +15,6 @@ export const ModalOverlay = styled.div`
   overflow-y: auto;
   padding-top: 40px;
   padding-bottom: 40px;
-  @media (max-width: 1160px) {
-    left: 0;
-  }
 `;
 
 export const ModalContent = styled.div`

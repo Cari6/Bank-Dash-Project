@@ -1,4 +1,3 @@
-export { default as LogoIcon } from "./logo";
 export { default as HomeIcon } from "./home";
 export { default as TransferIcon } from "./transfer";
 export { default as UserIcon } from "./user";
@@ -9,3 +8,4 @@ export { default as ServiceIcon } from "./service-icon";
 export { default as Settingsicon } from "./settings-icon";
 export { default as OpenEyeIcon } from "./open-eye";
 export { default as CloseEyeIcon } from "./close-eye";
+export { default as AddIcon } from "./add";

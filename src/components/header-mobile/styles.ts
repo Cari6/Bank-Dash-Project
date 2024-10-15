@@ -9,6 +9,7 @@ export const HeaderMobileContainer = styled.div`
   background-color: #fff;
   padding: 20px;
   height: 150px;
+
   @media (min-width: 1161px) {
     display: none;
   }

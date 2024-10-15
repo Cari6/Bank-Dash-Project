@@ -1,11 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  ButtonContainer,
-  Container,
-  CustomButton,
-  InputContainer,
-} from "./styles";
+import { ButtonContainer, CustomButton, InputContainer } from "./styles";
 import { switchPreferences } from "@/src/utils/constants";
 import Typography from "../../typography";
 import Switch from "../../switch";
@@ -22,7 +17,7 @@ const Preferences = () => {
     setChecked(updatedSwitches);
   };
   return (
-    <Container>
+    <>
       <InputContainer>
         <Input variant="variant1" placeholder="USD" text="Currency" />
         <Input
@@ -47,7 +42,7 @@ const Preferences = () => {
       <ButtonContainer>
         <CustomButton title="Save" variant="form" />
       </ButtonContainer>
-    </Container>
+    </>
   );
 };
 

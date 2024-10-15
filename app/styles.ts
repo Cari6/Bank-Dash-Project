@@ -48,11 +48,14 @@ export const Cards = styled.div`
   }
 `;
 
+export const NoExistingCard = styled.div`
+  width: 100%;
+  max-width: 360px;
+  height: 229.2px;
+`;
+
 export const Item1 = styled.div`
   grid-area: cards;
-  display:flex;
-  flex-direction:column;
-  }
 `;
 
 export const Item2 = styled.div`
@@ -65,13 +68,11 @@ export const Item2 = styled.div`
 `;
 
 export const Item3 = styled.div`
-
   grid-area: activity;
   @media (max-width: 1490px) {
     display: flex;
     align-items: center;
     flex-direction: column;
-  }
   }
 `;
 
@@ -82,7 +83,6 @@ export const Item4 = styled.div`
     align-items: center;
     flex-direction: column;
   }
-  }
 `;
 
 export const Item5 = styled.div`
@@ -92,7 +92,6 @@ export const Item5 = styled.div`
     align-items: center;
     flex-direction: column;
   }
-  }
 `;
 
 export const Item6 = styled.div`
@@ -101,7 +100,6 @@ export const Item6 = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-  }
   }
 `;
 

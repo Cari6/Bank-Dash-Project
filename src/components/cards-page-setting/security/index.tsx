@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import {
   ButtonContainer,
-  Container,
   ContainerInner,
   CustomButton,
   InputContainer,
 } from "./styles";
 import Typography from "../../typography";
-import { Icon, Input, Switch } from "../..";
+import { Input, Switch } from "../..";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { EditProfileValidationSchema } from "./validation";
@@ -18,7 +17,6 @@ interface FormValues {
 }
 
 const Security = () => {
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [checked, setChecked] = useState<boolean>(false);
 
   const handleChange = (nextChecked: boolean) => {
@@ -36,12 +34,10 @@ const Security = () => {
     },
     resolver: yupResolver(EditProfileValidationSchema),
   });
-  const onSubmit = (data: FormValues) => {
-    console.log("data", data);
-  };
+  const onSubmit = (data: FormValues) => {};
 
   return (
-    <Container>
+    <>
       <Typography variant="description2">Two-factor Authentication</Typography>
       <Switch
         checked={checked}
@@ -96,7 +92,7 @@ const Security = () => {
           variant="form"
         />
       </ButtonContainer>
-    </Container>
+    </>
   );
 };
 

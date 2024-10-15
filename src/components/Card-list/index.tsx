@@ -1,7 +1,7 @@
 import { cardListItems } from "@/src/utils/constants";
 import React from "react";
-import ItemCardList from "./item-card-list";
 import { CardContainer } from "./styles";
+import ItemCardList from "./item-card-list";
 
 const CardList = () => {
   return (

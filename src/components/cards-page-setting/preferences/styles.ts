@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import Button from "../../button";
 
-export const Container = styled.div``;
-
 export const CustomButton = styled(Button)`
   @media (max-width: 890px) {
     width: 100%;

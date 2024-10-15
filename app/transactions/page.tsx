@@ -126,6 +126,7 @@ const TransactionsPage = () => {
           activeTab={activeTab}
           onTabChange={handleActiveTab}
         />
+
         <TransactionsTableContainer>
           <TransactionsTable {...renderTable[activeTab]} />
         </TransactionsTableContainer>

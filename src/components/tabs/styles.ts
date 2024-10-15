@@ -33,10 +33,10 @@ export const Tab = styled.div<TabProps>`
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 0;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
 
-  @media (max-width: 385px) {
+  @media (max-width: 440px) {
     white-space: normal;
     padding: 10px 15px;
   }
